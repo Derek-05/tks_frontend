@@ -17,15 +17,6 @@ import Finance2 from "../../assets/Finance2.jpg";
 const Advantage = () => {
   return (
     <section className="Benefits-heading">
-      <br />
-      <br />
-      <br />
-      <br />
-
-      <br />
-      <br />
-      <br />
-
       <h2> Our Benefits</h2>
       <div className="card-container">
         <div className="card">
