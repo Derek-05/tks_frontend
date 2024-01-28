@@ -77,7 +77,7 @@ const Team = () => {
 
           <div className="row">
             <div className="row-img">
-              <img src={biomedico} alt="Physiotherapist" />
+              <img src={biomedico} alt="Biomedical engineer" />
             </div>
             <h3>Biomedical engineer</h3>
           </div>
