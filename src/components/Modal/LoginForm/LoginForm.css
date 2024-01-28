@@ -1,0 +1,68 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Consistent spacing */
+  background: #fff;
+  padding: 1.5rem; /* Sufficient padding */
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Slightly smaller width */
+  max-width: 400px; /* Maximum width */
+  margin: 2rem auto; /* Center form with auto margins */
+}
+
+/* Heading */
+form .form-title {
+  font-size: 1.5rem; /* Slightly smaller font size */
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Labels and Inputs */
+label {
+  font-weight: bold;
+  color: #333;  
+}
+
+form input[type="text"],
+form input[type="password"] {
+  padding: 0.75rem; /* Comfortable padding */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem; /* Slightly smaller font size */
+}
+
+/* Submit Button */
+form button {
+  padding: 0.75rem; /* Comfortable padding */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem; /* Slightly smaller font size */
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  form {
+      padding: 1rem; /* Less padding on smaller screens */
+      gap: 0.5rem; /* Less gap on smaller screens */
+  }
+
+  form .form-title {
+      font-size: 1.25rem; /* Smaller font size on smaller screens */
+  }
+
+  form input[type="text"],
+  form input[type="password"],
+  form button {
+      font-size: 0.875rem; /* Smaller font size for inputs and button on smaller screens */
+  }
+}
