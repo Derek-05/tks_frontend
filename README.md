@@ -68,3 +68,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### 'Install Package'
+
+code in the terminal: npm i
+
+### 'If you're experiencing issues running the code and encountering a "Permission denied" error, follow these steps in your terminal'
+
+First line copy this code in the terminal: chmod +x node_modules/.bin/react-scripts
+Second line: rm -rf node_modules npm install
