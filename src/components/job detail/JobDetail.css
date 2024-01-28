@@ -1,0 +1,22 @@
+.job-detail {
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid yellow;
+    border-radius: 4px;
+    background-color: #00489d;
+  }
+  
+  .job-detail h2 {
+    color:#fff;
+    margin-bottom: 10px;
+  }
+  
+  .job-detail p {
+    color: #fff;
+    margin-bottom: 5px;
+  }
+  
+  .job-detail p strong {
+    color: #fff;
+  }
+  

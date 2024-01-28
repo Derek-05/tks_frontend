@@ -1,0 +1,80 @@
+.Teamheading h1{
+  font-size:30px;
+  font-weight:600;
+  color: #ffed2a;
+  margin-bottom: 20px;
+  text-align: center;
+  
+}
+
+.feature-content{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+  align-items:center;
+  text-align:center;
+  gap:3rem;
+  color:#fff;
+}
+
+.Teamheading h1{
+  font-size:30px;
+  font-weight:600;
+  color: #ffed2a;
+  margin-bottom: 20px;
+  text-align: center;
+  
+}
+
+.feature-content{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+  align-items:center;
+  text-align:center;
+  gap:3rem;
+  color:#fff;
+}
+
+.row-img{
+  overflow: hidden;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row-img img{
+  width:150%;
+  display:block;
+  
+  transition: transform 0.7s;
+}
+
+.row-img img:hover{
+  transform: scale(1.2);
+}
+
+.feature-content h4{
+
+  font-size:17px;
+  font-weight:500;
+  cursor:pointer;
+  transition:all .50s ease;
+}
+
+.feature-content h4:hover{
+  color:var(--main-color);
+}
+
+
+
+@media (max-width: 1050px){
+  .feature-content{
+      gap:1.5rem;
+  }
+}
+

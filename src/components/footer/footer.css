@@ -1,0 +1,41 @@
+
+
+
+
+.footer{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,auto));
+    gap: 2rem;
+    background: linear-gradient(to left, rgba(0,0,0,0.6),rgba(0,0,0,0.3)) #00489d;
+    
+   
+}
+
+
+
+.footer-box{
+    
+    margin-left: 50px;
+    display:flex;
+    flex-direction: column;
+}
+
+.footer-box h3{
+    font-size:20px;
+    font-weight: 600;
+    margin-bottom:15px;
+    color:#ffed2a;
+    
+}
+
+.footer-box a{
+    
+    color:#fff;
+    margin-bottom: 0.8rem;
+    transition: all .50s ease;
+}
+
+.footer-box a:hover{
+    transform:translateX(-5px);
+    color: var(--text-color);
+}

@@ -1,0 +1,134 @@
+.prosthetics{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items:center;
+    gap: 9rem;
+}
+.prosthetics-img img{
+
+    width:100%;
+    height:auto;
+    border-radius:10px;
+}
+
+.prosthetics-text h5{
+    font-size:22px;
+    font-weight:700;
+    color:#ffed2a;
+    text-transform:uppercase;
+    letter-spacing:6px;
+    margin-bottom:20px;
+}
+
+.prosthetics-text h2{
+    color:#fff;
+    font-size:30px;
+    font-weight:800;
+    line-height:1.2;
+    margin-bottom:25px;
+}
+
+.prosthetics-text p{
+    text-align: justify;
+    text-justify: distribute-all-lines;
+    font-size: 17px;
+    font-weight:500;
+    line-height: 30px;
+    color:white;
+    margin-bottom: 35px;
+}
+
+.center-text{
+    text-align: center;
+}
+
+.center-text h2{
+    font-size: 40px;
+    font-weight: 700;
+    color:#ffed2a;
+}
+
+.variants-content{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,auto));
+    align-items: center;
+    gap:3rem;
+    margin-top: 5rem;
+}
+
+.box{
+    position: relative;
+}
+
+.box img{
+    width:115%;
+    height:115%;
+    object-fit: cover;
+    border-radius:10px;
+    filter:brightness(100%);
+    transition: all .3s cubic-bezier(.499,.05,.55,.95);
+    will-change:filter;
+    display:block;
+}
+
+    .box h6{
+        position:absolute;
+        left: 25px;
+        bottom:95px;
+        font-size: 18px;
+        font-weight:300;
+        
+
+    }
+
+    .box img:hover{
+        
+        transform:scale(1.04);
+        cursor:pointer;
+    }
+    
+    .newsletter-content{
+        margin-left: 50px;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        align-items: center;
+        gap:2rem;
+    }
+
+    .newsletter-text h2{
+        font-size: 30px;
+        font-weight: 800;
+        margin-bottom: 15px;
+        color: #ffed2a;
+    }
+
+    .newsletter-text p{
+        font-size: 18px;
+        font-weight: 500;
+        color:#fff;
+    }
+
+
+@media (max-width: 1050px){
+    
+    .prosthetics{
+        gap:3rem;
+    }
+}
+
+@media (max-width: 800px){
+    .prosthetics{
+        grid-template-columns: 1fr;
+    }
+    .newsletter-content{
+        grid-template-columns: 1fr;
+    }
+}
+
+     
+     
+
+
+
+
+

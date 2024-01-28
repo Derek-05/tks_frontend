@@ -1,0 +1,19 @@
+.job-listing {
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid linear-gradient(to left, rgba(0,0,0,0.6), rgba(0,0,0,0.3))#00489d;;
+    border-radius: 4px;
+    background:linear-gradient(to left, rgba(0,0,0,0.6), rgba(0,0,0,0.3))#00489d;
+  
+  }
+  
+  .job-listing h3 {
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  
+  .job-listing p {
+    color: #666;
+    margin-bottom: 5px;
+  }
+  

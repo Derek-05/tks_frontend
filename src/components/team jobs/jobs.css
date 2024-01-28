@@ -1,0 +1,31 @@
+
+.tks__team-container_job_img{
+    overflow: hidden;
+     width:140px;
+     height:140px;
+     margin: 0 auto;
+     margin-bottom: 20px;
+     border-radius: 50%;
+     cursor: pointer;
+}
+
+.tks__team-container_job_img img{
+    width:150%;
+    display:block;
+    
+}
+
+.tks__team-container_job-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 1rem 1.5rem;
+    height:100%;
+}
+
+.tks__team-container_job-content h3{
+    font-size:30px;
+     font-weight:500;
+     cursor:pointer;
+}

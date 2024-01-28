@@ -1,0 +1,88 @@
+.tks__header{
+    display:flex;
+
+}
+
+
+.tks__header-content{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start ;
+    flex-direction: column;
+    margin-top: 50px;
+    
+
+    margin-right: 5rem;
+}
+
+.tks__header-content h5 {
+    font-size:30px;
+    font-weight: 600;
+    
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color:#ffed2a;
+
+}
+
+.tks__header-content h3{
+    color:#fff;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-top: 10px;
+    
+}
+
+.tks__header-content p{
+    text-align: justify;
+    text-justify: distribute-all-lines;
+    font-size:15px;
+    font-weight: 600;
+    line-height: 20px;
+    color:#fff;
+    margin-bottom: 35px;
+}
+
+
+
+@media screen and (max-width: 1050px){
+    .tks__header{
+        flex-direction: column;
+    }
+
+    .tks__header-content {
+        margin: 0.5rem 0 2rem;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .tks__header h1{
+        font-size: 48px;
+        line-height: 60px;
+    }
+
+    .tks__header p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .tks__header-content__input button{
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+@media screen and (max-width: 490px){
+        .tks__header h1{
+            font-size: 36px;
+            line-height: 48px;
+        }
+    
+        .tks__header p {
+            font-size: 14px;
+            line-height: 24px;
+        }
+}
+

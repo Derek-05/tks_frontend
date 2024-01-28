@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    
+
+ }
+
+ body {
+    color: var(--text-color);
+    background:linear-gradient(to left, rgba(0,0,0,0.3),rgba(0,0,0,0.1))#00489d;
+       }
+
+a{
+    color:unset;
+    text-decoration: none;
+}
+
+
+
+.bg-transparent {
+    background: transparent;
+}
+
+.home-bg{
+    
+    
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url(../src/assets/main.jpg);
+    background-size: cover;
+    background-position: center center; /* Modificado para centrar la imagen */
+    position: relative;
+    height: 120vh; /* Ajusta la altura según tus necesidades */
+    width: 100vw; /* Ajusta el ancho según tus necesidades */
+}
+
+   
+
+
+.gradient__text {
+    background:var(--gradient--text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section__padding {
+    padding: 4rem 6rem;
+}
+
+.section__margin {
+    margin: 4rem 6rem
+}
+
+.slide-left {
+	-webkit-animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+ @-webkit-keyframes slide-left {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(-100px);
+              transform: translateX(-100px);
+    }
+  }
+  @keyframes slide-left {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(-100px);
+              transform: translateX(-100px);
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .section__padding{
+        padding: 4rem;
+    }
+    .section__margin{
+        margin: 4rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .section__padding{
+        padding: 4rem 2rem;
+    }
+    .section__margin{
+        margin: 4rem 2rem;
+    }
+}
+
+@media (max-width: 1200px){
+    
+
+    }
+    .home-bg{
+        height: 100vh;
+    }
+
+    @media (max-width: 600px){
+        
+
+        .home-bg{
+            height: 85vh;
+        }
+
+    }
+
+
+  
+
+
+
