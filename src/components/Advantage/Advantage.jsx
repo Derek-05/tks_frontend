@@ -23,7 +23,7 @@ const Advantage = () => {
           <img src={Benefit4} alt="Health and Well-being" />
           <div className="card-content">
             <h1>Health and Well-being</h1>
-            <a href="#list-of-benefits" class="card-button">
+            <a href="#Info" class="card-button">
               Read more
             </a>
           </div>
@@ -32,7 +32,7 @@ const Advantage = () => {
           <img src={Benefit3} alt="Professional Development" />
           <div className="card-content">
             <h1>Professional Development</h1>
-            <a href="#Benefit2" class="card-button">
+            <a href="#Info" class="card-button">
               Read more
             </a>
           </div>
@@ -41,7 +41,7 @@ const Advantage = () => {
           <img src={Benefit2} alt="Work-Family Balance" />
           <div className="card-content">
             <h1> Work-Family Balance</h1>
-            <a href="#Benefit3" class="card-button">
+            <a href="#Info" class="card-button">
               Read more
             </a>
           </div>
@@ -50,7 +50,7 @@ const Advantage = () => {
           <img src={Benefit1} alt="Financial-Incentives" />
           <div className="card-content">
             <h1>Financial Incentives</h1>
-            <a href="#Benefit4" class="card-button">
+            <a href="#Info" class="card-button">
               Read more
             </a>
           </div>
@@ -80,106 +80,326 @@ const Advantage = () => {
         </div>
       </div>
 
-      <div class="container mt-5">
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src={Tree} class="d-block w-100" alt="First slide" />
+      <div className="container mt-5">
+        <div className="Information-heading" id="Info">
+          <h2>Benefits Information</h2>
+          <br />
+          <br />
+          <br />
+        </div>
+        <div className="d-flex justify-content-center">
+          <div className="card-container1">
+            <div className="card1">
+              <div className="card-content1">
+                <h1>Health and Well being</h1>
+                <p>
+                  Promoting health and well-being in the workplace provides
+                  significant benefits, such as improving quality of life,
+                  reducing stress, and boosting morale. This results in
+                  healthier, more productive, and satisfied employees,
+                  contributing to a balanced and sustainable work environment.
+                </p>
+                <div className="container mt-5">
+                  <div
+                    id="myCarousel"
+                    className="carousel slide"
+                    data-ride="carousel"
+                  >
+                    <div className="carousel-inner">
+                      <div className="carousel-item active">
+                        <img
+                          src={Tree}
+                          className="d-block w-100"
+                          alt="First slide"
+                        />
+                      </div>
+                      <div className="carousel-item">
+                        <img
+                          src={Employee2}
+                          className="d-block w-100"
+                          alt="Second slide"
+                        />
+                      </div>
+                      <div className="carousel-item">
+                        <img
+                          src={Finance2}
+                          className="d-block w-100"
+                          alt="Third slide"
+                        />
+                      </div>
+                      <div className="carousel-item">
+                        <img
+                          src={Positivesign}
+                          className="d-block w-100"
+                          alt="Fourth slide"
+                        />
+                      </div>
+                    </div>
+                    <a
+                      className="carousel-control-prev"
+                      href="#myCarousel"
+                      role="button"
+                      data-slide="prev"
+                    >
+                      <span
+                        className="carousel-control-prev-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span className="sr-only">Previous</span>
+                    </a>
+                    <a
+                      className="carousel-control-next"
+                      href="#myCarousel"
+                      role="button"
+                      data-slide="next"
+                    >
+                      <span
+                        className="carousel-control-next-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span className="sr-only">Next</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="carousel-item">
-              <img src={Employee2} class="d-block w-100" alt="Second slide" />
-            </div>
-            <div class="carousel-item">
-              <img src={Finance2} class="d-block w-100" alt="Second slide" />
-            </div>
-            <div class="carousel-item">
-              <img
-                src={Positivesign}
-                class="d-block w-100"
-                alt="Second slide"
-              />
+            <div className="card1">
+              <div className="card-content1">
+                <h1>Professional Development</h1>
+                <p>
+                  Professional development enhances employee skills and career
+                  growth, leading to a motivated workforce. It improves
+                  engagement, expertise, and contributes to organizational
+                  success. This commitment also attracts top talent, fostering a
+                  culture of continuous learning.
+                </p>
+                <div className="container mt-5">
+                  <div
+                    id="myCarousel"
+                    className="carousel slide"
+                    data-ride="carousel"
+                  >
+                    <div className="carousel-inner">
+                      <div className="carousel-item active">
+                        <img
+                          src={Tree}
+                          className="d-block w-100"
+                          alt="First slide"
+                        />
+                      </div>
+                      <div className="carousel-item">
+                        <img
+                          src={Employee2}
+                          className="d-block w-100"
+                          alt="Second slide"
+                        />
+                      </div>
+                      <div className="carousel-item">
+                        <img
+                          src={Finance2}
+                          className="d-block w-100"
+                          alt="Third slide"
+                        />
+                      </div>
+                      <div className="carousel-item">
+                        <img
+                          src={Positivesign}
+                          className="d-block w-100"
+                          alt="Fourth slide"
+                        />
+                      </div>
+                    </div>
+                    <a
+                      className="carousel-control-prev"
+                      href="#myCarousel"
+                      role="button"
+                      data-slide="prev"
+                    >
+                      <span
+                        className="carousel-control-prev-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span className="sr-only">Previous</span>
+                    </a>
+                    <a
+                      className="carousel-control-next"
+                      href="#myCarousel"
+                      role="button"
+                      data-slide="next"
+                    >
+                      <span
+                        className="carousel-control-next-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span className="sr-only">Next</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <a
-            class="carousel-control-prev"
-            href="#myCarousel"
-            role="button"
-            data-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a
-            class="carousel-control-next"
-            href="#myCarousel"
-            role="button"
-            data-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
         </div>
       </div>
-      <div className="Information-container">
-        <h1 className="heading">Benefits Information</h1>
-        <div className="Info">
-          <h3>Health and Well-being</h3>
-          <p>
-            we prioritize the health and well-being of our team members. We
-            offer comprehensive benefits that encompass dental coverage, yoga
-            and fitness programs, check-up assurance, and paid health leaves. We
-            understand the importance of fostering a work environment that
-            supports both physical and mental wellness. Our commitment to
-            employee health goes beyond traditional benefits, ensuring a
-            holistic approach that promotes a healthy and balanced lifestyle.
-          </p>
-        </div>
-        <div className="Info">
-          <h3>Health and Well-being</h3>
-          <p>
-            we prioritize the health and well-being of our team members. We
-            offer comprehensive benefits that encompass dental coverage, yoga
-            and fitness programs, check-up assurance, and paid health leaves. We
-            understand the importance of fostering a work environment that
-            supports both physical and mental wellness. Our commitment to
-            employee health goes beyond traditional benefits, ensuring a
-            holistic approach that promotes a healthy and balanced lifestyle.
-          </p>
-        </div>
-      </div>
-      <div className="Information-container">
-        <div className="Info">
-          <h3>Health and Well-being</h3>
-          <p>
-            we prioritize the health and well-being of our team members. We
-            offer comprehensive benefits that encompass dental coverage, yoga
-            and fitness programs, check-up assurance, and paid health leaves. We
-            understand the importance of fostering a work environment that
-            supports both physical and mental wellness. Our commitment to
-            employee health goes beyond traditional benefits, ensuring a
-            holistic approach that promotes a healthy and balanced lifestyle.
-          </p>
-        </div>
 
-        <div className="Info">
-          <h3>Health and Well-being</h3>
-          <p>
-            we prioritize the health and well-being of our team members. We
-            offer comprehensive benefits that encompass dental coverage, yoga
-            and fitness programs, check-up assurance, and paid health leaves. We
-            understand the importance of fostering a work environment that
-            supports both physical and mental wellness. Our commitment to
-            employee health goes beyond traditional benefits, ensuring a
-            holistic approach that promotes a healthy and balanced lifestyle.
-          </p>
+      <div className="container mt-5">
+        <div className="d-flex justify-content-center">
+          <div className="card-container1">
+            <div className="card1">
+              <div className="card-content1">
+                <h1>Financial Incentive</h1>
+                <p>
+                  Financial incentives play a pivotal role in employee
+                  satisfaction and motivation. They include bonuses, salary
+                  increases, and other monetary rewards that recognize and
+                  appreciate employees' contributions. Offering competitive
+                  financial incentives not only attracts top talent but also
+                  enhances employee loyalty and engagement. This investment in
+                  financial well-being contributes to a positive workplace
+                  culture, ultimately driving performance and organizational
+                  success.
+                </p>
+                <div className="container mt-5">
+                  <div
+                    id="myCarousel"
+                    className="carousel slide"
+                    data-ride="carousel"
+                  >
+                    <div className="carousel-inner">
+                      <div className="carousel-item active">
+                        <img
+                          src={Tree}
+                          className="d-block w-100"
+                          alt="First slide"
+                        />
+                      </div>
+                      <div className="carousel-item">
+                        <img
+                          src={Employee2}
+                          className="d-block w-100"
+                          alt="Second slide"
+                        />
+                      </div>
+                      <div className="carousel-item">
+                        <img
+                          src={Finance2}
+                          className="d-block w-100"
+                          alt="Third slide"
+                        />
+                      </div>
+                      <div className="carousel-item">
+                        <img
+                          src={Positivesign}
+                          className="d-block w-100"
+                          alt="Fourth slide"
+                        />
+                      </div>
+                    </div>
+                    <a
+                      className="carousel-control-prev"
+                      href="#myCarousel"
+                      role="button"
+                      data-slide="prev"
+                    >
+                      <span
+                        className="carousel-control-prev-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span className="sr-only">Previous</span>
+                    </a>
+                    <a
+                      className="carousel-control-next"
+                      href="#myCarousel"
+                      role="button"
+                      data-slide="next"
+                    >
+                      <span
+                        className="carousel-control-next-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span className="sr-only">Next</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="card1">
+              <div className="card-content1">
+                <h1>Work-Family Balance</h1>
+                <p>
+                  Maintaining a healthy work-family balance is crucial for
+                  employee well-being. It reduces stress, enhances job
+                  satisfaction, and promotes overall happiness. Organizations
+                  that prioritize work-life balance foster a positive and
+                  supportive environment, resulting in more content and
+                  committed employees. This approach contributes to increased
+                  productivity and employee retention, creating a harmonious
+                  workplace culture.
+                </p>
+                <div className="container mt-5">
+                  <div
+                    id="myCarousel"
+                    className="carousel slide"
+                    data-ride="carousel"
+                  >
+                    <div className="carousel-inner">
+                      <div className="carousel-item active">
+                        <img
+                          src={Tree}
+                          className="d-block w-100"
+                          alt="First slide"
+                        />
+                      </div>
+                      <div className="carousel-item">
+                        <img
+                          src={Employee2}
+                          className="d-block w-100"
+                          alt="Second slide"
+                        />
+                      </div>
+                      <div className="carousel-item">
+                        <img
+                          src={Finance2}
+                          className="d-block w-100"
+                          alt="Third slide"
+                        />
+                      </div>
+                      <div className="carousel-item">
+                        <img
+                          src={Positivesign}
+                          className="d-block w-100"
+                          alt="Fourth slide"
+                        />
+                      </div>
+                    </div>
+                    <a
+                      className="carousel-control-prev"
+                      href="#myCarousel"
+                      role="button"
+                      data-slide="prev"
+                    >
+                      <span
+                        className="carousel-control-prev-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span className="sr-only">Previous</span>
+                    </a>
+                    <a
+                      className="carousel-control-next"
+                      href="#myCarousel"
+                      role="button"
+                      data-slide="next"
+                    >
+                      <span
+                        className="carousel-control-next-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span className="sr-only">Next</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -13,56 +13,44 @@
     align-items: center;
     justify-content: center;
 }
-.carousel-item{
-    
-    height:100vh;
-    min-height: 300px;
+#myCarousel {
+    max-width: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+  
 }
+
+.carousel-inner {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.carousel-item {
+    transition: transform 1s ease; /* Duración de la transición y función de aceleración */
+}
+
 .carousel-item img {
-    height: 500px; 
-    object-fit: cover; 
-  }
-  
-  
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
 
-  .carousel-control-prev-icon,
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+    background: none;
+}
+
+.carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: #ffed2a; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 50%;
+    padding: 10px;
 }
 
 
 
-.carousel-caption{
-    bottom:220px;
-    z-index: 2;
-}
-
-.carousel-caption h5{
-    color:black;
-    font-weight: 800;
-    font-size: 45px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 25px;
-}
-
-.carousel-caption p{
-    width: 60%;
-    margin:auto;
-    font-size:18px;
-    line-height: 1.9;
-}
-
-.carousel-inner::before{
-    content:'';
-    position:absolute;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    background:(to left, rgba(0,0,0,0.6),rgba(0,0,0,0.3)) #00489d;
-    z-index:1;
-}
 
 
 
@@ -188,18 +176,64 @@
 }
 
 /*Information Cards */
-.Information-container{
-    padding: 15px 9%;
-    padding-bottom: 100px;
-}
-.Information-container.heading{
-    text-align: center;
-    padding-bottom: 15px;
-    color:#ffed2a;
-    text-shadow: 0 5px 10px rgba(0,0,0,.2);
-    font-size: 50px;
+.card-container1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
 }
 
+.card1 {
+    width: 45%; /* Ajusta el ancho de la tarjeta según tus preferencias */
+    max-width: 400px; /* Ancho máximo para evitar que se extienda demasiado en pantallas grandes */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px; /* Ajusta el espaciado entre las tarjetas */
+}
+
+.card1 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-content1 {
+    padding: 15px;
+}
+
+.card-content1 h1 {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.card-content1 p {
+    font-size: 14px;
+    color: black;
+    line-height: 1.4;
+}
+@media (max-width: 599px) {
+    .card1 {
+        width: 80%; /* Ajusta el ancho según tus preferencias */
+    }
+}
+
+/* Reglas de medios para tabletas */
+@media (min-width: 600px) {
+    .card1 {
+        width: 68%; /* Dos tarjetas por fila en dispositivos más grandes */
+    }
+}
+
+@media (min-width: 768px) {
+    .card1 {
+        width: 48%; /* Tres tarjetas por fila en tabletas */
+    }
+}
 
   @media (max-width: 1050px){
     .Information{
