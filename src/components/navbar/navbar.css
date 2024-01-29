@@ -23,24 +23,34 @@ header {
   
   .navbar {
     display: flex;
+    justify-content: center; 
     align-items: center;
-    gap: 1.375rem;
+    flex: 1; 
+    list-style-type: none; 
+    padding-left: 0; 
+    margin: 0; 
+  }
+  
+  .navbar li {
+    margin: 0 1rem; 
   }
   
   .navbar a {
     color: #ffed2a;
     font-size: 1rem;
     font-weight: 500;
-    transition: color 0.5s ease;
+    padding: 0.5rem;
+    text-decoration: none;
   }
-  
   .navbar a:hover {
     color: #ffffff;
   }
   
   .h-right {
-    display: flex;
-    align-items: center;
+    position: absolute; 
+    right: 1.7rem; 
+    top: 50%;
+    transform: translateY(-50%); 
   }
   
   .h-right a {
