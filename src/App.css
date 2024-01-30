@@ -44,13 +44,7 @@ a{
     -webkit-text-fill-color: transparent;
 }
 
-.section__padding {
-    padding: 4rem 6rem;
-}
 
-.section__margin {
-    margin: 4rem 6rem
-}
 
 .slide-left {
 	-webkit-animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -115,6 +109,3 @@ a{
 
 
   
-
-
-

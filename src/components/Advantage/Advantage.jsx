@@ -56,11 +56,7 @@ const Advantage = () => {
           </div>
         </div>
       </div>
-      <div className="container">
-        <br />
-        <br />
-        <br />
-      </div>
+      <div className="container"></div>
       <div className="Information">
         <div class="Information-img">
           <img src={Employee1} alt="Employee" />
@@ -83,9 +79,6 @@ const Advantage = () => {
       <div className="container mt-5">
         <div className="Information-heading" id="Info">
           <h2>Benefits Information</h2>
-          <br />
-          <br />
-          <br />
         </div>
         <div className="d-flex justify-content-center">
           <div className="card-container1">
@@ -120,13 +113,7 @@ const Advantage = () => {
                           alt="Second slide"
                         />
                       </div>
-                      <div className="carousel-item">
-                        <img
-                          src={Finance2}
-                          className="d-block w-100"
-                          alt="Third slide"
-                        />
-                      </div>
+
                       <div className="carousel-item">
                         <img
                           src={Positivesign}
@@ -194,13 +181,7 @@ const Advantage = () => {
                           alt="Second slide"
                         />
                       </div>
-                      <div className="carousel-item">
-                        <img
-                          src={Finance2}
-                          className="d-block w-100"
-                          alt="Third slide"
-                        />
-                      </div>
+
                       <div className="carousel-item">
                         <img
                           src={Positivesign}
@@ -279,13 +260,7 @@ const Advantage = () => {
                           alt="Second slide"
                         />
                       </div>
-                      <div className="carousel-item">
-                        <img
-                          src={Finance2}
-                          className="d-block w-100"
-                          alt="Third slide"
-                        />
-                      </div>
+
                       <div className="carousel-item">
                         <img
                           src={Positivesign}
@@ -356,13 +331,7 @@ const Advantage = () => {
                           alt="Second slide"
                         />
                       </div>
-                      <div className="carousel-item">
-                        <img
-                          src={Finance2}
-                          className="d-block w-100"
-                          alt="Third slide"
-                        />
-                      </div>
+
                       <div className="carousel-item">
                         <img
                           src={Positivesign}
