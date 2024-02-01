@@ -1,0 +1,230 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    width:100%;
+    min-height: 100vh;
+    color:white;
+}
+
+.container{
+   
+    width:100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:30px 8%;
+}
+
+
+.container .row{
+    
+    display: flex;
+    justify-content: center;
+    width:100%;
+    max-width: 1100px;
+    
+}
+
+.row section .col{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.container .row .left{
+    flex-basis: 35%;
+    min-width: 320px;
+    margin-right: 60px;
+   
+}
+
+.container .row .right{
+    flex-basis: 60%;
+   
+}
+
+.container .row .left h2{
+    position:relative;
+    font-size: 28px;
+    color:yellow;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.container .row .left h2::before{
+    content: '';
+    position:absolute;
+    width:50%;
+    height:1px;
+    background-color: white;
+    top:120%;
+    left:0;
+}
+
+.container .row .left h2::after{
+    content: '';
+    position:absolute;
+    width:25%;
+    height:3px;
+    background-color: dodgerblue;
+    top: calc(120% - 1px);
+    left:0;
+}
+
+.container .row .left p{
+    font-size: 14px;
+    color:white;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    padding-bottom: 22px;
+}
+
+.container .row .left .contactInfo{
+    margin-bottom: 16px;
+}
+
+.container .contactInfo .iconGroup{
+    display:flex;
+    align-items: center;
+    margin: 25px 0px;
+}
+
+.iconGroup .icon{
+    width: 45px;
+    height:45px;
+    border: 2px solid dodgerblue;
+    border-radius: 50%;
+    margin-right: 20px;
+    position:relative;
+
+}
+
+.iconGroup .icon i{
+    font-size: 18px;
+    color:white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.iconGroup .details span{
+    display: block;
+    font-size: 15px;
+    color:white;
+}
+
+.iconGroup .details span:nth-child(1){
+    text-transform: uppercase;
+    color:Yellow;
+}
+
+
+.container .row .right .messageform{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 30px;
+
+}
+
+.container .row .right .inputGroup{
+    margin: 18px 0px;
+    position: relative;
+
+}
+
+.messageform .halfWidth{
+    flex-basis:48%;
+}
+
+.messageform .fullWidth{
+    flex-basis: 100%;
+}
+
+.messageform input, .messageform textarea{
+    width:100%;
+    font-size: 18px;
+    padding: 2px 0px;
+    background:linear-gradient(to left, rgba(0,0,0,0.6),rgba(0,0,0,0.3)) #00489d;
+    color: white;
+    border: none;
+    border-bottom: 2px solid dodgerblue;
+    outline:none;
+    
+}
+
+.messageform textarea{
+    resize:none;
+    height: 220px;
+    display: block;
+}
+
+.inputGroup label{
+    position:absolute;
+    left:0;
+    color:yellow;
+    bottom: 4px;
+    font-size: 15px;
+    transition: 0.4s;
+    pointer-events: none;
+
+}
+
+.inputGroup:nth-child(4) label{
+    top: 2px;
+
+}
+
+.inputGroup input:focus ~ label, .inputGroup textarea:focus ~ label,
+.inputGroup input:valid ~ label, .inputGroup textarea:valid ~ label
+{
+    transform: translateY(-30px);
+    font-size: 16px;
+}
+
+.inputGroup button{
+    padding:8px 16px;
+    font-size: 15px;
+    background: linear-gradient(to left, rgba(0,0,0,0.6),rgba(0,0,0,0.3)) #00489d;
+    color:yellow;
+    border: 1px solid transparent;
+    border-radius:25px;
+    outline:none;
+    cursor: pointer;
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.3);
+    transition: 0.4s;
+    border-color: dodgerblue;
+
+}
+
+.inputGroup button:hover{
+    background-color: #2e2e2e;
+    color: dodgerblue;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+    border: 1px solid dodgerblue;
+}
+
+
+@media(max-width: 1100px){
+    .messageform .halfWidth{
+        flex-basis: 100%;
+    }
+}
+
+@media(max-width: 900px){
+    .container .row{
+        flex-wrap: wrap;
+    }
+    .container .row .left, .container .row .right{
+        flex-basis: 100%;
+        margin:0px;
+    }
+}
+
