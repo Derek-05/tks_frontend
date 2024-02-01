@@ -48,24 +48,28 @@ const Report = () => {
         </section>
 
         <section className="col right">
-          <form className="messageform">
+          <form
+            className="messageform"
+            action="https://formsubmit.co/gc102406@gmail.com"
+            method="POST"
+          >
             <div className="inputGroup halfWidth">
-              <input type="text" name="" required="required" />
+              <input type="text" name="text" required="required" />
               <label>Your Name</label>
             </div>
 
             <div className="inputGroup halfWidth">
-              <input type="email" name="" required="required" />
+              <input type="email" name="email" required="required" />
               <label>Email</label>
             </div>
 
             <div className="inputGroup fullWidth">
-              <input type="text" name="" required="required" />
+              <input type="text" name="subject" required="required" />
               <label>Subject</label>
             </div>
 
             <div className="inputGroup fullWidth">
-              <textarea required="required"></textarea>
+              <textarea required="required" name="reqired"></textarea>
               <label>Say something</label>
             </div>
 
