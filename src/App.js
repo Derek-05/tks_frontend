@@ -7,6 +7,8 @@ import JobListPage from '../src/pages/JobListPage';
 import Benefits from './pages/Benefits';
 import ApplyNow from './pages/ApplyNow';
 import Contact from './pages/Contact';
+import Dashboard from './pages/Dashboard';
+
 import './App.css';
 
 
@@ -26,6 +28,7 @@ const App = () => {
           <Route path="/benefits" element={<Benefits />} />
           <Route path="/apply_now" element={<ApplyNow/>} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
         </Routes>
         </BrowserRouter>
         </div>
