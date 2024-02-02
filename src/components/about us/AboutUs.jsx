@@ -5,8 +5,8 @@ import "./about_us.css";
 
 const AboutUs = () => {
   return (
-    <section class="About-us">
-      <div class="About-us-img">
+    <section className="About-us">
+      <div className="About-us-img">
         <br />
         <br />
 
@@ -31,7 +31,7 @@ const AboutUs = () => {
         </p>
       </div>
 
-      <div class="Our-story-img">
+      <div className="Our-story-img">
         <br />
         <br />
         <br />
