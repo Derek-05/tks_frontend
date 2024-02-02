@@ -7,9 +7,15 @@ const AboutUs = () => {
   return (
     <section class="About-us">
       <div class="About-us-img">
+        <br />
+        <br />
+
         <img src={sunset} alt="sunset" />
       </div>
       <div className="About-us-text" id="Aboutus">
+        <br />
+        <br />
+
         <h5>About Us</h5>
         <h2>Specialization of the prosthesis center</h2>
         <p>
@@ -34,10 +40,13 @@ const AboutUs = () => {
         <br />
         <br />
         <br />
+        <br />
+        <br />
 
         <img src={OurStory2} alt="OurStory2" />
       </div>
       <div className="Our-story-text" id="Ourstory">
+        <br />
         <br />
         <br />
         <br />
