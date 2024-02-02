@@ -18,6 +18,11 @@ const Team = () => {
     <section>
       <div className="Team" id="Team">
         <div className="Teamheading" id="Team1">
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
           <h1>
             <strong>Team</strong>
           </h1>

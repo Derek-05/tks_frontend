@@ -3,7 +3,7 @@ import "./Report.css";
 
 const Report = () => {
   return (
-    <div className="container">
+    <div className="container" id="Contact">
       <main className="row">
         <section className="col left">
           <div className="contactTitle">
