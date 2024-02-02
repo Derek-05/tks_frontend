@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assets/Techkidslogo2.jpg.png";
-import UserAuth from '../UserAuth/UserAuth';
-import Modal from '../Modal/Modal';
+import UserAuth from "../UserAuth/UserAuth";
+import Modal from "../Modal/Modal";
 import "./navbar.css";
-import LoginForm from '../Modal/LoginForm/LoginForm';
+import LoginForm from "../Modal/LoginForm/LoginForm";
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
-  const [token, setToken] = useState(localStorage.getItem('token'));
+  const [token, setToken] = useState(localStorage.getItem("token"));
   const [isModalOpen, setModalOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState("Home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -22,20 +22,19 @@ const Navbar = () => {
     function handleResize() {
       setIsMobileView(window.innerWidth < 1050);
     }
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
-  
+
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth >= 1050) {
         setIsMobileMenuOpen(false);
       }
     }
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
-  
 
   useEffect(() => {
     function handleScroll() {
@@ -54,18 +53,19 @@ const Navbar = () => {
     { name: "Benefits", path: "/benefits" },
     { name: "Apply Now", path: "/apply_now" },
     { name: "Contact", path: "/contact" },
+    { name: "Dashboard", path: "/Dashboard" },
   ];
 
   const handleLoginSuccess = (token, userData) => {
-    console.log('Handling login success:', token, userData);
-    localStorage.setItem('token', token);
+    console.log("Handling login success:", token, userData);
+    localStorage.setItem("token", token);
     setToken(token);
     setUser(userData);
     setModalOpen(false);
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem("token");
     setToken(null);
     setUser(null);
   };
@@ -79,30 +79,54 @@ const Navbar = () => {
   };
 
   return (
-    <header ref={navbarRef} className={window.pageYOffset > 100 ? "sticky" : ""}>
+    <header
+      ref={navbarRef}
+      className={window.pageYOffset > 100 ? "sticky" : ""}
+    >
       <a href="#">
         <img src={logo} width="90vh" alt="logo" />
       </a>
       {isMobileView && (
-        <FontAwesomeIcon icon={faBars} id="menu-icon" onClick={toggleMobileMenu} />
+        <FontAwesomeIcon
+          icon={faBars}
+          id="menu-icon"
+          onClick={toggleMobileMenu}
+        />
       )}
-      <nav className={`navbar ${isMobileMenuOpen ? 'open' : ''}`}>
-        {menuItems.map(item => (
-          <li key={item.name} onClick={() => { setActiveMenu(item.name); if (isMobileView) toggleMobileMenu(); }}>
-            <Link to={item.path} className={activeMenu === item.name ? "active" : ""}>
+      <nav className={`navbar ${isMobileMenuOpen ? "open" : ""}`}>
+        {menuItems.map((item) => (
+          <li
+            key={item.name}
+            onClick={() => {
+              setActiveMenu(item.name);
+              if (isMobileView) toggleMobileMenu();
+            }}
+          >
+            <Link
+              to={item.path}
+              className={activeMenu === item.name ? "active" : ""}
+            >
               {item.name}
             </Link>
           </li>
         ))}
-       {isMobileView && isMobileMenuOpen && (
-  <li className="mobile-user-auth">
-    <UserAuth user={user} onLoginClick={handleLoginClick} onLogoutClick={handleLogout} />
-  </li>
-)}
+        {isMobileView && isMobileMenuOpen && (
+          <li className="mobile-user-auth">
+            <UserAuth
+              user={user}
+              onLoginClick={handleLoginClick}
+              onLogoutClick={handleLogout}
+            />
+          </li>
+        )}
       </nav>
       {!isMobileView && (
         <div className="h-right">
-          <UserAuth user={user} onLoginClick={handleLoginClick} onLogoutClick={handleLogout} />
+          <UserAuth
+            user={user}
+            onLoginClick={handleLoginClick}
+            onLogoutClick={handleLogout}
+          />
         </div>
       )}
       <Modal show={isModalOpen} onClose={() => setModalOpen(false)}>
