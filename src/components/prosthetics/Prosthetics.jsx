@@ -112,6 +112,10 @@ const Prosthetics = () => {
       <div class="newsletter">
         <div class="newsletter-content">
           <div class="newsletter-text">
+            <br />
+            <br />
+            <br />
+            <br />
             <h2>Ready to be part of our team</h2>
             <p> Join us and help us make a better world</p>
           </div>

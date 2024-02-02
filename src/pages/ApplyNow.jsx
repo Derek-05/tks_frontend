@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Forms from "../components/Form/Forms";
 
 const ApplyNow = () => {
   return (
-    <div>ApplyNow</div>
-  )
-}
+    <div className="FormInfo">
+      <Forms />
+    </div>
+  );
+};
 
-export default ApplyNow
+export default ApplyNow;

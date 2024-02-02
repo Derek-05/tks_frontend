@@ -27,7 +27,7 @@
 
 .feature-content{
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
   align-items:center;
   text-align:center;
   gap:3rem;
@@ -48,7 +48,7 @@
 }
 
 .row-img img{
-  width:150%;
+  width:125%;
   display:block;
   
   transition: transform 0.7s;
