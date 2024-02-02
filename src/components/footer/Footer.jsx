@@ -5,6 +5,9 @@ const Footer = () => {
   return (
     <section class="footer">
       <div class="footer-box">
+        <br />
+        <br />
+
         <h3>Services</h3>
         <a href="#Prosthetic">Custom Prosthetics</a>
         <a href="#"> Our Services</a>
@@ -12,6 +15,9 @@ const Footer = () => {
       </div>
 
       <div class="footer-box">
+        <br />
+        <br />
+
         <h3>Know us</h3>
         <a href="#Aboutus"> About us</a>
         <a href="#Ourstory"> Our story</a>
@@ -19,6 +25,9 @@ const Footer = () => {
       </div>
 
       <div class="footer-box">
+        <br />
+        <br />
+
         <h3>Information</h3>
         <a href="Benefits">Benefits</a>
         <a href="#">Job Offer</a>

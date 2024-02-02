@@ -5,8 +5,8 @@
     gap: 9rem;
 }
 .prosthetics-img img{
-
-    width:100%;
+    margin-left: 20px;
+    width:90%;
     height:auto;
     border-radius:10px;
 }
@@ -36,6 +36,8 @@
     line-height: 30px;
     color:white;
     margin-bottom: 35px;
+    margin-right: 15px;
+   
 }
 
 .center-text{
@@ -46,6 +48,7 @@
     font-size: 40px;
     font-weight: 700;
     color:#ffed2a;
+    margin-bottom: 20px;
 }
 
 .variants-content{
@@ -61,8 +64,9 @@
 }
 
 .box img{
-    width:115%;
-    height:115%;
+    width:90%;
+    height:90%;
+    margin-left: 10px;
     object-fit: cover;
     border-radius:10px;
     filter:brightness(100%);
@@ -114,6 +118,7 @@
     .prosthetics{
         gap:3rem;
     }
+    
 }
 
 @media (max-width: 800px){
@@ -123,9 +128,11 @@
     .newsletter-content{
         grid-template-columns: 1fr;
     }
+    
+    
 }
 
-     
+
      
 
 
