@@ -7,6 +7,7 @@ import UserAuth from "../UserAuth/UserAuth";
 import Modal from "../Modal/Modal";
 import "./navbar.css";
 import LoginForm from "../Modal/LoginForm/LoginForm";
+import Model from "react-modal";
 
 const Navbar = () => {
   const [user, setUser] = useState(null);

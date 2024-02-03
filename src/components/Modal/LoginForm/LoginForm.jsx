@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./LoginForm.css";
 import { loginUser } from "../../../api/authApi";
 
 const LoginForm = ({ onLoginSuccess }) => {
@@ -28,35 +29,33 @@ const LoginForm = ({ onLoginSuccess }) => {
   };
 
   return (
-    <div className="login-form-container">
-      <form onSubmit={handleSubmit}>
+    <div className="modal-container">
+      <div className="login-modal">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <br />
 
-        <div className="form-title">Log In</div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            value={credentials.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            value={credentials.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
+        <h2>Login</h2>
+        <form className="login-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <br />
+          <br />
+          <br />
+          <button type="submit" className="login-button">
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
