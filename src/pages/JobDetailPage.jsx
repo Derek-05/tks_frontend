@@ -1,25 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { fetchJobOfferingById } from '../api/jobOfferingsAPI';
-import JobDetail from '../components/job detail/JobDetail'
+import { getJobOfferingById } from '../api/jobOfferingsAPI';
+import JobDetail from '../components/job detail/JobDetail';
 
 const JobDetailPage = () => {
-  const [job, setJob] = useState(null);
+  const [job, setJob] = useState();
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchJobData = async () => {
       try {
-        const jobData = await fetchJobOfferingById(id);
-        setJob(jobData);
+        const job = await getJobOfferingById(id);
+        console.log('Fetched Job:', job);
+        setJob(job);
       } catch (error) {
         console.error("Error loading job detail:", error);
       }
     };
-
+  
     fetchJobData();
-  }, [id]);
+  }, [id, setJob]);
 
   const goBack = () => {
     navigate(-1); // Reemplaza useHistory().goBack() con useNavigate() para retroceder
