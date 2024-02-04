@@ -5,10 +5,11 @@
     gap: 9rem;
 }
 .prosthetics-img img{
-    margin-left: 20px;
+
     width:90%;
     height:auto;
     border-radius:10px;
+    margin-left: 20px;
 }
 
 .prosthetics-text h5{
@@ -36,8 +37,7 @@
     line-height: 30px;
     color:white;
     margin-bottom: 35px;
-    margin-right: 15px;
-   
+    margin-right: 25px;
 }
 
 .center-text{
@@ -48,7 +48,6 @@
     font-size: 40px;
     font-weight: 700;
     color:#ffed2a;
-    margin-bottom: 20px;
 }
 
 .variants-content{
@@ -66,13 +65,13 @@
 .box img{
     width:90%;
     height:90%;
-    margin-left: 10px;
     object-fit: cover;
     border-radius:10px;
     filter:brightness(100%);
     transition: all .3s cubic-bezier(.499,.05,.55,.95);
     will-change:filter;
     display:block;
+    margin-left: 15px;
 }
 
     .box h6{
@@ -97,6 +96,7 @@
         grid-template-columns: repeat(2,1fr);
         align-items: center;
         gap:2rem;
+       
     }
 
     .newsletter-text h2{
@@ -107,8 +107,8 @@
     }
 
     .newsletter-text p{
-        font-size: 20px;
-        font-weight: 700;
+        font-size: 18px;
+        font-weight: 800;
         color:#fff;
     }
 
@@ -119,6 +119,7 @@
         gap:3rem;
     }
     
+    
 }
 
 @media (max-width: 800px){
@@ -128,11 +129,12 @@
     .newsletter-content{
         grid-template-columns: 1fr;
     }
-    
-    
+    .prosthetics-text{
+        margin-left: 20px;
+    }
 }
 
-
+     
      
 
 
