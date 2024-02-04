@@ -38,7 +38,7 @@ export const logoutUser = async () => {
 // Function to get the user's profile using the authentication token
 export const getUserProfile = async (token) => {
   try {
-    const response = await axios.get(`${authBaseURL}/profile`, {
+    const response = await axios.get(`${authBaseURL}/me`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
