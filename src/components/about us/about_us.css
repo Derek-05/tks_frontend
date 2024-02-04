@@ -19,12 +19,12 @@
 
 
  .About-us-img img{
-   margin-top: 120px;
+  
     width: 90%;
     height:auto;
     border-radius:10px;
     margin-left:25px;
-    margin-top: 290px;
+    margin-top: 310px;
 
  }
 
@@ -47,7 +47,7 @@
    text-transform:uppercase;
    letter-spacing:6px;
    margin-bottom:20px;
-   margin-top: 190px;
+   margin-top: 220px;
  }
 
  .About-us-text p{
