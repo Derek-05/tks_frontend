@@ -7,6 +7,9 @@ const Report = () => {
       <main className="row">
         <section className="col left">
           <div className="contactTitle">
+            <br />
+            <br />
+            <br />
             <h2>Get In touch</h2>
             <p>
               Need assistance or want to get in touch? Our Contact Us page is
