@@ -150,6 +150,7 @@ body{
 
 .messageform input, .messageform textarea{
     width:100%;
+    
     font-size: 18px;
     padding: 2px 0px;
     background:linear-gradient(to left, rgba(0,0,0,0.6),rgba(0,0,0,0.3)) #00489d;
