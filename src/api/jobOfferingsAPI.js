@@ -1,25 +1,47 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:3002/api/v1/job_offerings';
+const baseURL = 'http://localhost:8080/api';
+
+export default axios.create({
+  baseURL: baseURL,
+});
 
 // Obtener todas las ofertas de trabajo
-export const fetchJobOfferings = async () => {
-  try {
-    const response = await axios.get(baseURL);
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching job offerings", error);
-    throw error;
-  }
-};
+export const getAllJobOfferings = async () => {
+    try {
+      const job = await axios.get(`${baseURL}/allJobs`)
+      console.log('API Response:', job.data);
+      return job.data;
+    } catch (error) {
+      console.error("Error fetching job offerings", error);
+      throw error;
+    }
+  };
 
 // Obtener una oferta de trabajo específica por ID
-export const fetchJobOfferingById = async (id) => {
+export const getJobOfferingById = async (id) => {
+    try {
+      const job = await axios.get(`${baseURL}/job/${id}`);
+      console.log('API Response (Job Offering by ID):', job.data);
+      return job.data;
+    } catch (error) {
+      if (error.response && error.response.status === 404) {
+        console.warn(`Job with ID ${id} not found`);
+      } else {
+        console.error("Error fetching job offering by ID", error);
+      }
+      throw error;
+    }
+  };
+
+//Añadir oferta de trabajo
+export const addJobOffering = async (data) => {
   try {
-    const response = await axios.get(`${baseURL}/${id}`);
-    return response.data;
+    const job = await axios.post(`${baseURL}/add/jobs/`, data);
+    console.log('API Response (Added Job):', job.data);
+    return job.data;
   } catch (error) {
-    console.error("Error fetching job offering by ID", error);
+    console.error("Error Adding Job", error.response.data);
     throw error;
   }
 };

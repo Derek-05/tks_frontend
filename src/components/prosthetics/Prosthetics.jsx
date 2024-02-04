@@ -26,9 +26,13 @@ const Prosthetics = () => {
             <h5>Passive prosthetics</h5>
             <h2>They are designed as a cosmetic Prothesis</h2>
             <p>
-              This type of prosthesis does not have active movement. They
-              improve the function of the pointed side, they provide support for
-              the execution of certain activities that require it.
+              This type of prosthesis, known as a non-active or static
+              prosthesis, does not incorporate mechanisms or components that
+              enable active movement. Instead, its primary purpose lies in
+              enhancing the functionality of the affected or pointed side of the
+              body. Non-active prostheses are designed to provide essential
+              support and facilitate the execution of specific activities that
+              may require stability, balance, or additional assistance.
             </p>
           </div>
         </div>

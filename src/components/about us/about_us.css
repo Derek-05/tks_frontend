@@ -46,8 +46,7 @@
    color:#ffed2a;
    text-transform:uppercase;
    letter-spacing:6px;
-   margin-bottom:20px;
-   margin-top: 220px;
+
  }
 
  .About-us-text p{
@@ -57,7 +56,7 @@
    font-weight:500;
    line-height: 30px;
    color:white;
-   margin-bottom: 35px;
+   margin-top: 10px;
    margin-right: 15px;
     
  }
@@ -114,11 +113,18 @@
     .About-us{
         gap: 3rem;
     }
+    
  }
 
  @media(max-width: 800px){
     .About-us{
         grid-template-columns: 1fr;
+    }
+    .About-us-text{
+      margin-left: 10px;
+    }
+    .Our-story-text{
+      margin-left:10px ;
     }
  }
 
