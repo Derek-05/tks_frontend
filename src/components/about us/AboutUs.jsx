@@ -7,9 +7,20 @@ const AboutUs = () => {
   return (
     <section className="About-us">
       <div className="About-us-img">
+
+        <br />
+        <br />
+        <br />
+
         <img src={sunset} alt="sunset" />
       </div>
       <div className="About-us-text" id="Aboutus">
+        <br />
+        <br />
+        <br />
+
+
+     
         <h5>About Us</h5>
         <br />
         <h2>Specialization of the prosthesis center</h2>
