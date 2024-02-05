@@ -6,13 +6,25 @@ const UserAuth = ({ user, onLoginClick, onLogoutClick }) => {
     <div className="user-auth">
       {user ? (
         <>
-          <span>Hi, {user.first_name}</span> {/* Display user's email or name */}
-          {/* Using button type="button" to differentiate from submit buttons in forms */}
-          <button type="button" onClick={onLogoutClick}>Logout</button>
+          <span>Hi, {user.first_name}</span>
+          <button
+            type="button"
+            onClick={onLogoutClick}
+            role="button"
+            aria-label="Logout"
+          >
+            Logout
+          </button>
         </>
       ) : (
-        // Adding type="button" is good practice for accessibility
-        <button type="button" onClick={onLoginClick}>Log In</button>
+        <button
+          type="button"
+          onClick={onLoginClick}
+          role="button"
+          aria-label="Log In"
+        >
+          Log In
+        </button>
       )}
     </div>
   );
