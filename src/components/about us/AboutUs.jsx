@@ -7,6 +7,7 @@ const AboutUs = () => {
   return (
     <section className="About-us">
       <div className="About-us-img">
+
         <br />
         <br />
         <br />
@@ -18,7 +19,10 @@ const AboutUs = () => {
         <br />
         <br />
 
+
+     
         <h5>About Us</h5>
+        <br />
         <h2>Specialization of the prosthesis center</h2>
         <p>
           Our prothesis center specializes in providing a prothesis services to

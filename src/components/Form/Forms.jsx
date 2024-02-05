@@ -1,7 +1,8 @@
-import React from "react";
+import React,{useState } from "react";
 import "./Form.css";
 
 const Forms = () => {
+
   return (
     <section className="container">
       <form action="#" className="Newform">
@@ -67,6 +68,7 @@ const Forms = () => {
         </div>
       </form>
     </section>
+  
   );
 };
 

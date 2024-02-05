@@ -1,22 +1,38 @@
+/* JobDetail.css */
+
+.job-detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+   /* Adjust as needed based on your layout */
+}
+
 .job-detail {
-    padding: 15px;
-    margin: 10px 0;
-    border: 1px solid yellow;
-    border-radius: 4px;
-    background-color: #00489d;
-  }
-  
-  .job-detail h2 {
-    color:#fff;
-    margin-bottom: 10px;
-  }
-  
-  .job-detail p {
-    color: #fff;
-    margin-bottom: 5px;
-  }
-  
-  .job-detail p strong {
-    color: #fff;
-  }
-  
+  justify-content: center;
+  border: none;
+  padding: 15px;
+  margin: 80px;
+  border-radius: 8px;
+  background: linear-gradient(to left, rgba(0, 72, 157, 0.8), rgba(0, 72, 157, 0.5)); /* Adjusted background gradient */
+  color: #fff; /* Set text color to white for better contrast */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle box shadow for depth */
+}
+
+.job-detail p {
+  margin: 8px 0;
+}
+
+.job-detail strong {
+  font-weight: bold;
+}
+
+/* Optional: Add styling for 'Not provided' text */
+.job-detail .not-provided {
+  color: #888;
+}
+
+/* Optional: Add hover effect */
+.job-detail:hover {
+  transform: scale(1.02); /* Optional: Add a slight scale effect on hover */
+}
