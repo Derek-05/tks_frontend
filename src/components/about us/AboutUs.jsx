@@ -9,10 +9,12 @@ const AboutUs = () => {
       <div className="About-us-img">
         <br />
         <br />
+        <br />
 
         <img src={sunset} alt="sunset" />
       </div>
       <div className="About-us-text" id="Aboutus">
+        <br />
         <br />
         <br />
 
