@@ -121,6 +121,8 @@ const Prosthetics = () => {
             <br />
             <h2>Ready to be part of our team</h2>
             <p> Join us and help us make a better world</p>
+            <br/>
+            <br/>
           </div>
         </div>
       </div>
