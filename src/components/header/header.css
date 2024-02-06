@@ -19,7 +19,7 @@
 .tks__header-content h5 {
     font-size:30px;
     font-weight: 600;
-    
+    margin-top: 180px;
     text-transform: uppercase;
     letter-spacing: 6px;
     color:#ffed2a;
@@ -28,22 +28,15 @@
 
 .tks__header-content h3{
     color:#fff;
-    font-size: 22px;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 180px;
+    text-transform: uppercase;
+    
+    margin-top: 15px;
     
 }
 
-.tks__header-content p{
-    text-align: justify;
-    text-justify: distribute-all-lines;
-    font-size:15px;
-    font-weight: 600;
-    line-height: 20px;
-    color:#fff;
-    margin-bottom: 35px;
-}
 
 
 
