@@ -29,10 +29,20 @@ const Footer = () => {
         <br />
 
         <h3>Information</h3>
-        <a href="Benefits">Benefits</a>
+      
         <a href="#">Job Offer</a>
         <a href="#"> Apply Now</a>
+       
+      </div>
+      <div class="footer-box">
+        <br />
+        <br />
+
+        <h3>Support Hub</h3>
         <a href="Contact">Contact</a>
+        <a href="Benefits">Benefits</a>
+       
+       
       </div>
     </section>
   );

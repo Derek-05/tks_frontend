@@ -127,12 +127,9 @@ const Advantage = () => {
           <div className="card-content1">
             <h3>Financial </h3>
             <p>
-              At our clinic encompass various incentives aimed at ensuring
-              employee satisfaction. Through initiatives like performance-based
-              bonuses, profit-sharing,retirement savings plans, and service
-              discounts, we strive tomotivate, align, secure long-term financial
-              stability, and strengthen the bond between our staff and the
-              clinic's mission.
+             At our clinic, we offer different benefits to make sure our employees are happy. We give bonuses 
+             based on performance, share profits, help with retirement savings, and offer discounts on services.
+              These things help keep our staff motivated, financially secure, and connected to our clinic's goals.
             </p>
           </div>
         </div>
@@ -236,8 +233,7 @@ const Advantage = () => {
               At our clinic empowers employees with continuous learning
               initiatives. This includes ongoing training programs, financial
               support for related education through tuition reimbursement, and
-              mentorship opportunities. Additionally, internal advancement
-              policies motivate our workforce to progress in their careers
+              mentorship opportunities.  our workforce to progress in their careers
               within the clinic, emphasizing our commitment to their success.
             </p>
           </div>
