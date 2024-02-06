@@ -14,7 +14,7 @@
 
 
 .footer-box{
-    
+    margin-top: 40px;
     margin-left: 50px;
     display:flex;
     flex-direction: column;
