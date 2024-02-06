@@ -61,7 +61,7 @@ const LoginForm = ({ onLoginSuccess }) => {
           {/* Display loading indicator during login request */}
           {loading && <p>Loading...</p>}
           <button type="submit" className="login-button" disabled={loading}>
-            Submit
+          {loading ? 'Logging in...' : 'Submit'}
           </button>
         </form>
       </div>

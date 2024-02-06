@@ -1,19 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Modal.css";
+import LoginForm from "../Modal/LoginForm/LoginForm";
+import SignUpForm from "../Modal/Sign Up Form/SignUp Form";
 
-const Modal = ({ show, onClose, children }) => {
+const Modal = ({ show, onClose }) => {
+  const [activeForm, setActiveForm] = useState('signup');
+
   if (!show) {
     return null;
   }
 
+  const handleSwitchForm = (formType) => {
+    setActiveForm(formType);
+  };
+
   return (
-    <div className="modal-overlay" onClick={onClose} role="dialog"
-    aria-modal="true">
+    <div className="modal-overlay" onClick={onClose} role="dialog" aria-modal="true">
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <span className="close-button" onClick={onClose} aria-label="Close">
           &times;
         </span>
-        {children}
+
+        {activeForm === "signup" ? (
+          <SignUpForm />
+        ) : (
+          <LoginForm />
+        )}
+
+        <div className="form-switch">
+          <p>{activeForm === "signup" ? "Don't have an account?" : "Already have an account?"}</p>
+          <button onClick={() => handleSwitchForm("signup")}>
+            Sign Up
+          </button>
+          <button onClick={() => handleSwitchForm("login")}>
+            Log In
+          </button>
+        </div>
       </div>
     </div>
   );

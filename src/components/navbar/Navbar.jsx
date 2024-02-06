@@ -7,7 +7,8 @@ import UserAuth from "../UserAuth/UserAuth";
 import Modal from "../Modal/Modal";
 import "./navbar.css";
 import LoginForm from "../Modal/LoginForm/LoginForm";
-import Model from "react-modal";
+import SignUpForm from "../Modal/Sign Up Form/SignUp Form";
+
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
@@ -16,7 +17,6 @@ const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState("Home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileView, setIsMobileView] = useState(window.innerWidth < 1050);
-  const menuIconRef = useRef(null);
   const navbarRef = useRef(null);
 
   useEffect(() => {
@@ -60,7 +60,7 @@ const Navbar = () => {
   
   
 
-  const handleLoginSuccess = (token, userData) => {
+  const handleLoginSuccess = (userData) => {
     console.log("Handling login success:", token, userData);
     localStorage.setItem("token", token);
     setToken(token);
@@ -77,6 +77,18 @@ const Navbar = () => {
   const handleLoginClick = () => {
     setModalOpen(true);
   };
+
+  const handleSignupSuccess = ( userData) => {
+    console.log("Handling signup success:", userData);
+    localStorage.setItem("user", user);
+    setUser(userData);
+    setModalOpen(false);
+  };
+
+  const handleSignupClick =() =>{ 
+    setModalOpen(true);
+
+  }
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -118,6 +130,7 @@ const Navbar = () => {
           <li className="mobile-user-auth">
             <UserAuth
               user={user}
+              onSignupClick={handleSignupClick}
               onLoginClick={handleLoginClick}
               onLogoutClick={handleLogout}
             />
@@ -128,15 +141,21 @@ const Navbar = () => {
         <div className="h-right">
           <UserAuth
             user={user}
+            onSignupClick={handleSignupClick}
             onLoginClick={handleLoginClick}
             onLogoutClick={handleLogout}
           />
         </div>
       )}
       <Modal show={isModalOpen} onClose={() => setModalOpen(false)}>
-        <LoginForm onLoginSuccess={handleLoginSuccess} />
+        {isModalOpen ? (
+          <SignUpForm onSignupSuccess={handleSignupSuccess}/>
+          
+        ) : (
+          <LoginForm onLoginSuccess={handleLoginSuccess} />
+        )}
       </Modal>
-    </header>
+     </header>
   );
 };
 
