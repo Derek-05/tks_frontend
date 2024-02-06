@@ -131,7 +131,7 @@
 .Information-text p{
  text-align: justify;
  text-justify: distribute-all-lines;
- font-size: 18px;
+ font-size: 16px;
  font-weight:700;
  line-height: 40px;
  color:white;
@@ -166,7 +166,7 @@
   .card-content1 p {
    text-align: justify;
     text-justify: distribute-all-lines;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
     
     line-height: 20px; 
