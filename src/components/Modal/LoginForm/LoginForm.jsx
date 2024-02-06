@@ -34,6 +34,9 @@ const LoginForm = ({ onLoginSuccess }) => {
   return (
     <div className="modal-container">
       <div className="login-modal">
+        <br/>
+        <br/>
+        <br/>
         <h2>Login</h2>
         <form className="login-form" onSubmit={handleSubmit}>
           <div className="form-group">
