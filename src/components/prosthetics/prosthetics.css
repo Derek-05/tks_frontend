@@ -18,7 +18,7 @@
     color:#ffed2a;
     text-transform:uppercase;
     letter-spacing:6px;
-    margin-bottom:20px;
+    margin-bottom:30px;
 }
 
 .prosthetics-text h2{
@@ -45,9 +45,10 @@
 }
 
 .center-text h2{
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 800;
     color:#ffed2a;
+    margin-bottom: 80px;
 }
 
 .variants-content{
@@ -71,7 +72,7 @@
     transition: all .3s cubic-bezier(.499,.05,.55,.95);
     will-change:filter;
     display:block;
-    margin-left: 15px;
+    margin-left:11px;
 }
 
     .box h6{
@@ -91,7 +92,7 @@
     }
     
     .newsletter-content{
-        margin-left: 50px;
+        margin-left: 30px;
         display: grid;
         grid-template-columns: repeat(2,1fr);
         align-items: center;
@@ -104,6 +105,7 @@
         font-weight: 800;
         margin-bottom: 15px;
         color: #ffed2a;
+       
     }
 
     .newsletter-text p{
@@ -125,9 +127,11 @@
 @media (max-width: 800px){
     .prosthetics{
         grid-template-columns: 1fr;
+        
     }
     .newsletter-content{
         grid-template-columns: 1fr;
+      
     }
     .prosthetics-text{
         margin-left: 20px;
