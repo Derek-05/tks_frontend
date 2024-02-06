@@ -12,20 +12,20 @@
 }
 
 .modal-content {
-  background: black;
+  background: none;
   border-radius: 10px;
   position: relative;
   width: 100%;
   height: 70%;
   max-width: 520px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
+  
  
   
 }
 
 .close-button {
   position: absolute;
-  top: 10px;
+  top: 180px;
   right: 20px;
   font-size: 30px;
   cursor: pointer;

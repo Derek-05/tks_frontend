@@ -13,8 +13,8 @@
 }
 
 .prosthetics-text h5{
-    font-size:22px;
-    font-weight:700;
+    font-size:30px;
+    font-weight:800;
     color:#ffed2a;
     text-transform:uppercase;
     letter-spacing:6px;
@@ -33,8 +33,8 @@
     text-align: justify;
     text-justify: distribute-all-lines;
     font-size: 17px;
-    font-weight:500;
-    line-height: 30px;
+    font-weight:700;
+    line-height: 45px;
     color:white;
     margin-bottom: 35px;
     margin-right: 25px;
@@ -46,7 +46,7 @@
 
 .center-text h2{
     font-size: 40px;
-    font-weight: 700;
+    font-weight: 800;
     color:#ffed2a;
 }
 

@@ -19,13 +19,10 @@
 
 
  .About-us-img img{
-   margin-top: 120px;
-    width: 90%;
-    height:auto;
-    border-radius:10px;
-    margin-left:25px;
-    margin-top: 290px;
-
+  width: 90%;
+  height:auto;
+  border-radius:10px;
+  margin-left: 25px;
  }
 
  .About-us-text h2{
@@ -40,25 +37,25 @@
  }
 
  .About-us-text h5{
-   text-align: center;
-   font-size:22px;
-   font-weight:700;
-   color:#ffed2a;
-   text-transform:uppercase;
-   letter-spacing:6px;
-   margin-top:250px;
-  
- }
+  text-align: center;
+  font-size:22px;
+  font-weight:700;
+  color:#ffed2a;
+  text-transform:uppercase;
+  letter-spacing:6px;
+  margin-bottom:20px;
+}
+ 
 
  .About-us-text p{
-   text-align: justify;
-   text-justify: distribute-all-lines;
-   font-size: 17px;
-   font-weight:500;
-   line-height: 30px;
-   color:white;
-   margin-top: 10px;
-   margin-right: 15px;
+  text-align: justify;
+    text-justify: distribute-all-lines;
+    font-size: 17px;
+    font-weight:700;
+    line-height: 45px;
+    color:white;
+    margin-bottom: 35px;
+    margin-right: 25px;
     
  }
 
@@ -96,14 +93,14 @@
 
  .Our-story-text p{
     
-   text-align: justify;
-   text-justify: distribute-all-lines;
-   font-size: 17px;
-   font-weight:500;
-   line-height: 30px;
-   color:white;
-   margin-bottom: 35px;
-   margin-right: 15px;
+  text-align: justify;
+    text-justify: distribute-all-lines;
+    font-size: 17px;
+    font-weight:700;
+    line-height: 45px;
+    color:white;
+    margin-bottom: 35px;
+    margin-right: 25px;
     
  }
 
@@ -111,21 +108,29 @@
 
   
  @media (max-width: 1050px){
-    .About-us{
-        gap: 3rem;
-    }
     
- }
+  .About-us{
+      gap:3rem;
+  }
+  
+  
+}
 
- @media(max-width: 800px){
-    .About-us{
-        grid-template-columns: 1fr;
-    }
-    .About-us-text{
-      margin-left: 10px;
-    }
-    .Our-story-text{
-      margin-left:10px ;
-    }
- }
-
+@media (max-width: 800px){
+  .About-us{
+      grid-template-columns: 1fr;
+  }
+  .About-us-img{
+      grid-template-columns: 1fr;
+  }
+  .About-us-text{
+      margin-left: 20px;
+  }
+  .Our-story-img{
+    grid-template-columns: 1fr;
+}
+  
+  .Our-story-text{
+    margin-left: 20px;
+}
+}
