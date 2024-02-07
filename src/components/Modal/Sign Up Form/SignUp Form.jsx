@@ -34,6 +34,7 @@ const SignUpForm = ({ onSignupSuccess  }) => {
 
   return (
     <div className="modal-container">
+      
       <div className="signup-modal">
         <h2>Sign Up</h2>
         <form className="signup-form" onSubmit={handleSignupSubmit}>
