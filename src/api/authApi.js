@@ -17,12 +17,26 @@ export const registerUser = async (userData) => {
 export const loginUser = async (credentials) => {
   try {
     const response = await axios.post(`${authBaseURL}/signin`, credentials);
+    const { token } = response.data;
+    setTokenInCookie(token);
     return response.data; 
   } catch (error) {
     console.error("Error logging in", error.response.data);
     throw error;
   }
 };
+
+const setTokenInCookie = (token) => {
+  // Set the token in a cookie with appropriate options (e.g., secure, HttpOnly)
+  // For example:
+  document.cookie = `jwt=${token}; path=/; SameSite=None; Secure; HttpOnly`;
+};
+
+export const getTokenFromCookie = () => {
+  const token = document.cookie.split('; ').find(row => row.startsWith('jwt='));
+  return token ? token.split('=')[1] : null;
+};
+
 
 // Function to log out a user
 export const logoutUser = async () => {

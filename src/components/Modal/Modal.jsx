@@ -3,8 +3,8 @@ import "./Modal.css";
 import LoginForm from "../Modal/LoginForm/LoginForm";
 import SignUpForm from "../Modal/Sign Up Form/SignUp Form";
 
-const Modal = ({ show, onClose }) => {
-  const [activeForm, setActiveForm] = useState('signup');
+const Modal = ({ show, onClose, onLoginSuccess, onSignupSucess }) => {
+  const [activeForm, setActiveForm] = useState('login');
 
   if (!show) {
     return null;
@@ -22,9 +22,9 @@ const Modal = ({ show, onClose }) => {
         </span>
 
         {activeForm === "signup" ? (
-          <SignUpForm />
+          <SignUpForm onSignupSuccess={onSignupSucess} />
         ) : (
-          <LoginForm />
+          <LoginForm onLoginSuccess={onLoginSuccess} />
         )}
 
         <div className="form-switch">

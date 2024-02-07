@@ -1,10 +1,8 @@
 // UserAuth.jsx
 import React from 'react';
 import './UserAuth.css';
-import LoginForm from "../Modal/LoginForm/LoginForm";
-import SignUpForm from "../Modal/Sign Up Form/SignUp Form";
 
-const UserAuth = ({ user, onLoginClick, onLogoutClick, onSignupClick }) => {
+const UserAuth = ({ user, onLogoutClick }) => {
   return (
     <div className="user-auth">
       {user ? (
@@ -19,23 +17,9 @@ const UserAuth = ({ user, onLoginClick, onLogoutClick, onSignupClick }) => {
           </button>
         </>
       ) : (
-        <>
-          <button
-            type="button"
-            onClick={() => onSignupClick()}
-            aria-label="Sign Up"
-          >
-            Sign Up
-          </button>
+        <div>
          
-          <button
-            type="button"
-            onClick={() => onLoginClick()}
-            aria-label="Log In"
-          >
-            Log In
-          </button>
-        </>
+        </div>
       )}
     </div>
   );
