@@ -1,7 +1,8 @@
+// UserAuth.jsx
 import React from 'react';
 import './UserAuth.css';
 
-const UserAuth = ({ user, onLoginClick, onLogoutClick }) => {
+const UserAuth = ({ user, onLogoutClick }) => {
   return (
     <div className="user-auth">
       {user ? (
@@ -9,22 +10,16 @@ const UserAuth = ({ user, onLoginClick, onLogoutClick }) => {
           <span>Hi, {user.first_name}</span>
           <button
             type="button"
-            onClick={onLogoutClick}
-            role="button"
+            onClick={() => onLogoutClick()}
             aria-label="Logout"
           >
             Logout
           </button>
         </>
       ) : (
-        <button
-          type="button"
-          onClick={onLoginClick}
-          role="button"
-          aria-label="Log In"
-        >
-          Log In
-        </button>
+        <div>
+         
+        </div>
       )}
     </div>
   );

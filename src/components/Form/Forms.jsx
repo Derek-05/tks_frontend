@@ -1,75 +1,184 @@
-import React,{useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Form.css";
+import { newApplicant } from '../../api/applicantApi';
+import { getAllJobOfferings } from '../../api/jobOfferingsAPI';
 
-const Forms = () => {
+const Forms = ({ onFormSuccess, token }) => {
+  const [credentials, setCredentials] = useState({
+    first_name: '',
+    last_name: '',
+    email: '',
+    phone_number: '',
+    selected_job: '',
+    cv_file: null,
+  });
 
+  const [loading, setLoading] = useState(false);
+  const [jobOfferings, setJobOfferings] = useState([]);
+  const [fileName, setFileName] = useState('');
+
+  useEffect(() => {
+    fetchJobs();
+  }, []);
+
+  const fetchJobs = async () => {
+    try {
+      const response = await getAllJobOfferings();
+      if (response && response.jobOfferings && Array.isArray(response.jobOfferings)) {
+        setJobOfferings(response.jobOfferings);
+      } else {
+        console.error("Invalid response structure:", response);
+        setJobOfferings([]);
+      }
+    } catch (error) {
+      console.error('Error fetching jobs:', error);
+    }
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+        const formData = new FormData();
+        formData.append('first_name', credentials.first_name);
+        formData.append('last_name', credentials.last_name);
+        formData.append('email', credentials.email);
+        formData.append('phone_number', credentials.phone_number);
+        formData.append('selected_job', credentials.selected_job);
+        formData.append('cv_file', credentials.cv_file);
+
+        const token = getTokenFromCookie(); // Retrieve the token
+        const response = await newApplicant(formData, token);
+        console.log('Applicant created successfully:', response);
+        onFormSuccess(response.user);
+    } catch (error) {
+        console.error('Error creating applicant:', error);
+    } finally {
+        setLoading(false);
+    }
+};
+
+
+
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    setCredentials((prev) => ({
+      ...prev,
+      [name]: name === 'cv_file' ? (files && files[0]) : value
+    }));
+
+    setFileName(files && files[0] ? files[0].name : '');
+  };
+
+  const handleJobChange = (e) => {
+    const { value } = e.target;
+    setCredentials((prev) => ({ ...prev, selected_job: value }));
+  };
+
+  const handleUndo = () => {
+    setCredentials((prev) => ({ ...prev, cv_file: null }));
+    setFileName('');
+  };
+
+
+  //form stucture con la logica implementada
   return (
     <section className="container">
-      <form action="#" className="Newform">
-        <h1>Apply Now</h1>
-        <div className="input-box">
-          <label>Full Name</label>
-          <input type="text" placeholder="Full Name" required />
-        </div>
-        <div className="input-box">
-          <label>Last Name</label>
-          <input type="text" placeholder="Last Name" />
-        </div>
-        <div className="column">
+        <form onSubmit={handleFormSubmit} className="Newform">
+          <h1>Apply Now</h1>
           <div className="input-box">
-            <label>Email</label>
-            <input type="text" placeholder="example@gmail.com" required />
+            <label htmlFor="first_name">First Name</label>
+            <input
+              type="text"
+              id="first_name"
+              name="first_name"
+              placeholder="First Name"
+              value={credentials.first_name}
+              onChange={handleChange}
+              required
+            />
           </div>
           <div className="input-box">
-            <label>Phone Number</label>
-            <input type="text" placeholder="123-345-678" required />
+            <label htmlFor="last_name">Last Name</label>
+            <input
+              type="text"
+              id="last_name"
+              name="last_name"
+              placeholder="Last Name"
+              value={credentials.last_name}
+              onChange={handleChange}
+              required
+            />
           </div>
-        </div>
-
-        <div className="input-box addres">
-          <label>Job Offers</label>
           <div className="column">
-            <div className="select-box">
-              <select>
-                <option>Job</option>
-                <option>Psychologist</option>
-                <option>Prosthesis manufacturer</option>
-                <option>Biomedical engineer</option>
-                <option>Prosthetic surgeon</option>
-              </select>
+            <div className="input-box">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="example@hotmail.com"
+                value={credentials.email}
+                onChange={handleChange}
+                required
+              />
             </div>
-            <div className="CVbtn">
-              <input type="file" placeholder="Upload CV" required />
-            </div>
-          </div>
-        </div>
-
-        <div className="gender-box">
-          <h3>Gender</h3>
-          <div className="gender-option">
-            <div className="gender">
-              <input type="radio" id="check-male" name="gender" checked />
-              <label for="check">Male</label>
-            </div>
-            <div className="gender">
-              <input type="radio" id="check-female" name="gender" />
-              <label for="check">Female</label>
-            </div>
-            <div className="gender">
-              <input type="radio" id="check-other" name="gender" />
-              <label for="check">Other</label>
+            <div className="input-box">
+              <label htmlFor="phone_number">Phone Number</label>
+              <input
+                type="integer"
+                id="phone_number"
+                name="phone_number"
+                placeholder="787-123-4567"
+                value={credentials.phone_number}
+                onChange={handleChange}
+                required
+              />
             </div>
           </div>
-        </div>
-        <div className="containerbtn">
-          <br />
-          <br />
-          <button>Sumbit</button>
-        </div>
-      </form>
-    </section>
   
+          <div className="input-box address">
+            <label>Job Offers</label>
+            <div className="column">
+              <div className="select-box">
+                <select onChange={handleJobChange} value={credentials.selected_job}>
+                  <option value="">Select Job</option>
+                  {jobOfferings.map(job => (
+                    <option key={job.id} value={job.id}>{job.title}</option>
+                  ))}
+                </select>
+              </div>
+  
+              <div className="input-box address">
+                <label htmlFor="resume">Resume</label>
+                {fileName && (
+                  <div className="filename">
+                    <p>Selected file: {fileName}</p>
+                    <button type="button" onClick={handleUndo}>Undo</button>
+                  </div>
+                )}
+                <div className="column">
+                  <div className="CVbtn">
+                    {/* Show the file name if it's selected */}
+                    <input type="file" name="cv_file" placeholder="Upload CV" onChange={handleChange} required />
+                  </div>
+                </div>
+              </div>
+              <br />
+              <br />
+              {loading && <p>Loading...</p>}
+              <button type="submit" className="containerbtn" disabled={loading}>
+                {loading ? 'Submitting...' : 'Submit'}
+              </button>
+            </div>
+          </div>
+        </form>
+      
+      
+    </section>
   );
-};
+};  
+
 
 export default Forms;
