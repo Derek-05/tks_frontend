@@ -13,16 +13,16 @@ const ApplyNow = () => {
     if (userToken) {
       setIsAuthenticated(true);
     } else {
-      // Navigate to the login page if no token is found
-      navigate('/login', { replace: true });
+      // Redirect to the login page if no token is found
+      navigate('Login', { replace: true });
     }
   }, [navigate]); // Add navigate as a dependency
 
-  const handleFormSuccess = (token, user) => {
+  const handleFormSuccess = (newToken, user) => {
     // Save token in local storage
-    localStorage.setItem('token', token);
+    localStorage.setItem('token', newToken);
     // Set token state
-    setToken(token);
+    setToken(newToken);
     // Set isAuthenticated state
     setIsAuthenticated(true);
   };
