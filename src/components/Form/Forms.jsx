@@ -3,7 +3,8 @@ import "./Form.css";
 import { newApplicant } from '../../api/applicantApi';
 import { getAllJobOfferings } from '../../api/jobOfferingsAPI';
 
-const Forms = ({ onFormSuccess, token }) => {
+
+const Forms = ({ onFormSuccess }) => {
   const [credentials, setCredentials] = useState({
     first_name: '',
     last_name: '',
@@ -40,26 +41,30 @@ const Forms = ({ onFormSuccess, token }) => {
     setLoading(true);
 
     try {
-        const formData = new FormData();
-        formData.append('first_name', credentials.first_name);
-        formData.append('last_name', credentials.last_name);
-        formData.append('email', credentials.email);
-        formData.append('phone_number', credentials.phone_number);
-        formData.append('selected_job', credentials.selected_job);
-        formData.append('cv_file', credentials.cv_file);
+      const formData = new FormData();
+      Object.entries(credentials).forEach(([key, value]) => {
+        formData.append(key, value);
+      });
 
-        const token = getTokenFromCookie(); // Retrieve the token
-        const response = await newApplicant(formData, token);
-        console.log('Applicant created successfully:', response);
-        onFormSuccess(response.user);
+      // Retrieve token from cookie
+      const token = getTokenFromCookie();
+
+      // Send request with token
+      const response = await newApplicant(formData, token);
+      console.log('Applicant created successfully:', response);
+      onFormSuccess(response.user);
     } catch (error) {
-        console.error('Error creating applicant:', error);
+      console.error('Error creating applicant:', error);
     } finally {
-        setLoading(false);
+      setLoading(false);
     }
-};
+  };
 
-
+  // Function to retrieve token from cookie
+  const getTokenFromCookie = () => {
+    const token = document.cookie.split('; ').find(row => row.startsWith('jwt='));
+    return token ? token.split('=')[1] : null;
+  };
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -127,7 +132,7 @@ const Forms = ({ onFormSuccess, token }) => {
             <div className="input-box">
               <label htmlFor="phone_number">Phone Number</label>
               <input
-                type="integer"
+                type="tel"
                 id="phone_number"
                 name="phone_number"
                 placeholder="787-123-4567"

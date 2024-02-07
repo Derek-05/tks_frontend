@@ -40,6 +40,7 @@ const LoginForm = ({ onLoginSuccess }) => {
         }));
     };
 
+
     return (
         <div className="modal-container">
             <div className="login-modal">
@@ -76,6 +77,5 @@ const LoginForm = ({ onLoginSuccess }) => {
         </div>
     );
 
-    };
 
 export default LoginForm;
