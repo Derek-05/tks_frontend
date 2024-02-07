@@ -40,7 +40,6 @@ const LoginForm = ({ onLoginSuccess }) => {
         }));
     };
 
- Apply-Now-fix
     return (
         <div className="modal-container">
             <div className="login-modal">
@@ -77,46 +76,6 @@ const LoginForm = ({ onLoginSuccess }) => {
         </div>
     );
 
-  return (
-    <div className="modal-container">
-      <div className="login-modal">
-        <br/>
-        <br/>
-        <br/>
-        <h2>Login</h2>
-        <form className="login-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={credentials.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={credentials.password}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          {/* Display loading indicator during login request */}
-          {loading && <p>Loading...</p>}
-          <button type="submit" className="login-button" disabled={loading}>
-            Submit
-          </button>
-        </form>
-      </div>
-    </div>
-  );
- main
-};
+    };
 
 export default LoginForm;
