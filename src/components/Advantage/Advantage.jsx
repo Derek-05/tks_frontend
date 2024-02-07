@@ -46,7 +46,7 @@ const Advantage = () => {
           <img src={Benefit4} alt="Health and Well-being" />
           <div className="card-content">
             <h1>Health and Well-being</h1>
-            <a href="#Info" class="card-button">
+            <a href="#Benefits-Info" class="card-button">
               Read more
             </a>
           </div>
@@ -55,7 +55,7 @@ const Advantage = () => {
           <img src={Benefit3} alt="Professional Development" />
           <div className="card-content">
             <h1>Professional Development</h1>
-            <a href="#Info" class="card-button">
+            <a href="#Benefits-Info" class="card-button">
               Read more
             </a>
           </div>
@@ -64,7 +64,7 @@ const Advantage = () => {
           <img src={Benefit2} alt="Work-Family Balance" />
           <div className="card-content">
             <h1> Work-Family Balance</h1>
-            <a href="#Info" class="card-button">
+            <a href="#Benefits-Info" class="card-button">
               Read more
             </a>
           </div>
@@ -73,7 +73,7 @@ const Advantage = () => {
           <img src={Benefit1} alt="Financial-Incentives" />
           <div className="card-content">
             <h1>Financial Incentives</h1>
-            <a href="#Info" class="card-button">
+            <a href="#Benefits-Info" class="card-button">
               Read more
             </a>
           </div>
@@ -87,19 +87,17 @@ const Advantage = () => {
               <h5> Inspire Smiles</h5>
               <h2>Join Our Team Today</h2>
               <p>
-                In our pediatric prosthetics clinic, we are dedicated to
-                ensuring the well-being of our team. We provide dental coverage,
-                professional development programs, flexible work arrangements,
-                and financial incentives to create an environment that promotes
-                health, growth, and work-family balance. In our clinic, we don't
-                just create prosthetics for children; we also foster a space
-                where everyone thrives.
+              In our pediatric prosthetics clinic, we are dedicated to ensuring the well-being of our team. We provide dental coverage, 
+              professional development programs, flexible work arrangements, and financial incentives to create an environment that promotes
+              health, growth, and work-family balance. Additionally, we offer mental health resources and counseling services to support our
+              team members through any challenges they may face. In our clinic, we don't just create prosthetics for children; we also foster
+              a space where everyone thrives, recognizing the importance of holistic support for our staff's overall well-being.
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div className="Information-text">
+      <div className="Information-text" id="Benefits-Info">
         <h5> Benefits Information</h5>
       </div>
       <div className="advantage-container">
@@ -127,12 +125,9 @@ const Advantage = () => {
           <div className="card-content1">
             <h3>Financial </h3>
             <p>
-              At our clinic encompass various incentives aimed at ensuring
-              employee satisfaction. Through initiatives like performance-based
-              bonuses, profit-sharing,retirement savings plans, and service
-              discounts, we strive tomotivate, align, secure long-term financial
-              stability, and strengthen the bond between our staff and the
-              clinic's mission.
+             At our clinic, we offer different benefits to make sure our employees are happy. We give bonuses 
+             based on performance, share profits, help with retirement savings, and offer discounts on services.
+              These things help keep our staff motivated, financially secure, and connected to our clinic's goals.
             </p>
           </div>
         </div>
@@ -236,8 +231,7 @@ const Advantage = () => {
               At our clinic empowers employees with continuous learning
               initiatives. This includes ongoing training programs, financial
               support for related education through tuition reimbursement, and
-              mentorship opportunities. Additionally, internal advancement
-              policies motivate our workforce to progress in their careers
+              mentorship opportunities.  our workforce to progress in their careers
               within the clinic, emphasizing our commitment to their success.
             </p>
           </div>

@@ -9,7 +9,7 @@
 
 .feature-content{
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
   align-items:center;
   text-align:center;
   gap:3rem;
@@ -17,22 +17,15 @@
 }
 
 .Teamheading h1{
-  font-size:30px;
-  font-weight:600;
+  font-size:40px;
+  font-weight:800;
   color: #ffed2a;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
   text-align: center;
+  margin-top: 100px;
   
 }
 
-.feature-content{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
-  align-items:center;
-  text-align:center;
-  gap:3rem;
-  color:#fff;
-}
 
 .row-img{
   overflow: hidden;

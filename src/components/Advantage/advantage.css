@@ -131,9 +131,9 @@
 .Information-text p{
  text-align: justify;
  text-justify: distribute-all-lines;
- font-size: 17px;
- font-weight:500;
- line-height: 30px;
+ font-size: 16px;
+ font-weight:700;
+ line-height: 40px;
  color:white;
  margin-bottom: 35px;
   
@@ -147,7 +147,7 @@
   
   .card1 {
     width: 48%; 
-    max-width: 350px; 
+    max-width: 400px; 
     margin: 20px 0;
     background-color: #fff;
     border-radius: 8px;
@@ -164,11 +164,12 @@
   }
   
   .card-content1 p {
-    text-align: justify;
+   text-align: justify;
     text-justify: distribute-all-lines;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
-    line-height: 24px; 
+    
+    line-height: 20px; 
     color: black;
     margin: 10px; 
   }
@@ -196,26 +197,31 @@
   
   .slider-controls {
     position: absolute;
-    top: 130px; 
+    top: 100px; 
     width: 100%;
+    margin-right: 200px; 
     display: flex;
     justify-content: space-between;
     transform: translateY(0%);
   }
   
   .slider-button {
-    background: #3498db;
-    color: #fff;
+    background: dodgerblue;
+    color: white;
     border: none;
-    padding: 8px;
-    cursor: pointer;
-    border-radius: 15px;
+    border-radius: 50%; 
+    font-size: 20px;
+    width: 30px; 
+    height: 30px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .slider-button:hover {
-    background: #1f65a6;
+    background: white;
+    color:dodgerblue;
   }
-
 /*Information Cards */
 
 

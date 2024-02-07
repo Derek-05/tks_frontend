@@ -26,13 +26,12 @@ const Prosthetics = () => {
             <h5>Passive prosthetics</h5>
             <h2>They are designed as a cosmetic Prothesis</h2>
             <p>
-              This type of prosthesis, known as a non-active or static
-              prosthesis, does not incorporate mechanisms or components that
-              enable active movement. Instead, its primary purpose lies in
-              enhancing the functionality of the affected or pointed side of the
-              body. Non-active prostheses are designed to provide essential
-              support and facilitate the execution of specific activities that
-              may require stability, balance, or additional assistance.
+            This type of prosthesis, known as a non-active or static prosthesis, does not incorporate mechanisms or 
+            components that enable active movement. Instead, its primary purpose lies in enhancing the functionality 
+            of the affected or pointed side of the body. Non-active prostheses are designed to provide essential support 
+            and facilitate the execution of specific activities that may require stability, balance, or additional assistance. 
+            In addition, they are often customized to match the individual's anatomy and lifestyle, promoting a comfortable 
+            and seamlessly integrated experience for the wearer.
             </p>
           </div>
         </div>
@@ -45,16 +44,16 @@ const Prosthetics = () => {
             <img src={myoelectric} alt="basketball" />
           </div>
           <div class="prosthetics-text">
-            <h5> Specific Prostheses for an activity</h5>
-            <h2> They ara designed for recrational activities</h2>
+            <h5> Myoelectric Prosthetics</h5>
+            <h2> They are driven by voluntary muscle contractions</h2>
             <p>
               {" "}
-              Activity-specific protheses are designed for an activity in which
-              the residual limb without a prosthesis,or passive, mechanical or
-              myoelectric prothesis,could damage the prothesis or simply cannot
-              or is not suitable for the specific activity. For example, in the
-              execution of sports or other hobbies that require a very specific
-              subjection.
+              Activity-specific prostheses are designed for an activity in which the residual limb without a prosthesis, 
+              or passive, mechanical, or myoelectric prosthesis, could damage the prosthesis or simply cannot or is not 
+              suitable for the specific activity. For example, in the execution of sports or other hobbies that require a 
+              very specific subjection. These specialized prostheses are meticulously crafted to withstand the unique demands
+              and stresses associated with particular activities, ensuring durability and optimal performance during pursuits 
+              such as running, swimming, or engaging in challenging physical endeavors.
             </p>
           </div>
         </div>
@@ -122,6 +121,8 @@ const Prosthetics = () => {
             <br />
             <h2>Ready to be part of our team</h2>
             <p> Join us and help us make a better world</p>
+            <br/>
+            <br/>
           </div>
         </div>
       </div>

@@ -23,6 +23,7 @@ const Team = () => {
           <br />
           <br />
           <br />
+          
           <h1>
             <strong>Team</strong>
           </h1>
