@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
-import { loginUser, getTokenFromCookie } from "../../../api/authApi";
+import { loginUser, setTokenInCookie } from "../../../api/authApi"; // Import the setTokenInCookie function
 
 const LoginForm = ({ onLoginSuccess }) => {
     const [credentials, setCredentials] = useState({
@@ -9,20 +9,14 @@ const LoginForm = ({ onLoginSuccess }) => {
     });
     const [loading, setLoading] = useState(false);
 
-    // Check if user is already authenticated
-    const token = getTokenFromCookie();
-    if (token) {
-        // Redirect or handle already authenticated user
-        // For example:
-        // return <Redirect to="/dashboard" />;
-    }
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
         try {
             const response = await loginUser(credentials);
             console.log("Login successful:", response);
+            // Set the token in the cookie after successful login
+            setTokenInCookie(response.token);
             // Call the onLoginSuccess callback with token and user data
             onLoginSuccess(response.token, response.user);
         } catch (error) {
@@ -39,7 +33,6 @@ const LoginForm = ({ onLoginSuccess }) => {
             [name]: value,
         }));
     };
-
 
     return (
         <div className="modal-container">
