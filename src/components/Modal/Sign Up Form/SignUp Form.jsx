@@ -83,8 +83,11 @@ const SignUpForm = ({ onSignupSuccess  }) => {
           {loading && <p>Loading...</p>}
           <button type="submit" className="signup-button" disabled={loading}>
           {loading ? 'Submitting...' : 'Submit'}
+         
           </button>
+         
         </form>
+       
       </div>
     </div>
   );

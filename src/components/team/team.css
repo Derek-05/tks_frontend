@@ -9,7 +9,7 @@
 
 .feature-content{
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
   align-items:center;
   text-align:center;
   gap:3rem;
