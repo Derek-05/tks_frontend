@@ -9,8 +9,8 @@ const Forms = ({ onFormSuccess }) => {
     last_name: "",
     email: "",
     phone_number: "",
-    selected_job: "",
-    cv_file: null,
+    job_offering_id: "",
+    cv_file: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -72,7 +72,7 @@ const Forms = ({ onFormSuccess }) => {
 
   const handleJobChange = (e) => {
     const { value } = e.target;
-    setCredentials((prev) => ({ ...prev, selected_job: value }));
+    setCredentials((prev) => ({ ...prev, job_offering_id: value }));
   };
 
   const handleUndo = () => {
@@ -127,7 +127,7 @@ const Forms = ({ onFormSuccess }) => {
               type="tel"
               id="phone_number"
               name="phone_number"
-              placeholder="787-123-4567"
+              placeholder="7871234567"
               value={credentials.phone_number}
               onChange={handleChange}
               required
@@ -141,7 +141,7 @@ const Forms = ({ onFormSuccess }) => {
             <div className="select-box">
               <select
                 onChange={handleJobChange}
-                value={credentials.selected_job}
+                value={credentials.job_offering_id}
               >
                 <option value="">Select Job</option>
                 {jobOfferings.map((job) => (
@@ -151,7 +151,7 @@ const Forms = ({ onFormSuccess }) => {
                 ))}
               </select>
             </div>
-            {credentials.selected_job && (
+            {credentials.job_offering_id && (
               <div className="input-box address">
                 <label htmlFor="resume">Resume</label>
                 {fileName && (
