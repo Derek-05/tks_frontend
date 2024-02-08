@@ -1,37 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import Forms from '../components/Form/Forms';
 import { useNavigate } from 'react-router-dom';
+import { getTokenFromLocalStorage } from '../api/authApi';
 
 const ApplyNow = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [token, setToken] = useState(localStorage.getItem('token'));
-  const navigate = useNavigate(); // Initialize the useNavigate hook
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if a valid token exists in local storage
-    const userToken = localStorage.getItem('token');
+    checkAuthentication();
+  }, []); // Run once on component mount
+
+  const checkAuthentication = () => {
+    const userToken = getTokenFromLocalStorage();
     if (userToken) {
       setIsAuthenticated(true);
     } else {
-      // Redirect to the login page if no token is found
-      navigate('Login', { replace: true });
+      navigate('/Signup', { replace: true });
     }
-  }, [navigate]); // Add navigate as a dependency
+  };
 
   const handleFormSuccess = (newToken, user) => {
-    // Save token in local storage
-    localStorage.setItem('token', newToken);
-    // Set token state
-    setToken(newToken);
-    // Set isAuthenticated state
+    // No need to set token in local storage here, as it's already set
     setIsAuthenticated(true);
   };
 
   return isAuthenticated ? (
     <div className="FormInfo">
-      <Forms onFormSuccess={handleFormSuccess} token={token} />
+      <Forms onFormSuccess={handleFormSuccess} />
     </div>
-  ) : null; // Return null if not authenticated
+  ) : null;
 };
 
 export default ApplyNow;
