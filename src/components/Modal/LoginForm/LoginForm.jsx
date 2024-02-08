@@ -69,6 +69,6 @@ const LoginForm = ({ onLoginSuccess }) => {
             </div>
         </div>
     );
-};
+
 
 export default LoginForm;
