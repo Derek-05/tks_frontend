@@ -1,5 +1,3 @@
-// Form.jsx
-
 import React, { useState, useEffect } from "react";
 import "./Form.css";
 import { newApplicant } from "../../api/applicantApi";

@@ -1,11 +1,10 @@
 import axios from 'axios';
 
 // Function to create a new applicant
-export const newApplicant = async (applicantData, token, baseURL = 'http://localhost:8080/api') => {
+export const newApplicant = async (applicantData, baseURL = 'http://localhost:8080/api') => {
     try {
         const response = await axios.post(`${baseURL}/create/applicant`, applicantData, {
             headers: {
-                Authorization: `Bearer ${token}`, // Set the Authorization header with the token
                 'Content-Type': 'application/json',
             },
             withCredentials: true,
