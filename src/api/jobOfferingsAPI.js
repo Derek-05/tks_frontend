@@ -37,7 +37,7 @@ export const getJobOfferingById = async (id) => {
 //Añadir oferta de trabajo
 export const addJobOffering = async (data) => {
   try {
-    const job = await axios.post(`${baseURL}/add/jobs/`, data);
+    const job = await axios.post(`${baseURL}/createJob`, data);
     console.log('API Response (Added Job):', job.data);
     return job.data;
   } catch (error) {
@@ -45,3 +45,26 @@ export const addJobOffering = async (data) => {
     throw error;
   }
 };
+
+
+export const deleteJobOffering = async (id) => {
+  try {
+    const job = await axios.delete(`${baseURL}/deleteJob/${id}`);
+    console.log('API Response (Deleted Job):', job.data);
+    return job.data;
+  } catch (error) {
+    if (error.response) {
+      // Server-side error
+      console.error(`Server Error (${error.response.status}): ${error.response.data}`);
+    } else if (error.request) {
+      // Client-side error
+      console.error(`Client Error: ${error.request}`);
+    } else {
+      // Other errors
+      console.error('Error:', error.message);
+    }
+    throw error;
+  }
+};
+
+
