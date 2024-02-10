@@ -81,11 +81,11 @@ const Forms = ({ onFormSuccess }) => {
   };
 
   return (
-    <section className="container" >
-      
+    <section className="container"> 
+     
       <form onSubmit={handleFormSubmit} className="Newform" >
         <h1>Apply Now</h1>
-        <div className="input-box" id="Form1">
+        <div className="input-box" >
           <label htmlFor="first_name">First Name</label>
           <input
             type="text"
