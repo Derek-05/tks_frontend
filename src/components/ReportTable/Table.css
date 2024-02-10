@@ -1,0 +1,69 @@
+
+.table-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+  background: darkblue;
+  width: 100%; /* Adjusted width */
+  padding: 10px;
+  font-size: 15px;
+}
+
+.heading1 {
+  margin-bottom: 20px; /* Reduced margin */
+  color: yellow;
+  font-size: 18px; /* Increased font size */
+}
+
+form {
+  width: 45%;
+}
+
+.list {
+  width: 100%; /* Adjusted width */
+  text-align: center;
+  border-collapse: collapse; /* Added for better border handling */
+}
+
+th, td {
+  border: 1px solid yellow;
+  padding: 8px 15px;
+}
+
+th {
+  background-color: dodgerblue; /* Moved background color from tr to th */
+  color: white; /* Added to ensure text is visible */
+}
+
+tr:nth-child(even) {
+  background-color: dodgerblue; /* Changed to apply to every even row */
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 4px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  font-size: 15px;
+  color: #ffed2a;
+  display: inline-block;
+  background-color: #00489d;
+  text-decoration: none;
+  border-radius: 5px;
+  width: 45%;
+  padding: 10px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  border: 2px solid #ffed2a;
+  background: white;
+  color: #00489d;
+}
+
