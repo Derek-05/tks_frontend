@@ -21,7 +21,7 @@ const Footer = () => {
         <h3>Know us</h3>
         <a href="#Aboutus"> About us</a>
         <a href="#Ourstory"> Our story</a>
-        <a href="#Team1">Team</a>
+        
       </div>
 
       <div class="footer-box">
@@ -31,7 +31,8 @@ const Footer = () => {
         <h3>Information</h3>
       
         <a href="#">Job Offer</a>
-        <a href="#"> Apply Now</a>
+        <a href="#Team1">Team</a>
+       
        
       </div>
       <div class="footer-box">

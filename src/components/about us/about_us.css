@@ -15,6 +15,7 @@
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 9rem;
+   
  }
 
 
@@ -58,6 +59,7 @@
     color:white;
     margin-bottom: 35px;
     margin-right: 25px;
+   
     
  }
 

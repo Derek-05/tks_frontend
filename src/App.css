@@ -29,12 +29,13 @@ a{
  
     
     
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url(../src/assets/Employee1.jpeg);
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url(../src/assets/Employee2.jpeg);
     background-size: cover;
     background-position: center center; /* Modificado para centrar la imagen */
     position: relative;
-    height: 120vh; /* Ajusta la altura según tus necesidades */
+    height: 100vh; /* Ajusta la altura según tus necesidades */
     width: 100vw; /* Ajusta el ancho según tus necesidades */
+   
 
 }
 
