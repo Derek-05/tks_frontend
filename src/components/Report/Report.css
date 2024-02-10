@@ -1,20 +1,20 @@
-/* Establecemos un estilo base para todos los elementos */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Establecemos estilos generales para el cuerpo de la página */
+
 body {
     width: 100%;
     min-height: 100vh;
     color: white;
-    font-family: Arial, sans-serif; /* Fuente predeterminada */
-    background-color: #222; /* Color de fondo */
+    font-family: Arial, sans-serif; 
+    
 }
 
-/* Contenedor principal */
+
 .container {
     width: 100%;
     min-height: 100vh;
@@ -24,7 +24,7 @@ body {
     padding: 30px 8%;
 }
 
-/* Filas dentro del contenedor */
+
 .container .row {
     display: flex;
     justify-content: center;
@@ -32,7 +32,6 @@ body {
     max-width: 1100px;
 }
 
-/* Columnas izquierda y derecha */
 .container .row .left {
     flex-basis: 35%;
     min-width: 320px;
@@ -43,12 +42,13 @@ body {
     flex-basis: 60%;
 }
 
-/* Encabezado */
+
 .container .row .left h2 {
     position: relative;
     font-size: 28px;
     color: yellow;
     margin-bottom: 25px;
+  
 }
 
 .container .row .left h2::before {
@@ -71,15 +71,15 @@ body {
     left: 0;
 }
 
-/* Estilo para el texto general */
+
 .container .row .left p {
-    font-size: 14px;
+    font-size: 15px;
     color: white;
     line-height: 1.5;
     margin-bottom: 20px;
+    font-weight: 700;
 }
 
-/* Iconos de contacto */
 .container .row .left .contactInfo {
     margin-bottom: 20px;
 }
@@ -109,14 +109,15 @@ body {
 .iconGroup .details span {
     font-size: 15px;
     color: white;
+    font-weight: 700;
 }
 
 .iconGroup .details span:first-child {
     text-transform: uppercase;
     color: yellow;
+    font-weight: 700;
 }
 
-/* Formulario de mensaje */
 .messageform {
     display: flex;
     flex-wrap: wrap;
@@ -133,11 +134,11 @@ body {
     position: absolute;
     left: 0;
     color: yellow;
-    bottom: 20px; /* Ajustamos la posición inicial de las etiquetas */
+    bottom: 20px; 
     font-size: 15px;
-    transition: transform 0.4s, font-size 0.4s; /* Añadimos la transición para transform y font-size */
+    transition: transform 0.4s, font-size 0.4s; 
     pointer-events: none;
-    transform-origin: left bottom; /* Establecemos el origen de la transformación */
+    transform-origin: left bottom; 
 }
 
 .inputGroup input, 
@@ -158,16 +159,16 @@ body {
 }
 .inputGroup input:focus ~ label, 
 .inputGroup textarea:focus ~ label {
-    transform: translateY(-100%) scale(0.8); /* Movemos la etiqueta hacia arriba y la reducimos de tamaño */
-    font-size: 12px; /* Ajustamos el tamaño de la fuente */
-    bottom: 40px; /* Ajustamos la posición de la etiqueta enfocada */
+    transform: translateY(-100%) scale(0.8); 
+    font-size: 12px; 
+    bottom: 40px; 
 }
 
 .inputGroup input:valid ~ label, 
 .inputGroup textarea:valid ~ label {
-    transform: translateY(-100%) scale(0.8); /* Movemos la etiqueta hacia arriba y la reducimos de tamaño */
-    font-size: 12px; /* Ajustamos el tamaño de la fuente */
-    bottom: 40px; /* Ajustamos la posición de la etiqueta cuando el campo tiene contenido */
+    transform: translateY(-100%) scale(0.8); 
+    font-size: 12px; 
+    bottom: 40px; 
 }
 
 
