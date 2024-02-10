@@ -1,136 +1,103 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Table.css";
+import { getAllApplicants } from "../../api/applicantApi";
+import { getAllUsers } from "../../api/userApi"; // Import the API function
 
 const Table = () => {
-  const initialFormData = {
-    Employee1: "",
-    Employee2: "",
-    "Employee-email": "",
-    "Employee-Job": ""
-  };
-
-  const [formData, setFormData] = useState({ ...initialFormData });
   const [employeeList, setEmployeeList] = useState([]);
-  const [editIndex, setEditIndex] = useState(null);
+  const [userList, setUserList] = useState([]);
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    if (editIndex !== null) {
-      // Actualizar la fila existente si estamos en modo de edición
-      const updatedList = [...employeeList];
-      updatedList[editIndex] = { ...formData };
-      setEmployeeList(updatedList);
-      setEditIndex(null);
-    } else {
-      // Agregar una nueva fila si no estamos en modo de edición
-      setEmployeeList([...employeeList, { ...formData }]);
-    }
-    setFormData({ ...initialFormData });
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Fetch applicants data
+        const applicantsResponse = await getAllApplicants();
+        setEmployeeList(applicantsResponse.applicants);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value
-    }));
-  };
+        // Fetch users data
+        const usersResponse = await getAllUsers();
+          console.log("usersResponse:", usersResponse); // Add this line to check the value
+
+          if (usersResponse && usersResponse.data && Array.isArray(usersResponse.data.users)) {
+            setUserList(usersResponse.data.users);
+          } else {
+            console.error("Invalid users response:", usersResponse);
+          }
+            } catch (error) {
+              console.error("Error fetching data:", error);
+              // Handle errors here
+            }
+          };
+
+    fetchData();
+
+    return () => {}; // Cleanup function
+  }, []);
 
   const handleEdit = (index) => {
-    // Mostrar los datos de la fila seleccionada en el formulario de entrada
-    setFormData({ ...employeeList[index] });
-    setEditIndex(index);
+    // Implement edit functionality
   };
 
   const handleDelete = (index) => {
-    // Eliminar la fila seleccionada de la lista de empleados
-    setEmployeeList(employeeList.filter((_, i) => i !== index));
+    // Implement delete functionality
   };
 
   return (
     <div className="heading1">
-    
-      <h1>Admi Dashboard</h1>
-    <div className="table-container">
-      
-      
-      
-      <form autoComplete="off" onSubmit={handleFormSubmit}>
-        <div>
-          <label htmlFor="Employee1">First Name</label>
-          <input
-            type="text"
-            name="Employee1"
-            id="Employee1"
-            value={formData.Employee1}
-            onChange={handleInputChange}
-          />
-        </div>
+      <h1>Admin Dashboard</h1>
+      <div className="table-container">
+        {employeeList.length > 0 ? (
+          <table className="list" id="EmployeeList">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>User Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Job Id</th>
+                <th>File Name</th>
+                <th>File Type</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              {employeeList.map((applicant, index) => {
+                // Find the corresponding user data for this applicant
+                const user = userList.find(user => user.user_id === applicant.user_id);
 
-        <div>
-          <label htmlFor="Employee2">Last Name</label>
-          <input
-            type="text"
-            name="Employee2"
-            id="Employee2"
-            value={formData.Employee2}
-            onChange={handleInputChange}
-          />
-        </div>
-
-        <div>
-          <label htmlFor="Employee-email">Email</label>
-          <input
-            type="text"
-            name="Employee-email"
-            id="Employee-email"
-            value={formData["Employee-email"]}
-            onChange={handleInputChange}
-          />
-        </div>
-
-        <div>
-          <label htmlFor="Employee-Job">Job Role</label>
-          <input
-            type="text"
-            name="Employee-Job"
-            id="Employee-Job"
-            value={formData["Employee-Job"]}
-            onChange={handleInputChange}
-          />
-        </div>
-
-        <div className="form_action--button">
-          <input type="submit" value={editIndex !== null ? "Save" : "Submit"} />
-          <input type="reset" value="Reset" onClick={() => { setFormData({ ...initialFormData }); setEditIndex(null); }} />
-        </div>
-      </form>
-
-      <table className="list" id="EmployeeList">
-        <thead>
-          <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Job</th>
-            <th>Edit</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {employeeList.map((employee, index) => (
-            <tr key={index}>
-              <td>{employee.Employee1}</td>
-              <td>{employee.Employee2}</td>
-              <td>{employee["Employee-email"]}</td>
-              <td>{employee["Employee-Job"]}</td>
-              <td><button onClick={() => handleEdit(index)}>Edit</button></td>
-              <td><button onClick={() => handleDelete(index)}>Delete</button></td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+                return (
+                  <tr key={index}>
+                    <td>{applicant.applicant_id}</td>
+                    <td>{applicant.user_id}</td>
+                    <td>{user ? user.first_name : ""}</td>
+                    <td>{user ? user.last_name : ""}</td>
+                    <td>{user ? user.email : ""}</td>
+                    <td>{user ? user.phone_number : ""}</td>
+                    <td>{applicant.job_offering_id}</td>
+                    <td>{applicant.file_name}</td>
+                    <td>{applicant.file_type}</td>
+                    <td>{applicant.created_At}</td>
+                    <td>{applicant.updated_At}</td>
+                    <td>
+                      <button onClick={() => handleEdit(index)}>Edit</button>
+                    </td>
+                    <td>
+                      <button onClick={() => handleDelete(index)}>Delete</button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
     </div>
   );
 };
