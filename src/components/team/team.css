@@ -1,19 +1,14 @@
-.Teamheading h1{
-  font-size:30px;
-  font-weight:600;
-  color: #ffed2a;
-  margin-bottom: 20px;
-  text-align: center;
-  
-}
+
 
 .feature-content{
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
   align-items:center;
   text-align:center;
   gap:3rem;
   color:#fff;
+
+  
 }
 
 .Teamheading h1{
@@ -23,6 +18,7 @@
   margin-bottom: 80px;
   text-align: center;
   margin-top: 100px;
+  
   
 }
 
@@ -38,6 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .row-img img{

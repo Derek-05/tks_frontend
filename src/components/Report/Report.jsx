@@ -24,6 +24,7 @@ const Report = () => {
               </div>
               <div class="details">
                 <span>Phone</span>
+                <br/>
                 <span>1+787-444-545</span>
               </div>
             </div>
@@ -34,6 +35,7 @@ const Report = () => {
               </div>
               <div class="details">
                 <span>Email</span>
+                <br/>
                 <span>techkidssolutions@gmail.com</span>
               </div>
             </div>
@@ -44,6 +46,7 @@ const Report = () => {
               </div>
               <div class="details">
                 <span>Location</span>
+                <br/>
                 <span>Aguada, PR</span>
               </div>
             </div>
@@ -73,7 +76,7 @@ const Report = () => {
 
             <div className="inputGroup fullWidth">
               <textarea required="required" name="reqired"></textarea>
-              <label>Say something</label>
+             
             </div>
 
             <div className="inputGroup fullWidth">

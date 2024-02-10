@@ -69,12 +69,16 @@ const Prosthetics = () => {
             <h2> They ara designed for recrational activities</h2>
             <p>
               {" "}
-              Activity-specific protheses are designed for an activity in which
-              the residual limb without a prosthesis,or passive, mechanical or
-              myoelectric prothesis,could damage the prothesis or simply cannot
-              or is not suitable for the specific activity. For example, in the
-              execution of sports or other hobbies that require a very specific
-              subjection.
+              Activity-specific prostheses are meticulously crafted to accommodate scenarios 
+              where the natural residual limb, or conventional passive, mechanical, or myoelectric 
+              prostheses, may pose a risk of damaging the prosthesis, or where they prove inadequate 
+              for the demands of the particular activity. These specialized prosthetic devices find
+               application in various pursuits such as sports or hobbies that necessitate precise and 
+               tailored support, ensuring optimal performance and safety for the wearer.are engineered
+                with precision to address the unique challenges presented by specific activities, ensuring 
+                optimal functionality and durability. They offer tailored solutions for individuals engaged 
+                in sports or hobbies that demand intricate levels of support, safeguarding against 
+                potential damage or discomfort caused by conventional prosthetic options.
             </p>
           </div>
         </div>
