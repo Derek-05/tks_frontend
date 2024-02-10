@@ -4,6 +4,7 @@ import { getAllApplicants } from "../../api/applicantApi";
 import { getAllUsers } from "../../api/userApi"; // Import the API function
 
 const Table = () => {
+
   const [employeeList, setEmployeeList] = useState([]);
   const [userList, setUserList] = useState([]);
 
@@ -100,6 +101,9 @@ const Table = () => {
       </div>
     </div>
   );
+
+ 
+
 };
 
 export default Table;
