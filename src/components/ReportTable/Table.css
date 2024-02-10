@@ -1,0 +1,66 @@
+body .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 290px;
+    background-color: gray;
+    padding-top: 50px;
+}
+
+body .logo-name {
+    margin-left: 8px;
+}
+
+body .logo_name {
+    color: white;
+}
+
+body .logo-name span {
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 15px;
+    text-transform: uppercase;
+}
+
+body .logo-name a {
+    position: relative;
+    color: yellow;
+    display: table;
+    width: 280px;
+    padding: 10px;
+}
+
+body .bx {
+    position: relative;
+   top: 18px;
+    width: 70px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+}
+
+body .sidebar .logo_name {
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+}
+
+body .logo-name a:hover {
+    background-color: darkgray;
+}
+
+body .logout {
+    position: absolute;
+    top: 400px;
+}
+
+
+  
+  /* CSS para ampliar el ancho del contenido */
+  .content {
+    width: calc(100% - 290px); /* Calcula el ancho restando el ancho del sidebar */
+    margin-right: 1000px; /* Alinea el contenido a la derecha del sidebar */
+  }
+
+ 
