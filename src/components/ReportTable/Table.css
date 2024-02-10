@@ -61,6 +61,6 @@ body .logout {
   .content {
     width: calc(100% - 290px); /* Calcula el ancho restando el ancho del sidebar */
     margin-right: 1000px; /* Alinea el contenido a la derecha del sidebar */
+
   }
 
- 
