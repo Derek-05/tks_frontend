@@ -8,7 +8,7 @@ export const registerUser = async (userData) => {
     const response = await axios.post(`${authBaseURL}/signup`, userData);
     return response.data; 
   } catch (error) {
-    console.error("Error registering user", error.response.data);
+    console.error("Error registering user", error.response ? error.response.data : error.message);
     throw error;
   }
 };
@@ -18,39 +18,34 @@ export const loginUser = async (credentials) => {
   try {
     const response = await axios.post(`${authBaseURL}/signin`, credentials);
     const { token } = response.data;
-    setTokenInCookie(token); // Set the token in the cookie
+    // Set the token in local storage
+    setTokenInLocalStorage(token);
     return response.data; // Return the response data as before
   } catch (error) {
-    console.error("Error logging in", error.response.data);
+    console.error("Error logging in", error.response ? error.response.data : error.message);
     throw error;
   }
 };
 
- export const setTokenInCookie = (token) => {
-  document.cookie = `jwt=${token}; path=/; SameSite=None; Secure; HttpOnly`;
+// Function to set the token in local storage
+export const setTokenInLocalStorage = (token) => {
+  localStorage.setItem('token', token);
 };
 
-
-export const getTokenFromCookie = () => {
-  const token = document.cookie.split('; ').find(row => row.startsWith('jwt='));
-  return token ? token.split('=')[1] : null;
-};
-
-
-
+// Function to get the token from local storage
 export const getTokenFromLocalStorage = () => {
   return localStorage.getItem('token');
 };
 
-
-
 // Function to log out a user
 export const logoutUser = async () => {
   try {
+    // Clear token from local storage
+    localStorage.removeItem('token');
     const response = await axios.get(`${authBaseURL}/logout`);
     return response.data; 
   } catch (error) {
-    console.error("Error logging out", error.response.data);
+    console.error("Error logging out", error.response ? error.response.data : error.message);
     throw error;
   }
 };
@@ -65,7 +60,7 @@ export const getUserProfile = async (token) => {
     });
     return response.data; // This should include the user's profile
   } catch (error) {
-    console.error("Error fetching user profile", error.response.data);
+    console.error("Error fetching user profile", error.response ? error.response.data : error.message);
     throw error;
   }
 };
@@ -75,5 +70,7 @@ export default {
   registerUser,
   loginUser,
   logoutUser,
-  getUserProfile
+  getUserProfile,
+  setTokenInLocalStorage,
+  getTokenFromLocalStorage
 };

@@ -6,7 +6,7 @@ const LoginPage = () => {
     const navigate = useNavigate(); // Get the navigate function from React Router
 
     const handleLoginSuccess = () => {
-        navigate('/apply_now'); // Redirect to apply_now page after successful login
+        navigate('/dashboard'); // Redirect to apply_now page after successful login
     };
 
     return (
