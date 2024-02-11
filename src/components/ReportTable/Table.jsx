@@ -173,11 +173,12 @@ const Table = () => {
       <div className="table-container">
         {content === "applicants" && renderApplicantsTable()}
         {content === "jobOffers" && renderJobOffersTable()}
-        {content !== "applicants" && content !== "jobOffers" && <p>Welcome to Dashboard</p>}
-        {content === "jobForm" && renderJobForm()}
+        {content === "jobForm" && renderJobForm()} {/* Updated condition */}
+        {content !== "applicants" && content !== "jobOffers" && content !== "jobForm" && <p>Welcome to Dashboard</p>} {/* Additional condition */}
       </div>
     </div>
   );
+  
 
   // Render applicants table
   const renderApplicantsTable = () => (
