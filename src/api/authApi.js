@@ -13,11 +13,17 @@ export const registerUser = async (userData) => {
   }
 };
 
-// Function to log in a user
+
+
+
+// loginUser function
 export const loginUser = async (credentials) => {
   try {
     const response = await axios.post(`${authBaseURL}/signin`, credentials);
     const { token } = response.data;
+
+    console.log("Response data:", response.data); // Log the response data
+
     // Set the token in local storage
     setTokenInLocalStorage(token);
     return response.data; // Return the response data as before
@@ -27,15 +33,24 @@ export const loginUser = async (credentials) => {
   }
 };
 
-// Function to set the token in local storage
-export const setTokenInLocalStorage = (token) => {
+
+
+
+ export const setTokenInLocalStorage = (token) => {
   localStorage.setItem('token', token);
 };
+
+
+
+
+
+
 
 // Function to get the token from local storage
 export const getTokenFromLocalStorage = () => {
   return localStorage.getItem('token');
 };
+
 
 // Function to log out a user
 export const logoutUser = async () => {
