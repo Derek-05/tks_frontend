@@ -38,12 +38,7 @@ const Table = () => {
         setJobOfferList(jobOffersResponse.jobOfferings);
 
         // Fetch user profile and update form data with user ID
-        const token = getTokenFromLocalStorage();
-        const userProfile = await getUserProfile(token);
-        setFormData((prevData) => ({
-          ...prevData,
-          userId: userProfile.user_id
-        }));
+        
       } catch (error) {
         console.error("Error fetching data:", error);
         // Handle errors here
@@ -92,30 +87,28 @@ const Table = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Add job offering with form data
+  
+      console.log("Form data before submitting:", formData);
+  
+      // Añadir la oferta de trabajo
       await addJobOffering(formData);
-
-      // Reset the form data
+  
+      // Si la creación es exitosa, actualiza la lista de ofertas de trabajo
+      const jobOffersResponse = await getAllJobOfferings();
+      setJobOfferList(jobOffersResponse.jobOfferings);
+  
+      // Restablece los datos del formulario
       setFormData({
         title: "",
         description: "",
         salary: "",
         qualifications: "",
-        available: true,
-        userId: formData.userId
+        available: true
       });
-
-      
     } catch (error) {
-        console.error("Error creating job offering:", error);
-        // Handle error, maybe show a message to the user
+      console.error("Error creating job offering:", error);
     }
-};
-
-
-  
-
-
+  };
 
 
 
