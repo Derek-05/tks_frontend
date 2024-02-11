@@ -4,7 +4,7 @@ import "./Table.css";
 import { getAllApplicants} from "../../api/applicantApi"
 import { getAllUsers} from "../../api/userApi"
 import { getAllJobOfferings, deleteJobOffering, addJobOffering  } from "../../api/jobOfferingsAPI";
-import { getTokenFromLocalStorage } from "../../api/authApi";
+import { getTokenFromLocalStorage, getUserProfile } from "../../api/authApi";
 
 const Table = () => {
   // State variables
@@ -17,7 +17,8 @@ const Table = () => {
     description: "",
     salary: "",
     qualifications: "",
-    available: true // Assuming job is available by default
+    available: true,
+    userId: "" 
   });
 
   // Fetch data on component mount
@@ -35,6 +36,14 @@ const Table = () => {
         // Fetch job offers data
         const jobOffersResponse = await getAllJobOfferings();
         setJobOfferList(jobOffersResponse.jobOfferings);
+
+        // Fetch user profile and update form data with user ID
+        const token = getTokenFromLocalStorage();
+        const userProfile = await getUserProfile(token);
+        setFormData((prevData) => ({
+          ...prevData,
+          userId: userProfile.user_id
+        }));
       } catch (error) {
         console.error("Error fetching data:", error);
         // Handle errors here
@@ -45,6 +54,7 @@ const Table = () => {
 
     return () => {}; // Cleanup function
   }, []);
+
 
   // Event handlers
   const handleApplicantsClick = () => setContent("applicants");
@@ -82,42 +92,28 @@ const Table = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        // Retrieve the token from local storage
-        const token = getTokenFromLocalStorage();
+      // Add job offering with form data
+      await addJobOffering(formData);
 
-        // Ensure the token exists before proceeding
-        if (!token) {
-            throw new Error('No token found. Please log in again.');
-        }
+      // Reset the form data
+      setFormData({
+        title: "",
+        description: "",
+        salary: "",
+        qualifications: "",
+        available: true,
+        userId: formData.userId
+      });
 
-        // Construct the config object with the Authorization header
-        const config = {
-            headers: {
-                Authorization: `token=${token}`,
-                withCredentials: true
-            }
-        };
-
-        // Add job offering with authentication token included in the request headers
-        await addJobOffering(formData, config);
-
-        // If the creation is successful, update the job offer list by refetching
-        const jobOffersResponse = await getAllJobOfferings();
-        setJobOfferList(jobOffersResponse.jobOfferings);
-
-        // Reset the form data
-        setFormData({
-            title: "",
-            description: "",
-            salary: "",
-            qualifications: "",
-            available: true
-        });
+      
     } catch (error) {
         console.error("Error creating job offering:", error);
         // Handle error, maybe show a message to the user
     }
 };
+
+
+  
 
 
 
@@ -302,6 +298,13 @@ const Table = () => {
 
         <label htmlFor="qualifications">Qualifications:</label>
         <textarea id="qualifications" name="qualifications" value={formData.qualifications} onChange={handleInputChange} required />
+
+        <input
+            type="hidden"
+            id="userId"
+            name="userId"
+            value={formData.userId}
+          />
 
         <button type="submit">Create Job</button>
       </form>

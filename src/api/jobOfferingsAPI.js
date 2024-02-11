@@ -38,8 +38,8 @@ export const getJobOfferingById = async (id) => {
 export const addJobOffering = async (data, config) => {
   try {
     const job = await axios.post(`${baseURL}/createJob`, data, config);
-    console.log('API Response (Added Job):', job.data);
-    return job.data;
+    console.log('API Response (Added Job):', job.newJobOffering);
+    return job.new;
   } catch (error) {
     console.error("Error Adding Job", error.response.data);
     throw error;

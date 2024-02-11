@@ -70,7 +70,8 @@ export const getUserProfile = async (token) => {
   try {
     const response = await axios.get(`${authBaseURL}/me`, {
       headers: {
-        Authorization: `Bearer ${token}`
+        Authorization: `token= ${token}`,
+        
       }
     });
     return response.data; // This should include the user's profile
