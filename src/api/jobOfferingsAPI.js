@@ -41,7 +41,7 @@ export const addJobOffering = async (data) => {
   console.log(token);
   try {
     // Manually set the cookie in the browser (for debugging only)
-    document.cookie = `token=${token}; path=/;`;
+    document.cookie = `token=${token}; path=/; SameSite=None; Secure`;
 
     // Now make the request with the credentials flag
     const response = await axios.post(`${baseURL}/createJob`, data, {
