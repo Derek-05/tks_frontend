@@ -19,6 +19,7 @@ const Table = () => {
     qualifications: "",
     available: true,
   });
+  
 
   // Fetch data on component mount
   useEffect(() => {
@@ -270,7 +271,10 @@ const Table = () => {
         ))}
       </tbody>
     </table>
-  );
+
+    
+
+    );
 
   const renderJobForm = () => (
     <div className="job-form">
