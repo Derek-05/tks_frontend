@@ -35,16 +35,27 @@ export const getJobOfferingById = async (id) => {
   };
 
 //Añadir oferta de trabajo
-export const addJobOffering = async (data, config) => {
+export const addJobOffering = async (data) => {
+  // Extract the token from localStorage (for debugging only, not for production)
+  const token = localStorage.getItem('token'); // Assume 'token' is the key you've used
+  console.log(token);
   try {
-    const job = await axios.post(`${baseURL}/createJob`, data, config);
-    console.log('API Response (Added Job):', job.data);
-    return job.data;
+    // Manually set the cookie in the browser (for debugging only)
+    document.cookie = `token=${token}; path=/;`;
+
+    // Now make the request with the credentials flag
+    const response = await axios.post(`${baseURL}/createJob`, data, {
+      withCredentials: true
+    });
+
+    console.log('API Response (Added Job):', response.data);
+    return response.data;
   } catch (error) {
-    console.error("Error Adding Job", error.response.data);
+    console.error("Error Adding Job", error.response?.data || error.message);
     throw error;
   }
 };
+
 
 
 

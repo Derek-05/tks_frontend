@@ -82,44 +82,28 @@ const Table = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        // Retrieve the token from local storage
-        const token = getTokenFromLocalStorage();
-
-        // Ensure the token exists before proceeding
-        if (!token) {
-            throw new Error('No token found. Please log in again.');
-        }
-
-        // Construct the config object with the Authorization header
-        const config = {
-            headers: {
-                Authorization: `token=${token}`,
-                withCredentials: true
-            }
-        };
-
-        // Add job offering with authentication token included in the request headers
-        await addJobOffering(formData, config);
-
-        // If the creation is successful, update the job offer list by refetching
-        const jobOffersResponse = await getAllJobOfferings();
-        setJobOfferList(jobOffersResponse.jobOfferings);
-
-        // Reset the form data
-        setFormData({
-            title: "",
-            description: "",
-            salary: "",
-            qualifications: "",
-            available: true
-        });
+  
+      console.log("Form data before submitting:", formData);
+  
+      // Añadir la oferta de trabajo
+      await addJobOffering(formData);
+  
+      // Si la creación es exitosa, actualiza la lista de ofertas de trabajo
+      const jobOffersResponse = await getAllJobOfferings();
+      setJobOfferList(jobOffersResponse.jobOfferings);
+  
+      // Restablece los datos del formulario
+      setFormData({
+        title: "",
+        description: "",
+        salary: "",
+        qualifications: "",
+        available: true
+      });
     } catch (error) {
-        console.error("Error creating job offering:", error);
-        // Handle error, maybe show a message to the user
+      console.error("Error creating job offering:", error);
     }
-};
-
-
+  };
 
 
 
