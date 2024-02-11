@@ -48,7 +48,6 @@ const Navbar = () => {
     { name: "Apply Now", path: "/apply_now" },
     { name: "Contact", path: "/contact" },
     { name: "Dashboard", path: "/Dashboard" },
-    { name: "Signup", path: "/Signup" },
     { name: "Login", path: "/Login" },
     { name: "ThankYou", path: "/thankyou" },
 
