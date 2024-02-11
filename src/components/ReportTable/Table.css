@@ -1,15 +1,14 @@
 /* Sidebar styles */
 body .sidebar {
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 300px;
-    background-color: gray;
-    padding-top: 50px;
-    overflow-y: auto;
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 300px;
+  background-color: gray;
+  padding-top: 50px;
+  overflow-y: auto;
+}
 
 body .logo-name {
   margin-left: 8px;
@@ -24,13 +23,14 @@ body .logo-name span {
   font-weight: bold;
   padding-left: 15px;
   text-transform: uppercase;
+  line-height: 4.0;
 }
 
 body .logo-name a {
   position: relative;
   color: yellow;
-  display: block; /* Change display to block for full width */
-  padding: 15px 20px; /* Adjust padding for better button appearance */
+  display: block;
+  padding: 15px 20px;
 }
 
 body .logo-name a:hover {
@@ -39,63 +39,93 @@ body .logo-name a:hover {
 
 body .logout {
   position: absolute;
-  bottom: 20px;
+  top: 350px;
   left: 0;
-  width: 100%; /* Make logout button full width */
 }
 
 /* Content area styles */
 .content {
-  width: calc(100% - 290px);
-  margin-left: 290px;
-  padding: 20px; /* Add padding for better spacing */
+  width: calc(100% - 300px); /* Cambiado a 300px para corresponder con el ancho del sidebar */
+  margin-left: 300px; /* Cambiado a 300px para corresponder con el ancho del sidebar */
+  padding: 20px;
 }
 
 /* Table styles */
 .list {
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 350px;
 }
 
 .list th,
 .list td {
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
+  text-align: left;
 }
 
 .list th {
   background-color: #f2f2f2;
-  text-align: left;
+  color: black;
 }
 
-
-  
-  /* CSS para ampliar el ancho del contenido */
-  .heading1 {
-    width: calc(100% - 290px); /* Calcula el ancho restando el ancho del sidebar */
-    margin-right: 1000px; /* Alinea el contenido a la derecha del sidebar */
-
 .list td {
-  text-align: left;
+  color: black;
 }
 
-
-/* Handle text wrapping in tables */
 .list td {
-  white-space: nowrap; /* Prevent text wrapping by default */
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* Show ellipsis for overflow text */
+  text-overflow: ellipsis;
 }
 
-
-
-  .heading1 h1{
-    margin-left: 500px;
-    margin-bottom: 100px;
-  }
-
-/* Override white-space for specific columns where wrapping is needed */
-.list .wrap-text {
-  white-space: normal;
+/* Job Form styles */
+.job-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  
 }
+
+.job-form h2 {
+margin-top: 50px;
+  color: yellow;
+
+
+}
+
+.job-form label {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  color: yellow;
+}
+
+.job-form input[type="text"],
+.job-form textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.job-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)) #00489d;
+  color: yellow;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.job-form button:hover {
+  background-color: #2e2e2e;
+  color: dodgerblue;
+  border-color: dodgerblue;
+}
+
 
