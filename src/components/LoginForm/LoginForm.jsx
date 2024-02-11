@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
-import { loginUser, setTokenInLocalStorage } from "../../../api/authApi";
-import Dashboard from "../../ReportTable/Table"; // Import the Dashboard component
+import { loginUser, setTokenInLocalStorage } from "../../api/authApi";
+import Dashboard from "../ReportTable/Table"; // Import the Dashboard component
 
 const LoginForm = () => {
     const [credentials, setCredentials] = useState({

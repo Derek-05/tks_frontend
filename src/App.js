@@ -8,7 +8,6 @@ import Benefits from './pages/Benefits';
 import ApplyNow from './pages/ApplyNow';
 import Contact from './pages/Contact';
 import Dashboard from './pages/Dashboard';
-import SignUp from './pages/SignUp';
 import LogIn from './pages/LogIn';
 import ThankYou from './pages/Thank you page';
 
@@ -28,8 +27,7 @@ const App = () => {
           <Route path='/apply_now' element={<ApplyNow />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/signup' element={<SignUp />} />
-          <Route path='/login' element={<LogIn />} />
+         <Route path='/login' element={<LogIn />} />
           <Route path='/thankyou' element={<ThankYou />} />
           {/* Redirect to home page if accessing the thank you page directly */}
           <Route path='*' element={<Navigate to='/' />} />
