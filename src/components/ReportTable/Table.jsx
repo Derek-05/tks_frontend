@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Table.css";
+
 import { getAllApplicants} from "../../api/applicantApi"
 import { getAllUsers} from "../../api/userApi"
 import { getAllJobOfferings, deleteJobOffering, addJobOffering  } from "../../api/jobOfferingsAPI";
@@ -48,10 +49,16 @@ const Table = () => {
   // Event handlers
   const handleApplicantsClick = () => setContent("applicants");
   const handleJobsClick = () => setContent("jobOffers");
-  const handleJobFormClick =() => setContent("jobForm")
-  const handleEdit = (index) => {};
-  const handleDelete =(index)=>{};
-  
+  const handleJobFormClick = () => setContent("jobForm");
+
+  const handleEdit = (index) => {
+    // Implement edit functionality
+  };
+
+  const handleDelete = (index) => {
+    // Implement delete functionality
+  };
+
   const handleJobDelete = async (id) => {
     try {
       await deleteJobOffering(id);
@@ -187,6 +194,8 @@ const Table = () => {
     <table className="list" id="EmployeeList">
       {/* Table header */}
       <thead>
+      <br/>
+      <br/>
         <tr>
           <th>Id</th>
           <th>User Id</th>
@@ -237,7 +246,10 @@ const Table = () => {
   const renderJobOffersTable = () => (
     <table className="list" id="JobOfferList">
       {/* Table header */}
+    
       <thead>
+      <br/>
+      <br/>
         <tr>
           <th>ID</th>
           <th>Title</th>
@@ -261,10 +273,10 @@ const Table = () => {
             <td>{jobOffer.available}</td>
             <td>
               <button onClick={() => handleEdit(index)}>Edit</button>
-              </td>
-              <td>
-                <button onClick={() => handleJobDelete(jobOffer.id)}>Delete</button>
-              </td>
+            </td>
+            <td>
+              <button onClick={() => handleJobDelete(jobOffer.id)}>Delete</button>
+            </td>
           </tr>
         ))}
       </tbody>
@@ -274,7 +286,10 @@ const Table = () => {
   const renderJobForm = () => (
     <div className="job-form">
       <h2>Create Job</h2>
+      
       <form onSubmit={handleSubmit}>
+        <br/>
+       
         <label htmlFor="title">Title:</label>
         <input type="text" id="title" name="title" value={formData.title} onChange={handleInputChange} required />
 
@@ -293,10 +308,10 @@ const Table = () => {
   );
 
   return (
-    <body>
+    <div>
       {renderSidebar()}
       {renderContent()}
-    </body>
+    </div>
   );
 };
 

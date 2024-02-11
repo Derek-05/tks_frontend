@@ -41,4 +41,4 @@ function services() {
   )
 }
 
-export default services
+export default services;
