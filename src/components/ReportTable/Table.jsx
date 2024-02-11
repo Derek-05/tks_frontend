@@ -93,7 +93,8 @@ const Table = () => {
         // Construct the config object with the Authorization header
         const config = {
             headers: {
-                Authorization: `token=${token}`
+                Authorization: `token=${token}`,
+                withCredentials: true
             }
         };
 
