@@ -100,6 +100,7 @@ const Table = () => {
       </nav>
       <div className="heading1">
         <h1>Admin Dashboard</h1>
+        
         <div className="table-container">
           {employeeList.length > 0 ? (
             <table className="list" id="EmployeeList">

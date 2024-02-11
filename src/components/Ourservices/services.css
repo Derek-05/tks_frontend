@@ -1,24 +1,23 @@
-*{
-    margin: 0px;
-    padding:0px;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    width:100%;
-    
+body {
+    width: 100%;
 }
 
-.title h1{
+.title h1 {
     text-align: center;
     font-size: 30px;
     font-weight: 800;
-    color:yellow;
+    color: yellow;
     padding-top: 50px;
 }
 
-.title h1::after{
-    content:"";
+.title h1::after {
+    content: "";
     height: 4px;
     width: 230px;
     background-color: white;
@@ -26,8 +25,8 @@ body{
     margin: auto;
 }
 
-.services{
-    width:85%;
+.services {
+    width: 85%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,43 +34,43 @@ body{
     text-align: center;
 }
 
-.New-card{
+.New-card {
     width: 100%;
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-self: center;
     flex-direction: column;
-    margin: 0px 20px;
+    margin: 0 20px;
     padding: 50px 20px;
-    background-color: white;
+    background-color: antiquewhite;
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0 0 10px yellow;
+    box-shadow: 0 0 10px white;
+    transition: background-color 0.4s ease; /* Transición en el cambio de color de fondo */
 }
 
-.New-card:hover{
-    background-color:antiquewhite;
-    transition: 0.4s ease;
+.New-card:hover {
+    background-color: white;
 }
 
-.New-card .icon{
+.New-card .icon {
     font-size: 35px;
     margin-bottom: 10px;
     color: red;
 }
 
-.New-card h2{
+.New-card h2 {
     font-size: 28px;
-    color:dodgerblue;
+    color: dodgerblue;
     margin-bottom: 20px;
 }
 
-.New-card p{
-    font-size: 15px;
-    font-weight: 700;
-    color: black;
-   line-height: 1.5;
+.New-card p {
+    font-size: 16px;
+    color: #666; /* Color de texto gris */
+    line-height: 1.5;
 }
+
 
 
 @media screen and (max-width: 940px){
