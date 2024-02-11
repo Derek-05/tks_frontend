@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Table.css";
-import { getAllApplicants} from "../../api/applicantApi"
-import { getAllUsers} from "../../api/userApi"
-import { getAllJobOfferings, deleteJobOffering, addJobOffering  } from "../../api/jobOfferingsAPI";
+import { getAllApplicants } from "../../api/applicantApi";
+import { getAllUsers } from "../../api/userApi";
+import { getAllJobOfferings, deleteJobOffering, addJobOffering } from "../../api/jobOfferingsAPI";
 
 const Table = () => {
   // State variables
@@ -47,10 +47,16 @@ const Table = () => {
   // Event handlers
   const handleApplicantsClick = () => setContent("applicants");
   const handleJobsClick = () => setContent("jobOffers");
-  const handleJobFormClick =() => setContent("jobForm")
-  const handleEdit = (index) => {};
-  const handleDelete =(index)=>{};
-  
+  const handleJobFormClick = () => setContent("jobForm");
+
+  const handleEdit = (index) => {
+    // Implement edit functionality
+  };
+
+  const handleDelete = (index) => {
+    // Implement delete functionality
+  };
+
   const handleJobDelete = async (id) => {
     try {
       await deleteJobOffering(id);
@@ -136,71 +142,11 @@ const Table = () => {
               </li>
             </ul>
           </div>
-
-        )}
-      </nav>
-      <div className="heading1">
-        <h1>Admin Dashboard</h1>
-        
-        <div className="table-container">
-          {employeeList.length > 0 ? (
-            <table className="list" id="EmployeeList">
-              <thead>
-                <tr>
-                  <th>Id</th>
-                  <th>User Id</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Email</th>
-                  <th>Phone Number</th>
-                  <th>Job Id</th>
-                  <th>File Name</th>
-                  <th>File Type</th>
-                  <th>Created At</th>
-                  <th>Updated At</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-                {employeeList.map((applicant, index) => {
-                  // Find the corresponding user data for this applicant
-                  const user = userList.find((user) => user.user_id === applicant.user_id);
-
-                  return (
-                    <tr key={index}>
-                      <td>{applicant.applicant_id}</td>
-                      <td>{applicant.user_id}</td>
-                      <td>{user ? user.first_name : ""}</td>
-                      <td>{user ? user.last_name : ""}</td>
-                      <td>{user ? user.email : ""}</td>
-                      <td>{user ? user.phone_number : ""}</td>
-                      <td>{applicant.job_offering_id}</td>
-                      <td>{applicant.file_name}</td>
-                      <td>{applicant.file_type}</td>
-                      <td>{applicant.created_At}</td>
-                      <td>{applicant.updated_At}</td>
-                      <td>
-                        <button onClick={() => handleEdit(index)}>Edit</button>
-                      </td>
-                      <td>
-                        <button onClick={() => handleDelete(index)}>Delete</button>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          ) : (
-            <p>Loading...</p>
-          )}
-
         </nav>
       </div>
       {content && (
         <div className="restore-button" onClick={() => setContent("")}>
           <i className="bx bx-menu"></i>
-
         </div>
       )}
     </nav>
@@ -224,6 +170,8 @@ const Table = () => {
     <table className="list" id="EmployeeList">
       {/* Table header */}
       <thead>
+      <br/>
+      <br/>
         <tr>
           <th>Id</th>
           <th>User Id</th>
@@ -274,7 +222,10 @@ const Table = () => {
   const renderJobOffersTable = () => (
     <table className="list" id="JobOfferList">
       {/* Table header */}
+    
       <thead>
+      <br/>
+      <br/>
         <tr>
           <th>ID</th>
           <th>Title</th>
@@ -298,10 +249,10 @@ const Table = () => {
             <td>{jobOffer.available}</td>
             <td>
               <button onClick={() => handleEdit(index)}>Edit</button>
-              </td>
-              <td>
-                <button onClick={() => handleJobDelete(jobOffer.id)}>Delete</button>
-              </td>
+            </td>
+            <td>
+              <button onClick={() => handleJobDelete(jobOffer.id)}>Delete</button>
+            </td>
           </tr>
         ))}
       </tbody>
@@ -311,7 +262,10 @@ const Table = () => {
   const renderJobForm = () => (
     <div className="job-form">
       <h2>Create Job</h2>
+      
       <form onSubmit={handleSubmit}>
+        <br/>
+       
         <label htmlFor="title">Title:</label>
         <input type="text" id="title" name="title" value={formData.title} onChange={handleInputChange} required />
 
@@ -330,10 +284,10 @@ const Table = () => {
   );
 
   return (
-    <body>
+    <div>
       {renderSidebar()}
       {renderContent()}
-    </body>
+    </div>
   );
 };
 
