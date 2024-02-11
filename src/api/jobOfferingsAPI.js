@@ -35,9 +35,9 @@ export const getJobOfferingById = async (id) => {
   };
 
 //Añadir oferta de trabajo
-export const addJobOffering = async (data) => {
+export const addJobOffering = async (data, config) => {
   try {
-    const job = await axios.post(`${baseURL}/createJob`, data);
+    const job = await axios.post(`${baseURL}/createJob`, data, config);
     console.log('API Response (Added Job):', job.data);
     return job.data;
   } catch (error) {
@@ -45,6 +45,9 @@ export const addJobOffering = async (data) => {
     throw error;
   }
 };
+
+
+
 
 
 export const deleteJobOffering = async (id) => {

@@ -13,22 +13,20 @@ export const registerUser = async (userData) => {
   }
 };
 
-// Function to log in a user
 
 
+
+// loginUser function
 export const loginUser = async (credentials) => {
   try {
     const response = await axios.post(`${authBaseURL}/signin`, credentials);
-    const { token, role } = response.data;
+    const { token } = response.data;
 
-    // Check if the user has the correct role
-    if (role && role.id === 1 && role.name === 'admin') {
-      // Set the token in local storage
-      setTokenInLocalStorage(token);
-      return response.data; // Return the response data as before
-    } else {
-      throw new Error('User does not have the required role');
-    }
+    console.log("Response data:", response.data); // Log the response data
+
+    // Set the token in local storage
+    setTokenInLocalStorage(token);
+    return response.data; // Return the response data as before
   } catch (error) {
     console.error("Error logging in", error.response ? error.response.data : error.message);
     throw error;
@@ -36,16 +34,23 @@ export const loginUser = async (credentials) => {
 };
 
 
-// Function to set the token in local storage
-export const setTokenInLocalStorage = (token) => {
+
+
+ export const setTokenInLocalStorage = (token) => {
   localStorage.setItem('token', token);
 };
+
+
+
+
+
 
 
 // Function to get the token from local storage
 export const getTokenFromLocalStorage = () => {
   return localStorage.getItem('token');
 };
+
 
 // Function to log out a user
 export const logoutUser = async () => {

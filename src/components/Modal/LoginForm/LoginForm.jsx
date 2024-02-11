@@ -18,8 +18,14 @@ const LoginForm = () => {
         try {
             const response = await loginUser(credentials);
             console.log("Login successful:", response);
-            setTokenInLocalStorage(response.token);
-            setLoggedIn(true); // Set loggedIn state to true upon successful login
+            
+            // Ensure response contains token and user data
+            if (response.token && response.filteredUserData.roleId === 1) {
+                setTokenInLocalStorage(response.token);
+                setLoggedIn(true); // Set loggedIn state to true upon successful login
+            } else {
+                throw new Error("User does not have roleId of 1.");
+            }
         } catch (error) {
             console.error("Login failed:", error.response ? error.response.data : error.message);
             setError("Login failed. Please check your credentials.");
@@ -27,6 +33,7 @@ const LoginForm = () => {
             setLoading(false);
         }
     };
+    
 
     const handleChange = (e) => {
         const { name, value } = e.target;

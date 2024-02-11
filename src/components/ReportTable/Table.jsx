@@ -3,6 +3,7 @@ import "./Table.css";
 import { getAllApplicants} from "../../api/applicantApi"
 import { getAllUsers} from "../../api/userApi"
 import { getAllJobOfferings, deleteJobOffering, addJobOffering  } from "../../api/jobOfferingsAPI";
+import { getTokenFromLocalStorage } from "../../api/authApi";
 
 const Table = () => {
   // State variables
@@ -74,23 +75,45 @@ const Table = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await addJobOffering(formData);
-      // If the creation is successful, update the job offer list by refetching
-      const jobOffersResponse = await getAllJobOfferings();
-      setJobOfferList(jobOffersResponse.jobOfferings);
-      // Reset the form data
-      setFormData({
-        title: "",
-        description: "",
-        salary: "",
-        qualifications: "",
-        available: true
-      });
+        // Retrieve the token from local storage
+        const token = getTokenFromLocalStorage();
+
+        // Ensure the token exists before proceeding
+        if (!token) {
+            throw new Error('No token found. Please log in again.');
+        }
+
+        // Construct the config object with the Authorization header
+        const config = {
+            headers: {
+                Authorization: `token=${token}`
+            }
+        };
+
+        // Add job offering with authentication token included in the request headers
+        await addJobOffering(formData, config);
+
+        // If the creation is successful, update the job offer list by refetching
+        const jobOffersResponse = await getAllJobOfferings();
+        setJobOfferList(jobOffersResponse.jobOfferings);
+
+        // Reset the form data
+        setFormData({
+            title: "",
+            description: "",
+            salary: "",
+            qualifications: "",
+            available: true
+        });
     } catch (error) {
-      console.error("Error creating job offering:", error);
-      // Handle error, maybe show a message to the user
+        console.error("Error creating job offering:", error);
+        // Handle error, maybe show a message to the user
     }
-  };
+};
+
+
+
+
 
   // Render sidebar
   const renderSidebar = () => (
