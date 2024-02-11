@@ -50,6 +50,8 @@ const Navbar = () => {
     { name: "Dashboard", path: "/Dashboard" },
     { name: "Signup", path: "/Signup" },
     { name: "Login", path: "/Login" },
+    { name: "ThankYou", path: "/thankyou" },
+
   ];
 
   // Function to toggle mobile menu
