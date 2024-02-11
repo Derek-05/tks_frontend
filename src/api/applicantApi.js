@@ -1,7 +1,13 @@
 import axios from 'axios';
 
+const baseURL = 'http://localhost:8080/api';
+
+export default axios.create({
+  baseURL: baseURL,
+});
+
 // Function to create a new applicant
-export const newApplicant = async (applicantData, baseURL = 'http://localhost:8080/api') => {
+export const newApplicant = async (applicantData) => {
     try {
         const response = await axios.post(`${baseURL}/create/applicant`, applicantData, {
             headers: {
@@ -30,7 +36,7 @@ export const newApplicant = async (applicantData, baseURL = 'http://localhost:80
 
 export const getAllApplicants = async () => {
   try {
-    const response = await axios.get("http://localhost:8080/api/allApplicants");
+    const response = await axios.get(`${baseURL}/allApplicants`);
     return response.data; // Assuming the response data contains the list of applicants
   } catch (error) {
     console.error("Error fetching all applicants:", error);

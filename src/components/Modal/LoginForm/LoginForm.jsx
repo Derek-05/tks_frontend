@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
-import { loginUser, setTokenInCookie } from "../../../api/authApi"; // Import the setTokenInCookie function
+import { loginUser, setTokenInLocalStorage } from "../../../api/authApi"; // Import loginUser and setTokenInLocalStorage functions
 
 const LoginForm = ({ onLoginSuccess }) => {
     const [credentials, setCredentials] = useState({
@@ -8,6 +8,7 @@ const LoginForm = ({ onLoginSuccess }) => {
         password: "",
     });
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -15,12 +16,13 @@ const LoginForm = ({ onLoginSuccess }) => {
         try {
             const response = await loginUser(credentials);
             console.log("Login successful:", response);
-            // Set the token in the cookie after successful login
-            setTokenInCookie(response.token);
+            // Set the token in local storage after successful login
+            setTokenInLocalStorage(response.token);
             // Call the onLoginSuccess callback with token and user data
             onLoginSuccess(response.token, response.user);
         } catch (error) {
             console.error("Login failed:", error.response ? error.response.data : error.message);
+            setError("Login failed. Please check your credentials.");
         } finally {
             setLoading(false);
         }
@@ -48,6 +50,7 @@ const LoginForm = ({ onLoginSuccess }) => {
                             value={credentials.email}
                             onChange={handleChange}
                             required
+                            disabled={loading} // Disable input while loading
                         />
                     </div>
                     <div className="form-group">
@@ -59,9 +62,11 @@ const LoginForm = ({ onLoginSuccess }) => {
                             value={credentials.password}
                             onChange={handleChange}
                             required
+                            disabled={loading} // Disable input while loading
                         />
                     </div>
                     {loading && <p>Loading...</p>}
+                    {error && <p className="error-message">{error}</p>} {/* Apply CSS for error message */}
                     <button type="submit" className="login-button" disabled={loading}>
                         {loading ? 'Logging in...' : 'Submit'}
                     </button>
@@ -69,6 +74,6 @@ const LoginForm = ({ onLoginSuccess }) => {
             </div>
         </div>
     );
-    }
+}
 
 export default LoginForm;
