@@ -18,7 +18,6 @@ const Table = () => {
     salary: "",
     qualifications: "",
     available: true,
-    userId: "" 
   });
 
   // Fetch data on component mount
