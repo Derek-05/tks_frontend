@@ -169,7 +169,7 @@ const Table = () => {
   // Render content based on selected tab
   const renderContent = () => (
     <div className="heading1">
-      <h1>Admin Dashboard</h1>
+      
       <div className="table-container">
         {content === "applicants" && renderApplicantsTable()}
         {content === "jobOffers" && renderJobOffersTable()}

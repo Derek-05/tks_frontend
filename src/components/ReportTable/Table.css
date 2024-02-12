@@ -45,16 +45,19 @@ body .logout {
 
 /* Content area styles */
 .content {
-  width: calc(100% - 300px); /* Cambiado a 300px para corresponder con el ancho del sidebar */
-  margin-left: 300px; /* Cambiado a 300px para corresponder con el ancho del sidebar */
+  width: calc(100% - 400px); /* Cambiado a 300px para corresponder con el ancho del sidebar */
+  margin-left: 400px; /* Cambiado a 300px para corresponder con el ancho del sidebar */
   padding: 20px;
 }
 
 /* Table styles */
 .list {
-  width: 100%;
+  width: 50%;
   border-collapse: collapse;
   margin-bottom: 350px;
+  margin-left: auto; /* Mueve la tabla hacia la derecha */
+  margin-right: auto; /* Centra la tabla horizontalmente */
+
 }
 
 .list th,
@@ -67,6 +70,8 @@ body .logout {
 .list th {
   background-color: #f2f2f2;
   color: black;
+  text-align: justify;
+  text-justify: distribute-all-lines;
 }
 
 .list td {
