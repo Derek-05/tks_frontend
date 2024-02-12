@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./Table.css";
 
-import { getAllApplicants} from "../../api/applicantApi"
+import { getAllApplicants, deleteApplicant} from "../../api/applicantApi"
 import { getAllUsers} from "../../api/userApi"
 import { getAllJobOfferings, deleteJobOffering, addJobOffering  } from "../../api/jobOfferingsAPI";
-import { getTokenFromLocalStorage, getUserProfile } from "../../api/authApi";
+
 
 const Table = () => {
   // State variables
@@ -60,9 +60,27 @@ const Table = () => {
     // Implement edit functionality
   };
 
-  const handleDelete = (index) => {
-    // Implement delete functionality
+  const handleApplicantEdit = (index) => {
+    // Implement edit functionality
   };
+
+  const handleApplicantDelete = async (id) => {
+    try {
+      // Call the deleteApplicant function to delete the applicant with the provided ID
+      const deletedApplicant = await deleteApplicant(id);
+
+      setEmployeeList(prevApplicants => prevApplicants.filter(applicant => applicant.applicant_id !== id));
+      
+      // Handle the result if needed
+      console.log("Deleted Applicant:", deletedApplicant);
+      
+      // Optionally update your UI or data after successful deletion
+    } catch (error) {
+      console.error("Error deleting applicant:", error);
+      // Handle errors gracefully
+    }
+  };
+  
 
   const handleJobDelete = async (id) => {
     try {
@@ -221,10 +239,10 @@ const Table = () => {
               <td>{applicant.created_At}</td>
               <td>{applicant.updated_At}</td>
               <td>
-                <button onClick={() => handleEdit(index)}>Edit</button>
+                <button onClick={() => handleApplicantEdit(index)}>Edit</button>
               </td>
               <td>
-                <button onClick={() => handleDelete(index)}>Delete</button>
+                <button onClick={() => handleApplicantDelete(index)}>Delete</button>
               </td>
             </tr>
           );

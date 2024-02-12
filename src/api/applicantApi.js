@@ -43,3 +43,23 @@ export const getAllApplicants = async () => {
     throw error; // Re-throw the error to handle it in the calling code
   }
 };
+
+
+
+export const deleteApplicant = async id => {
+  const token = localStorage.getItem('token'); // Assume 'token' is the key you've used
+  console.log(token);
+  try {
+    document.cookie = `token=${token}; path=/; SameSite=None; Secure`;
+
+    const response = await axios.delete(`${baseURL}/deleteApplicants/${id}`, {
+      withCredentials: true
+    });
+    return response.data; // Assuming the response data contains the list of applicants after deletion
+  } catch (error) {
+    console.error("Error deleting applicant:", error);
+    throw error; // Re-throw the error to handle it in the calling code
+  }
+};
+
+

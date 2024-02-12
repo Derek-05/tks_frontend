@@ -57,28 +57,29 @@ export const addJobOffering = async (data) => {
 };
 
 
-
-
-
-
-export const deleteJobOffering = async (id) => {
+export const deleteJobOffering = async (id, data) => {
+    const token = localStorage.getItem('token'); // Assume 'token' is the key you've used
+    console.log(token);
   try {
-    const job = await axios.delete(`${baseURL}/deleteJob/${id}`);
-    console.log('API Response (Deleted Job):', job.data);
-    return job.data;
+    document.cookie = `token=${token}; path=/; SameSite=None; Secure`;
+
+    // Now make the request with the credentials flag
+    const response = await axios.delete(`${baseURL}/deleteJob/${id}`, {
+      withCredentials: true
+    });
+      
+    console.log('API Response (Deleted Job):', response.data);
+    return response.data;
   } catch (error) {
     if (error.response) {
-      // Server-side error
       console.error(`Server Error (${error.response.status}): ${error.response.data}`);
     } else if (error.request) {
-      // Client-side error
       console.error(`Client Error: ${error.request}`);
     } else {
-      // Other errors
       console.error('Error:', error.message);
     }
     throw error;
   }
-};
+}
 
 
