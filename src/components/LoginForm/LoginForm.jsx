@@ -50,6 +50,7 @@ const LoginForm = () => {
 
     return (
         <div className="modal-container">
+            
             <div className="login-modal">
                 <h2>Login</h2>
                 <form className="login-form" onSubmit={handleSubmit}>

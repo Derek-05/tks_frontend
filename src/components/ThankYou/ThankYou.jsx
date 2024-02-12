@@ -1,16 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import "./ThankYou.css";
 const ThankYouPage = () => {
   return (
-    <div className="thank-you-page">
-      <div className="thank-you-content">
-        <h1>Thank You!</h1>
-        <p>Your application has been submitted successfully.</p>
-        <p>We will review your application and get back to you soon.</p>
-        <Link to="/" className="btn btn-primary">Back to Home</Link>
-      </div>
+   
+    <div className="card-2">
+    <div className="card-bod2">
+      <h1 className="card-title-2">Thank You!</h1>
+      <p className="card-text-2">Your application has been submitted successfully. We will review your application and get back to you soon.</p>
+      <Link to="/" className="btn-2 btn-primary">Back to Home</Link>
     </div>
+  </div>
+   
+   
   );
 };
 

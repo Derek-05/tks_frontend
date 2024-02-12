@@ -5,6 +5,7 @@
   height: 100vh;
   text-align: center;
   
+  
 }
 .login-modal h2{
 margin-bottom: 50px;
@@ -19,7 +20,7 @@ color:yellow;
   height: 70%;
   max-width: 700px;
   text-align: center;
-  margin-bottom: 150px;
+  margin-bottom: 80px;
 }
 
 .login-form {
