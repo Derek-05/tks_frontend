@@ -10,7 +10,8 @@ const Forms = ({ onFormSuccess }) => {
     email: "",
     phone_number: "",
     job_offering_id: "",
-    cv_file: "",
+    file_name: "",
+    file_type: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -62,14 +63,28 @@ const Forms = ({ onFormSuccess }) => {
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
-    setCredentials((prev) => ({
-      ...prev,
-      [name]: name === "cv_file" ? (files && files[0]) : value,
-    }));
-
-    setFileName(files && files[0] ? files[0].name : "");
+  
+    // If the input is a file input
+    if (name === "cv_file") {
+      // Set file name and type in credentials
+      setCredentials((prev) => ({
+        ...prev,
+        file_name: files && files[0] ? files[0].name : "",
+        file_type: files && files[0] ? files[0].type : "",
+        cv_file: files && files[0] ? files[0] : null, // Set the actual file object
+      }));
+      // Set file name for display
+      setFileName(files && files[0] ? files[0].name : "");
+    } else {
+      // For other input fields, update credentials as usual
+      setCredentials((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
   };
-
+  
+  
   const handleJobChange = (e) => {
     const { value } = e.target;
     setCredentials((prev) => ({ ...prev, job_offering_id: value }));

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Table.css";
-
+import { logoutUser } from "../../api/authApi";
 import { getAllApplicants, deleteApplicant} from "../../api/applicantApi"
 import { getAllUsers} from "../../api/userApi"
 import { getAllJobOfferings, deleteJobOffering, addJobOffering  } from "../../api/jobOfferingsAPI";
@@ -126,7 +126,24 @@ const Table = () => {
     } catch (error) {
       console.error("Error creating job offering:", error);
     }
+
   };
+
+  const handleLogoutClick = async () => {
+    try {
+        // Call the logout function to clear token and logout from the server
+        await logoutUser();
+        // Redirect the user to the login page or any other appropriate page
+        // Example: Redirecting using window.location
+        window.location.href = '/login'; 
+    } catch (error) {
+        // Handle any errors that might occur during the logout process
+        console.error('Logout failed:', error);
+        // Optionally, you might want to display an error message to the user
+        // alert('Logout failed');
+    }
+};
+
 
 
 
@@ -167,7 +184,7 @@ const Table = () => {
                 </a>
               </li>
               <li>
-                <a href="home" className="logout">
+                <a href="home" className="logout" onClick={handleLogoutClick}>
                   <i className="bx bx-log-out"></i>
                   <span className="logo_name">Logout</span>
                 </a>
@@ -234,7 +251,12 @@ const Table = () => {
               <td>{user ? user.email : ""}</td>
               <td>{user ? user.phone_number : ""}</td>
               <td>{applicant.job_offering_id}</td>
-              <td>{applicant.file_name}</td>
+               <td>
+              {/* Include a download link for the file name */}
+              <a href={`download/${applicant.file_name}`} target="_blank" download>
+                {applicant.file_name}
+              </a>
+            </td>
               <td>{applicant.file_type}</td>
               <td>{applicant.created_At}</td>
               <td>{applicant.updated_At}</td>

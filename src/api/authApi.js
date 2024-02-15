@@ -65,28 +65,11 @@ export const logoutUser = async () => {
   }
 };
 
-// Function to get the user's profile using the authentication token
-export const getUserProfile = async (token) => {
-  try {
-    const response = await axios.get(`${authBaseURL}/me`, {
-      headers: {
-        Authorization: `token= ${token}`,
-        
-      }
-    });
-    return response.data; // This should include the user's profile
-  } catch (error) {
-    console.error("Error fetching user profile", error.response ? error.response.data : error.message);
-    throw error;
-  }
-};
-
 // Export the functions for use in other parts of the application
 export default {
   registerUser,
   loginUser,
   logoutUser,
-  getUserProfile,
   setTokenInLocalStorage,
   getTokenFromLocalStorage
 };
