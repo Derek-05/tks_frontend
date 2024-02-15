@@ -3,10 +3,10 @@ import "./prosthetics.css";
 import pasiva from "../../assets/protesispasiva.jpg";
 import myoelectric from "../../assets/arm.jpeg";
 import basketball from "../../assets/basketball.jpeg";
-import patio from "../../assets/patio.jpeg";
 import clinic from "../../assets/clinic.jpeg";
 import soccer from "../../assets/soccer.jpeg";
 import street from "../../assets/street.jpeg";
+import { homepage } from "./imports";
 
 const Prosthetics = () => {
   return (
@@ -77,8 +77,7 @@ const Prosthetics = () => {
                tailored support, ensuring optimal performance and safety for the wearer.are engineered
                 with precision to address the unique challenges presented by specific activities, ensuring 
                 optimal functionality and durability. They offer tailored solutions for individuals engaged 
-                in sports or hobbies that demand intricate levels of support, safeguarding against 
-                potential damage or discomfort caused by conventional prosthetic options.
+                in sports or hobbies.
             </p>
           </div>
         </div>
@@ -97,39 +96,41 @@ const Prosthetics = () => {
 
         <div class="variants-content">
           <div class="box">
-            <img src={patio} alt="patio" />
+            <img src={homepage} alt=" kid running" />
           </div>
 
           <div class="box">
-            <img src={soccer} alt="soccer" />
+            <img src={soccer} alt="kid playing soccer" />
           </div>
 
           <div class="box">
-            <img src={street} alt="street" />
+            <img src={street} alt="kid in a street" />
           </div>
 
           <div class="box">
-            <img src={clinic} alt="clinic" />
+            <img src={clinic} alt="kid in a clinic" />
           </div>
         </div>
       </section>
       <br />
       <br />
+      <br/>
+      <br/>
+      <br/>
+     
 
-      <div class="newsletter">
-        <div class="newsletter-content">
-          <div class="newsletter-text">
-            <br />
-            <br />
-            <br />
-            <br />
-            <h2>Ready to be part of our team</h2>
-            <p> Join us and help us make a better world</p>
-            <br/>
-            <br/>
-          </div>
-        </div>
-      </div>
+      <div class="container3">
+    <div class="column-left3">
+       <h3>Ready to be part of our team</h3>
+       <p>"Join us and help us  make a better world"</p>
+    </div>
+    <div class="column-right3">
+    <button class="btn3">Job Offer</button>
+    </div>
+
+    
+</div>
+
     </section>
   );
 };

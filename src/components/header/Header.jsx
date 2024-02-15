@@ -32,17 +32,7 @@ const Header = () => {
             <br />
             <br />
             <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+           
           </h3>
         </div>
       </div>
