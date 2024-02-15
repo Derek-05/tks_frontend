@@ -5,12 +5,13 @@ import "./about_us.css";
 
 const AboutUs = () => {
   return (
+    <body className="body-about-us">
     <section className="About-us">
       <div className="About-us-img">
 
       
 
-        <img src={sunset} alt="sunset" />
+        <img src={sunset} alt="Little girl with her mom" />
       </div>
       <div className="About-us-text" id="Aboutus">
        
@@ -37,21 +38,16 @@ const AboutUs = () => {
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <br/>
+        <br/>
+        <br/>
+       
+       
 
         <img src={OurStory2} alt="OurStory2" />
       </div>
       <div className="Our-story-text" id="Ourstory">
-        <br />
-        <br />
-        <br />
-        <br />
+        
 
         <h5>Our Story</h5>
         <h2>
@@ -70,6 +66,7 @@ const AboutUs = () => {
         </p>
       </div>
     </section>
+    </body>
   );
 };
 

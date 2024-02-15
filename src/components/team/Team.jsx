@@ -4,11 +4,9 @@ import {
   evaluadora,
   fisioterapeuta,
   fabricador,
-  biomedico,
   psicologa,
   Insurance,
   customer,
-  InvestigadorClinico,
   Cirujano2,
 } from "./imports";
 import "./team.css";
@@ -38,7 +36,7 @@ const Team = () => {
             <div className="row-img">
               <img src={fisioterapeuta} alt="Physiotherapist" />
             </div>
-            <h3> Physiotherapist</h3>
+            <h3> Physical Therapist</h3>
           </div>
           <div className="row">
             <div className="row-img">
@@ -49,9 +47,9 @@ const Team = () => {
 
           <div className="row">
             <div className="row-img">
-              <img src={Insurance} alt="Insurance" />
+              <img src={Insurance} alt="Nurse" />
             </div>
-            <h3>Insurance</h3>
+            <h3>Nurse</h3>
           </div>
 
           <div className="row">
@@ -76,17 +74,12 @@ const Team = () => {
           </div>
           <div className="row">
             <div className="row-img">
-              <img src={fabricador} alt=" Prosthesis manufacturer" />
+              <img src={fabricador} alt="Secretary" />
             </div>
-            <h3> Prosthesis manufacturer</h3>
+            <h3> Secretary</h3>
           </div>
 
-          <div className="row">
-            <div className="row-img">
-              <img src={biomedico} alt="Biomedical engineer" />
-            </div>
-            <h3>Biomedical engineer</h3>
-          </div>
+         
 
           <div className="row">
             <div className="row-img">
@@ -95,14 +88,12 @@ const Team = () => {
             <h3>Prosthetic surgeon</h3>
           </div>
 
-          <div className="row">
-            <div className="row-img">
-              <img src={InvestigadorClinico} alt="Clinical researcher" />
-            </div>
-            <h3>Clinical researcher</h3>
-          </div>
+          
         </div>
       </div>
+      <br/>
+      <br/>
+      <br/>
     </section>
   );
 };
