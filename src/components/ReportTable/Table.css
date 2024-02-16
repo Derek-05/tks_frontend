@@ -43,6 +43,8 @@ body .logout {
   left: 0;
 }
 
+
+
 /* Content area styles */
 .content {
   width: calc(100% - 400px); /* Cambiado a 300px para corresponder con el ancho del sidebar */
@@ -52,12 +54,33 @@ body .logout {
 
 /* Table styles */
 .list {
-  width: 50%;
-  border-collapse: collapse;
-  margin-bottom: 350px;
-  margin-left: auto; /* Mueve la tabla hacia la derecha */
-  margin-right: auto; /* Centra la tabla horizontalmente */
+  margin-bottom: 250px;
+  width: 30%; /* Reduciendo el ancho de la tabla */
+  margin-left: 470px; /* Quitando el margen izquierdo */
+  margin-right: 20px; /* Agregando un margen derecho para mover la tabla hacia la derecha */
+}
+.list-2 {
+  margin-bottom: 250px;
+  width: 30%; /* Reduciendo el ancho de la tabla */
+  margin-left: 350px; /* Quitando el margen izquierdo */
+  margin-right: 20px; /* Agregando un margen derecho para mover la tabla hacia la derecha */
+}
+.list-2 td p {
+  word-wrap: break-word; /* Permite que las palabras largas se rompan y se muevan a la siguiente línea */
+  max-width: 150px; /* Ancho máximo para la celda de la tabla */
+}
+.list td p {
+  word-wrap: break-word; /* Permite que las palabras largas se rompan y se muevan a la siguiente línea */
+  max-width: 150px; /* Ancho máximo para la celda de la tabla */
+}
 
+
+
+.list-2 th,
+.list-2 td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
 }
 
 .list th,
@@ -66,12 +89,20 @@ body .logout {
   border: 1px solid #ccc;
   text-align: left;
 }
-
+.list-2 th {
+  background-color: #f2f2f2;
+  color: black;
+  text-align: justify;
+  text-justify: distribute-all-lines;
+}
 .list th {
   background-color: #f2f2f2;
   color: black;
   text-align: justify;
   text-justify: distribute-all-lines;
+}
+.list-2 td {
+  color: white;
 }
 
 .list td {
@@ -79,6 +110,11 @@ body .logout {
 }
 
 .list td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.list td-2 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

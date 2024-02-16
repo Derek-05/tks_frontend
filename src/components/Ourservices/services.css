@@ -12,7 +12,7 @@ body {
     text-align: center;
     font-size: 30px;
     font-weight: 800;
-    color:darkblue;
+    color:#00489d;
     padding-top: 150px;
 }
 
@@ -43,25 +43,14 @@ body {
     flex-direction: column;
     margin: 0 20px;
     padding: 50px 20px;
-    background-color: antiquewhite;
+    background-color:#00489d ;
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 0 10px white;
     transition: background-color 0.4s ease; /* Transición en el cambio de color de fondo */
 }
 
-.New-card:hover p{
-    color:white;
-}
-.New-card:hover {
-    background-color:  darkblue;
-   
-    
-}
-.New-card:hover  .title-2
-{
-    color:yellow;
-}
+
 
 .New-card .icon {
     font-size: 35px;
@@ -71,13 +60,13 @@ body {
 
 .New-card h2 {
     font-size: 28px;
-    color: dodgerblue;
+    color: yellow;
     margin-bottom: 20px;
 }
 
 .New-card p {
     font-size: 16px;
-    color: #666; /* Color de texto gris */
+    color: white; /* Color de texto gris */
     line-height: 1.5;
 }
 
