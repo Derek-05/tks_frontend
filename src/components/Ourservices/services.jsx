@@ -2,7 +2,7 @@ import React from 'react'
 import "./services.css";
 function services() {
   return (
-    <body>
+    <body >
     <div className="section">
       <div className="title">
         <h1>Our Services</h1>

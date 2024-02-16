@@ -10,6 +10,7 @@ import { homepage } from "./imports";
 
 const Prosthetics = () => {
   return (
+   
     <section>
       <div className="Types-of-prostheses" id="Prosthetic">
         <div class="center-text">
@@ -82,9 +83,9 @@ const Prosthetics = () => {
           </div>
         </div>
       </div>
-
-      <section class="prostheticsvariants">
-        <div class="center-text" id="Design">
+      <div className="Prosthetics-body">
+      <section className="prostheticsvariants">
+        <div className="center-text" id="Design">
           <br />
           <br />
           <br />
@@ -94,20 +95,20 @@ const Prosthetics = () => {
           <h2>Children's prosthesis designs</h2>
         </div>
 
-        <div class="variants-content">
-          <div class="box">
+        <div className="variants-content">
+          <div className="box">
             <img src={homepage} alt=" kid running" />
           </div>
 
-          <div class="box">
+          <div className="box">
             <img src={soccer} alt="kid playing soccer" />
           </div>
 
-          <div class="box">
+          <div className="box">
             <img src={street} alt="kid in a street" />
           </div>
 
-          <div class="box">
+          <div className="box">
             <img src={clinic} alt="kid in a clinic" />
           </div>
         </div>
@@ -119,19 +120,24 @@ const Prosthetics = () => {
       <br/>
      
 
-      <div class="container3">
-    <div class="column-left3">
+      <div className="container3">
+    <div className="column-left3">
        <h3>Ready to be part of our team</h3>
        <p>"Join us and help us  make a better world"</p>
+       <br/>
+       <br/>
+       <br/>
     </div>
-    <div class="column-right3">
-    <button class="btn3">Job Offer</button>
+    <div className="column-right3">
+    <button className="btn3">Job Offer</button>
     </div>
 
     
 </div>
+</div>
 
     </section>
+   
   );
 };
 

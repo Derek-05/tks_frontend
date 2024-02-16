@@ -74,7 +74,12 @@ body .logout {
   max-width: 150px; /* Ancho máximo para la celda de la tabla */
 }
 
-
+.list-2 th p{
+  color:black;
+}
+.list th p{
+  color:black;
+}
 
 .list-2 th,
 .list-2 td {
