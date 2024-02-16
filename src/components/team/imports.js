@@ -1,23 +1,22 @@
 import ortopeda from '../../assets/ortopeda.jpg';
-import evaluadora from '../../assets/evaluadora.jpg';
-import fisioterapeuta from '../../assets/fisioterapeuta.jpg';
-import fabricador from '../../assets/fabricador.jpg';
-import biomedico from '../../assets/biomedico.jpg';
-import psicologa from'../../assets/psicologa.jpg';
-import Insurance from'../../assets/Insurance.jpg';
-import customer from'../../assets/customer.jpg';
-import Cirujano2 from'../../assets/Cirujano2.jpg';
+import secretaria from '../../assets/Secretaria.jpeg'
+import fisioterapeuta from '../../assets/fisioterapeuta.jpeg';
+import Nurse from '../../assets/Nurse.jpeg';
+import Nurse2 from '../../assets/Nurse2.jpeg';
+import psicologa from '../../assets/psicologa.jpeg';
+import Personal from '../../assets/Personal.jpeg';
+
+import Cirujano2 from'../../assets/Cirujano2.jpeg';
 
 
 export{
      ortopeda,
-     evaluadora,
+     secretaria,
      fisioterapeuta,
-     fabricador,
-     biomedico,
+     Nurse,
+     Nurse2,
      psicologa,
-     Insurance,
-     customer,
+     Personal,
      Cirujano2,
 
     

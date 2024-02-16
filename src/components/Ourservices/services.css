@@ -6,6 +6,12 @@
 
 body {
     width: 100%;
+   
+}
+
+.section{
+    background: rgb(237, 235, 235);
+    margin-bottom:100px;
 }
 
 .title h1 {
@@ -13,7 +19,7 @@ body {
     font-size: 30px;
     font-weight: 800;
     color:#00489d;
-    padding-top: 150px;
+    padding-top: 50px;
 }
 
 .title h1::after {
@@ -47,7 +53,7 @@ body {
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 0 10px white;
-    transition: background-color 0.4s ease; /* Transición en el cambio de color de fondo */
+    transition: background-color 0.4s ease; 
 }
 
 
@@ -66,7 +72,7 @@ body {
 
 .New-card p {
     font-size: 16px;
-    color: white; /* Color de texto gris */
+    color: white; 
     line-height: 1.5;
 }
 

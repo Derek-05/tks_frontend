@@ -1,12 +1,13 @@
 import React from "react";
 import {
   ortopeda,
-  evaluadora,
-  fisioterapeuta,
-  fabricador,
+  secretaria,
+  Personal,
+  Nurse,
+  Nurse2,
   psicologa,
-  Insurance,
-  customer,
+  fisioterapeuta,
+  
   Cirujano2,
 } from "./imports";
 import "./team.css";
@@ -34,7 +35,7 @@ const Team = () => {
         <div className="feature-content">
           <div className="row">
             <div className="row-img">
-              <img src={fisioterapeuta} alt="Physiotherapist" />
+            <img src={fisioterapeuta} alt="Physical Therapist" />
             </div>
             <h3> Physical Therapist</h3>
           </div>
@@ -47,7 +48,7 @@ const Team = () => {
 
           <div className="row">
             <div className="row-img">
-              <img src={Insurance} alt="Nurse" />
+              <img src={Nurse} alt="Nurse" />
             </div>
             <h3>Nurse</h3>
           </div>
@@ -61,22 +62,22 @@ const Team = () => {
 
           <div className="row">
             <div className="row-img">
-              <img src={evaluadora} alt="Evaluator" />
+              <img src={secretaria} alt="Secretary" />
             </div>
-            <h3>Evaluator</h3>
+            <h3>Secretary</h3>
           </div>
 
           <div className="row">
             <div className="row-img">
-              <img src={customer} alt="Customer services" />
+            <img src={Personal} alt="Maintenance Staff" />
             </div>
-            <h3>Customer Services</h3>
+            <h3>Maintenance Staff</h3>
           </div>
           <div className="row">
             <div className="row-img">
-              <img src={fabricador} alt="Secretary" />
+              <img src={Nurse2} alt="Nurse2" />
             </div>
-            <h3> Secretary</h3>
+            <h3> Nurse</h3>
           </div>
 
          
