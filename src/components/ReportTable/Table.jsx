@@ -235,7 +235,7 @@ const Table = () => {
 
   // Render job offers table
   const renderJobOffersTable = () => (
-    <table className="list" id="JobOfferList">
+    <table className="list-2" id="JobOfferList">
       {/* Table header */}
     
       <thead>
