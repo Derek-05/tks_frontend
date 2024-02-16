@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Table.css";
 import { logoutUser } from "../../api/authApi";
-import { getAllApplicants, deleteApplicant, getApplicantFilesById} from "../../api/applicantApi"
-import { getAllUsers} from "../../api/userApi"
-import { getAllJobOfferings, deleteJobOffering, addJobOffering  } from "../../api/jobOfferingsAPI";
-
+import { getAllApplicants, deleteApplicant } from "../../api/applicantApi";
+import { getAllUsers } from "../../api/userApi";
+import { getAllJobOfferings, deleteJobOffering, addJobOffering } from "../../api/jobOfferingsAPI";
 
 const Table = () => {
   // State variables
@@ -19,7 +18,6 @@ const Table = () => {
     qualifications: "",
     available: true,
   });
-  
 
   // Fetch data on component mount
   useEffect(() => {
@@ -38,7 +36,6 @@ const Table = () => {
         setJobOfferList(jobOffersResponse.jobOfferings);
 
         // Fetch user profile and update form data with user ID
-        
       } catch (error) {
         console.error("Error fetching data:", error);
         // Handle errors here
@@ -50,7 +47,6 @@ const Table = () => {
     return () => {}; // Cleanup function
   }, []);
 
-
   // Event handlers
   const handleApplicantsClick = () => setContent("applicants");
   const handleJobsClick = () => setContent("jobOffers");
@@ -60,63 +56,23 @@ const Table = () => {
     // Implement edit functionality
   };
 
-  const handleApplicantEdit = async (id) => {
-    try {
-      // Fetch applicant files by ID
-      const filesResponse = await getApplicantFilesById(id);
-      
-      // Assuming the response contains file data in the data property
-      const fileData = filesResponse.data;
-  
-      // Convert the array of bytes to an ArrayBuffer
-      const arrayBuffer = new Uint8Array(fileData).buffer;
-  
-      // Create a Blob from the ArrayBuffer
-      const blob = new Blob([arrayBuffer], { type: 'application/pdf' });
-  
-      // Create a URL for the Blob
-      const url = window.URL.createObjectURL(blob);
-  
-      // Create a link element to trigger the download
-      const link = document.createElement('a');
-      link.href = url;
-      link.setAttribute('download', `resume_${id}.pdf`); // Adjust file name as needed
-  
-      // Append the link to the document body and click it
-      document.body.appendChild(link);
-      link.click();
-      
-      // Clean up after download
-      window.URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error("Error fetching applicant files:", error);
-      // Handle errors gracefully
-    }
-};
-
-  
-  
-  
-  
-  
+  const handleApplicantEdit = async () => {
+    // Implement applicant edit functionality
+  };
 
   const handleApplicantDelete = async (id) => {
     try {
       // Call the deleteApplicant function to delete the applicant with the provided ID
       const deletedApplicant = await deleteApplicant(id);
-
       setEmployeeList(prevApplicants => prevApplicants.filter(applicant => applicant.applicant_id !== id));
-      
       // Handle the result if needed
       console.log("Deleted Applicant:", deletedApplicant);
-      
       // Optionally update your UI or data after successful deletion
     } catch (error) {
       console.error("Error deleting applicant:", error);
       // Handle errors gracefully
     }
   };
-  
 
   const handleJobDelete = async (id) => {
     try {
@@ -141,17 +97,13 @@ const Table = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-  
       console.log("Form data before submitting:", formData);
-  
-      // Añadir la oferta de trabajo
+      // Add job offering
       await addJobOffering(formData);
-  
-      // Si la creación es exitosa, actualiza la lista de ofertas de trabajo
+      // If the creation is successful, update the job offer list
       const jobOffersResponse = await getAllJobOfferings();
       setJobOfferList(jobOffersResponse.jobOfferings);
-  
-      // Restablece los datos del formulario
+      // Reset form data
       setFormData({
         title: "",
         description: "",
@@ -162,26 +114,22 @@ const Table = () => {
     } catch (error) {
       console.error("Error creating job offering:", error);
     }
-
   };
 
   const handleLogoutClick = async () => {
     try {
-        // Call the logout function to clear token and logout from the server
-        await logoutUser();
-        // Redirect the user to the login page or any other appropriate page
-        // Example: Redirecting using window.location
-        window.location.href = '/login'; 
+      // Call the logout function to clear token and logout from the server
+      await logoutUser();
+      // Redirect the user to the login page or any other appropriate page
+      // Example: Redirecting using window.location
+      window.location.href = '/login'; 
     } catch (error) {
-        // Handle any errors that might occur during the logout process
-        console.error('Logout failed:', error);
-        // Optionally, you might want to display an error message to the user
-        // alert('Logout failed');
+      // Handle any errors that might occur during the logout process
+      console.error('Logout failed:', error);
+      // Optionally, you might want to display an error message to the user
+      // alert('Logout failed');
     }
-};
-
-
-
+  };
 
   // Render sidebar
   const renderSidebar = () => (
@@ -249,15 +197,14 @@ const Table = () => {
       </div>
     </div>
   );
-  
 
   // Render applicants table
   const renderApplicantsTable = () => (
     <table className="list" id="EmployeeList">
       {/* Table header */}
       <thead>
-      <br/>
-      <br/>
+        <br />
+        <br />
         <tr>
           <th>Id</th>
           <th>User Id</th>
@@ -287,12 +234,12 @@ const Table = () => {
               <td>{user ? user.email : ""}</td>
               <td>{user ? user.phone_number : ""}</td>
               <td>{applicant.job_offering_id}</td>
-               <td>
-              {/* Include a download link for the file name */}
-              <a href={`download/${applicant.file_name}`} target="_blank" download>
-                {applicant.file_name}
-              </a>
-            </td>
+              <td>
+                {/* Include a download link for the file name */}
+                <a href={`download/${applicant.file_name}`} target="_blank" download>
+                  {applicant.file_name}
+                </a>
+              </td>
               <td>{applicant.file_type}</td>
               <td>{applicant.created_At}</td>
               <td>{applicant.updated_At}</td>
@@ -300,7 +247,7 @@ const Table = () => {
                 <button onClick={() => handleApplicantEdit(index)}>Edit</button>
               </td>
               <td>
-                <button onClick={() => handleApplicantDelete(index)}>Delete</button>
+                <button onClick={() => handleApplicantDelete(applicant.applicant_id)}>Delete</button>
               </td>
             </tr>
           );
@@ -313,10 +260,9 @@ const Table = () => {
   const renderJobOffersTable = () => (
     <table className="list" id="JobOfferList">
       {/* Table header */}
-    
       <thead>
-      <br/>
-      <br/>
+        <br />
+        <br />
         <tr>
           <th>ID</th>
           <th>Title</th>
@@ -348,18 +294,13 @@ const Table = () => {
         ))}
       </tbody>
     </table>
-
-    
-
-    );
+  );
 
   const renderJobForm = () => (
     <div className="job-form">
       <h2>Create Job</h2>
-      
       <form onSubmit={handleSubmit}>
-        <br/>
-       
+        <br />
         <label htmlFor="title">Title:</label>
         <input type="text" id="title" name="title" value={formData.title} onChange={handleInputChange} required />
 
@@ -371,13 +312,6 @@ const Table = () => {
 
         <label htmlFor="qualifications">Qualifications:</label>
         <textarea id="qualifications" name="qualifications" value={formData.qualifications} onChange={handleInputChange} required />
-
-        <input
-            type="hidden"
-            id="userId"
-            name="userId"
-            value={formData.userId}
-          />
 
         <button type="submit">Create Job</button>
       </form>

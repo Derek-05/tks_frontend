@@ -80,7 +80,6 @@ const Forms = ({ onFormSuccess }) => {
             file_name: file.name,
             file_type: file.type,
             file_size: fileSize,
-            data: reader.result, // Set the file data (as a base64-encoded string)
           }));
         };
         reader.readAsDataURL(file); // Read the file as a data URL
@@ -115,7 +114,10 @@ const Forms = ({ onFormSuccess }) => {
   const handleUndo = () => {
     setCredentials((prev) => ({ ...prev, cv_file: null }));
     setFileName("");
+    // Reset file input value
+    document.getElementById("cv_file").value = "";
   };
+  
 
   return (
     <section className="container"> 
