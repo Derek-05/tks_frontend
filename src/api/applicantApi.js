@@ -36,7 +36,7 @@ export const newApplicant = async (applicantData) => {
 
 export const getAllApplicants = async () => {
   try {
-    const response = await axios.get(`${baseURL}/allApplicants`);
+    const response = await axios.get(`${baseURL}/allApplicants`, );
     return response.data; // Assuming the response data contains the list of applicants
   } catch (error) {
     console.error("Error fetching all applicants:", error);
@@ -46,7 +46,34 @@ export const getAllApplicants = async () => {
 
 
 
-export const deleteApplicant = async id => {
+export const getApplicantFilesById = async (id) => {
+  const token = localStorage.getItem('token');
+  try {
+    document.cookie = `token=${token}; path=/; SameSite=None; Secure`;
+
+    const response = await axios.get(`${baseURL}/getApplicantWithFiles/${id}`, {
+      responseType: 'blob', // Set the response type to 'blob'
+      withCredentials: true,
+    });
+
+    // Create a Blob object from the response data
+    const blob = new Blob([response.data], { type: 'application/pdf' });
+
+    // Create a URL for the Blob object
+    const url = URL.createObjectURL(blob);
+
+    return url;
+  } catch (error) {
+    console.error("Error fetching applicant files:", error);
+    throw error;
+  }
+};
+
+
+
+
+
+export const deleteApplicant = async (id) => {
   const token = localStorage.getItem('token'); // Assume 'token' is the key you've used
   console.log(token);
   try {

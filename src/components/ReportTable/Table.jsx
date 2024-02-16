@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Table.css";
 import { logoutUser } from "../../api/authApi";
-import { getAllApplicants, deleteApplicant} from "../../api/applicantApi"
+import { getAllApplicants, deleteApplicant, getApplicantFilesById} from "../../api/applicantApi"
 import { getAllUsers} from "../../api/userApi"
 import { getAllJobOfferings, deleteJobOffering, addJobOffering  } from "../../api/jobOfferingsAPI";
 
@@ -60,9 +60,45 @@ const Table = () => {
     // Implement edit functionality
   };
 
-  const handleApplicantEdit = (index) => {
-    // Implement edit functionality
-  };
+  const handleApplicantEdit = async (id) => {
+    try {
+      // Fetch applicant files by ID
+      const filesResponse = await getApplicantFilesById(id);
+      
+      // Assuming the response contains file data in the data property
+      const fileData = filesResponse.data;
+  
+      // Convert the array of bytes to an ArrayBuffer
+      const arrayBuffer = new Uint8Array(fileData).buffer;
+  
+      // Create a Blob from the ArrayBuffer
+      const blob = new Blob([arrayBuffer], { type: 'application/pdf' });
+  
+      // Create a URL for the Blob
+      const url = window.URL.createObjectURL(blob);
+  
+      // Create a link element to trigger the download
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', `resume_${id}.pdf`); // Adjust file name as needed
+  
+      // Append the link to the document body and click it
+      document.body.appendChild(link);
+      link.click();
+      
+      // Clean up after download
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("Error fetching applicant files:", error);
+      // Handle errors gracefully
+    }
+};
+
+  
+  
+  
+  
+  
 
   const handleApplicantDelete = async (id) => {
     try {

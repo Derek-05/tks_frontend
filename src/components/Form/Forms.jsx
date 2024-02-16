@@ -12,11 +12,13 @@ const Forms = ({ onFormSuccess }) => {
     job_offering_id: "",
     file_name: "",
     file_type: "",
+    file_size: "",
+    data: "",
   });
 
   const [loading, setLoading] = useState(false);
   const [jobOfferings, setJobOfferings] = useState([]);
-  const [fileName, setFileName] = useState("");
+  const [fileName, setFileName] = useState("")
 
   useEffect(() => {
     fetchJobs();
@@ -66,15 +68,34 @@ const Forms = ({ onFormSuccess }) => {
   
     // If the input is a file input
     if (name === "cv_file") {
-      // Set file name and type in credentials
-      setCredentials((prev) => ({
-        ...prev,
-        file_name: files && files[0] ? files[0].name : "",
-        file_type: files && files[0] ? files[0].type : "",
-        cv_file: files && files[0] ? files[0] : null, // Set the actual file object
-      }));
+      // Set file name, type, size, and data in credentials
+      const file = files && files[0];
+      if (file) {
+        const fileSize = file.size; // Get the file size in bytes
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          // After reading the file, set the data in credentials
+          setCredentials((prev) => ({
+            ...prev,
+            file_name: file.name,
+            file_type: file.type,
+            file_size: fileSize,
+            data: reader.result, // Set the file data (as a base64-encoded string)
+          }));
+        };
+        reader.readAsDataURL(file); // Read the file as a data URL
+      } else {
+        // If no file is selected, reset the file-related fields
+        setCredentials((prev) => ({
+          ...prev,
+          file_name: "",
+          file_type: "",
+          file_size: "",
+          data: "",
+        }));
+      }
       // Set file name for display
-      setFileName(files && files[0] ? files[0].name : "");
+      setFileName(file ? file.name : "");
     } else {
       // For other input fields, update credentials as usual
       setCredentials((prev) => ({
@@ -83,6 +104,7 @@ const Forms = ({ onFormSuccess }) => {
       }));
     }
   };
+  
   
   
   const handleJobChange = (e) => {
