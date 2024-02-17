@@ -14,10 +14,9 @@ function services() {
           <div className="icon">
           <i class='bx bx-plus-medical' ></i>
           </div>
-          <h2 className='title-2'>Evaluation and diagnosis</h2>
-          <p> Complete medical assessments for children
-            , such as congenital malformations, traumatic 
-            amputations or neuromuscular diseases.</p>
+          <h2 className='title-2'>Evaluation <br/>and diagnosis</h2>
+          <p> 
+Complete medical assessments for children, such as congenital malformations, traumatic amputations, neuromuscular diseases.</p>
         </div>
         <div className="New-card">
           <div className="icon">
