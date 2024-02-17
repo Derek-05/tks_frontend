@@ -1,12 +1,19 @@
 .Prosthetics-body{
-    background: url(../../assets/Mainbackground.png);
+    background: url(../../assets/Mainbackground1.png);
+    
 }
 
+.prosthetics-main{
+    height:320%;
+    margin-bottom:100px;
+   
+}
 .prosthetics{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items:center;
     gap: 9rem;
+    margin-bottom:50px;
 }
 .prosthetics-img img{
 
@@ -17,15 +24,12 @@
     margin-top: 55px;
 }
 
-.prostheticsvariants{
-    
-}
+
 
 .prosthetics-text h5{
     font-size:28px;
     font-weight:800;
     color:darkblue;
-    text-transform:uppercase;
     letter-spacing:6px;
     margin-bottom:30px;
   
@@ -44,7 +48,7 @@
     text-justify: distribute-all-lines;
     font-size: 17px;
     font-weight:700;
-    line-height: 45px;
+    line-height: 40px;
     color:#666;
     margin-bottom: 35px;
     margin-right: 35px;
@@ -52,13 +56,15 @@
 
 .center-text{
     text-align: center;
+    
 }
 
 .center-text h2{
-    font-size: 35px;
+   
+    font-size: 30px;
     font-weight: 800;
     color:darkblue;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 }
 
 .variants-content{

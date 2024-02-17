@@ -35,8 +35,10 @@ function services() {
           <p> Provide continuous follow-up and regular prosthetic settings as the child grows and 
             changes, ensuring they remain adequate.</p>
         </div>
+        
       </div>
     </div>
+    
     </body>
   )
 }

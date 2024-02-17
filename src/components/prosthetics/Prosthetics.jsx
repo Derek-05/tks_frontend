@@ -10,11 +10,12 @@ import { homepage } from "./imports";
 
 const Prosthetics = () => {
   return (
-   
+    <body className="prosthetics-main">
+      
     <section>
       <div className="Types-of-prostheses" id="Prosthetic">
         <div class="center-text">
-          <h2>Types of prostheses</h2>
+          <h2>TYPES OF PROSTHESES</h2>
         </div>
         <br />
         <br />
@@ -24,7 +25,7 @@ const Prosthetics = () => {
             <img src={pasiva} alt="pasiva" />
           </div>
           <div class="prosthetics-text">
-            <h5>Passive prosthetics</h5>
+            <h5>Passive Prosthetics</h5>
             <h2>They are designed as a cosmetic Prothesis</h2>
             <p>
             This type of prosthesis, known as a non-active or static prosthesis, does not incorporate mechanisms or 
@@ -42,7 +43,9 @@ const Prosthetics = () => {
 
         <div class="prosthetics">
           <div class="prosthetics-img">
-            <img src={myoelectric} alt="basketball" />
+            <br/>
+            <br/>
+            <img src={myoelectric} alt="Myoelectric Prosthetics" />
           </div>
           <div class="prosthetics-text">
             <h5> Myoelectric Prosthetics</h5>
@@ -66,7 +69,7 @@ const Prosthetics = () => {
             <img src={basketball} alt="basketball" />
           </div>
           <div class="prosthetics-text">
-            <h5> Specific Prostheses for an activity</h5>
+            <h5> Specific Prostheses </h5>
             <h2> They ara designed for recrational activities</h2>
             <p>
               {" "}
@@ -137,6 +140,7 @@ const Prosthetics = () => {
 </div>
 
     </section>
+    </body>
    
   );
 };
