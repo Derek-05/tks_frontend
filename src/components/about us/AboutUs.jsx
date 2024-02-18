@@ -54,7 +54,7 @@ const AboutUs = () => {
         <h5>Our Story</h5>
         <h2>
           Unveiling Our Essence
-          <br /> Who We Are
+          
         </h2>
         <p>
           Founded with an inspiring purpose, our children`s prothesis company
