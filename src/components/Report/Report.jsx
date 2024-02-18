@@ -8,15 +8,16 @@ const Report = () => {
         <section className="col left">
           <div className="contactTitle">
             <br />
-            <br />
-            <br />
+            <br/>
             <h2>Get In touch</h2>
+            <br/>
             <p>
               Need assistance or want to get in touch? Our Contact Us page is
               the gateway to connect with our team. Drop us a message, and we'll
               get back to you promptly.
             </p>
           </div>
+          <br/>
           <div className="contactInfo">
             <div className="iconGroup">
               <div className="icon">

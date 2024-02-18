@@ -63,7 +63,7 @@
 .Benefits-heading h2{
     font-size: 40px;
     font-weight: 700;
-    color:#ffed2a;
+    color:darkblue;
     margin-top: 30px;
 }
 
@@ -108,8 +108,8 @@
 
 .Information-text h2{
  text-align: center;
- color:#fff;
- font-size:30px;
+ color:dodgerblue;
+ font-size: 23px;
  font-weight:800;
  line-height:1.2;
  margin-bottom:25px;
@@ -119,10 +119,9 @@
 
 .Information-text h5{
  text-align: center;
- font-size:22px;
+ font-size:30px;
  font-weight:700;
- color:#ffed2a;
- text-transform:uppercase;
+ color:darkblue;
  letter-spacing:6px;
  margin-bottom:20px;
  margin-top: 190px;
@@ -134,7 +133,7 @@
  font-size: 16px;
  font-weight:700;
  line-height: 40px;
- color:white;
+ color:#666;
  margin-bottom: 35px;
   
 }

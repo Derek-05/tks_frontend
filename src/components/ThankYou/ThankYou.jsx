@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import "./ThankYou.css";
 const ThankYouPage = () => {
   return (
-   
+   <body className='thank-you-card'>
     <div className="card-2">
     <div className="card-bod2">
       <h1 className="card-title-2">Thank You!</h1>
@@ -11,6 +11,7 @@ const ThankYouPage = () => {
       <Link to="/" className="btn-2 btn-primary">Back to Home</Link>
     </div>
   </div>
+  </body>
    
    
   );

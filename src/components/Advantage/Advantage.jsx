@@ -40,7 +40,7 @@ const Advantage = () => {
       <br />
       <br />
       <br />
-      <h2> Our Benefits</h2>
+      <h2> OUR BENEFITS</h2>
       <div className="card-container">
         <div className="card">
           <img src={Benefit4} alt="Health and Well-being" />
@@ -226,7 +226,7 @@ const Advantage = () => {
             </button>
           </div>
           <div className="card-content1">
-            <h3>Carrer Development</h3>
+            <h3>CareerDevelopment</h3>
             <p>
               At our clinic empowers employees with continuous learning
               initiatives. This includes ongoing training programs, financial

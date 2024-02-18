@@ -33,7 +33,6 @@ body {
 
 .services {
     width: 85%;
-   
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -89,3 +88,10 @@ body {
         margin: 20px 0px;
     }
 }
+
+@media screen and (max-width: 768px) {
+   
+    .services {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }

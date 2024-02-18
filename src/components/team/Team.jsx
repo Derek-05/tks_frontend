@@ -14,7 +14,8 @@ import "./team.css";
 
 const Team = () => {
   return (
-    <section>
+   
+    <section className="Team-body-prosthetics">
       <div className="Team" id="Team">
         <div className="Teamheading" id="Team1">
           <br />
@@ -96,6 +97,7 @@ const Team = () => {
       <br/>
       <br/>
     </section>
+   
   );
 };
 
