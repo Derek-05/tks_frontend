@@ -15,7 +15,7 @@ const Forms = ({ onFormSuccess }) => {
     education: "",
     skills: "",
     experience: "",
-    achivements: "",
+    achievements: "",
    });
 
   const [loading, setLoading] = useState(false);
@@ -70,7 +70,7 @@ const Forms = ({ onFormSuccess }) => {
       phone_number: 15,
       education: 500,
       skills: 200,
-      achivements: 200,
+      achievements: 200,
       experience: 500,
     };
 
@@ -232,13 +232,13 @@ const Forms = ({ onFormSuccess }) => {
             ></textarea>
         </div>
         <div className="input-box">
-          <label htmlFor="achivements">Achievements </label>
+          <label htmlFor="achievements">Achievements </label>
           <input
             type="text"
             id="achievements"
             name="achievements"
             placeholder="Your achievements"
-            value={credentials.achivements}
+            value={credentials.achievements}
             onChange={handleChange}
             maxLength={200} // Limiting input length
             required // Required attribute added

@@ -195,10 +195,10 @@ const Table = () => {
         <th>Date of Birth</th>
         <th>Gender</th>
         <th>Job Id</th>
-        <th>Description</th>
+        <th>Education</th>
         <th>Skills</th>
-        <th>Job Experience</th>
-        <th>Vision</th>
+        <th>Experience</th>
+        <th>Achivements</th>
         <th>Created At</th>
         <th>Updated At</th>
         <th>Edit</th>
@@ -218,12 +218,12 @@ const Table = () => {
             <td>{user ? user.phone_number : ""}</td>
             <td>{user ? user.email : ""}</td>
             <td>{user ? user.dof : ""}</td>
-            <td>{user ? user.sex : ""}</td>
+            <td>{user ? user.gender : ""}</td>
             <td>{applicant.job_offering_id}</td>
-            <td>{user ? user.description : ""}</td>
-            <td>{user ? user.major_skills : ""}</td>
-            <td>{user ? user.job_experience : ""}</td>
-            <td>{user ? user.vision : ""}</td>
+            <td>{user ? user.education : ""}</td>
+            <td>{user ? user.skills : ""}</td>
+            <td>{user ? user.experience : ""}</td>
+            <td>{user ? user.achievements : ""}</td>
             <td>{applicant.created_At}</td>
             <td>{applicant.updated_At}</td>
             <td>
