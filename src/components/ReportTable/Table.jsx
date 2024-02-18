@@ -182,56 +182,63 @@ const Table = () => {
 
   // Render applicants table
   const renderApplicantsTable = () => (
-    <table className="list" id="EmployeeList">
-      {/* Table header */}
-      <thead>
-      <br/>
-      <br/>
-        <tr>
-          <th>Id</th>
-          <th>User Id</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Phone Number</th>
-          <th>Job Id</th>
-          <th>File Name</th>
-          <th>File Type</th>
-          <th>Created At</th>
-          <th>Updated At</th>
-          <th>Edit</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      {/* Table body */}
-      <tbody>
-        {employeeList.map((applicant, index) => {
-          const user = userList.find((user) => user.user_id === applicant.user_id);
-          return (
-            <tr key={index}>
-              <td>{applicant.applicant_id}</td>
-              <td>{applicant.user_id}</td>
-              <td>{user ? user.first_name : ""}</td>
-              <td>{user ? user.last_name : ""}</td>
-              <td>{user ? user.email : ""}</td>
-              <td>{user ? user.phone_number : ""}</td>
-              <td>{applicant.job_offering_id}</td>
-              <td>{applicant.file_name}</td>
-              <td>{applicant.file_type}</td>
-              <td>{applicant.created_At}</td>
-              <td>{applicant.updated_At}</td>
-              <td>
-                <button onClick={() => handleEdit(index)}>Edit</button>
-              </td>
-              <td>
-                <button onClick={() => handleDelete(index)}>Delete</button>
-              </td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
-  );
+  <table className="list" id="EmployeeList">
+    {/* Table header */}
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>User Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Date of Birth</th>
+        <th>Gender</th>
+        <th>Job Id</th>
+        <th>Description</th>
+        <th>Skills</th>
+        <th>Job Experience</th>
+        <th>Vision</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    {/* Table body */}
+    <tbody>
+      {employeeList.map((applicant, index) => {
+        const user = userList.find((user) => user.user_id === applicant.user_id);
+        return (
+          <tr key={index}>
+            <td>{applicant.applicant_id}</td>
+            <td>{applicant.user_id}</td>
+            <td>{user ? user.first_name : ""}</td>
+            <td>{user ? user.last_name : ""}</td>
+            <td>{user ? user.phone_number : ""}</td>
+            <td>{user ? user.email : ""}</td>
+            <td>{user ? user.dof : ""}</td>
+            <td>{user ? user.sex : ""}</td>
+            <td>{applicant.job_offering_id}</td>
+            <td>{user ? user.description : ""}</td>
+            <td>{user ? user.major_skills : ""}</td>
+            <td>{user ? user.job_experience : ""}</td>
+            <td>{user ? user.vision : ""}</td>
+            <td>{applicant.created_At}</td>
+            <td>{applicant.updated_At}</td>
+            <td>
+              <button onClick={() => handleEdit(index)}>Edit</button>
+            </td>
+            <td>
+              <button onClick={() => handleDelete(index)}>Delete</button>
+            </td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+);
+
 
   // Render job offers table
   const renderJobOffersTable = () => (

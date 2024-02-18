@@ -8,16 +8,15 @@ const Forms = ({ onFormSuccess }) => {
     first_name: "",
     last_name: "",
     dof: "",
-    sex: "",
+    gender: "",
     email: "",
     phone_number: "",
     job_offering_id: "",
-    description: "",
-    major_skills: "",
-    education_qualification: "",
-    vision: "",
-    why_join: "",
-  });
+    education: "",
+    skills: "",
+    experience: "",
+    achivements: "",
+   });
 
   const [loading, setLoading] = useState(false);
   const [jobOfferings, setJobOfferings] = useState([]);
@@ -62,6 +61,23 @@ const Forms = ({ onFormSuccess }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    // Limit input length for certain fields
+    const maxLength = {
+      first_name: 100,
+      last_name: 100,
+      email: 100,
+      phone_number: 15,
+      education: 500,
+      skills: 200,
+      achivements: 200,
+      experience: 500,
+    };
+
+    if (value.length > maxLength[name]) {
+      return; // Don't update state if character limit exceeded
+    }
+
     setCredentials((prev) => ({
       ...prev,
       [name]: name === "sex" ? e.target.value : value,
@@ -86,6 +102,7 @@ const Forms = ({ onFormSuccess }) => {
             placeholder="First Name"
             value={credentials.first_name}
             onChange={handleChange}
+            maxLength={100} // Limiting input length
             required // Required attribute added
           />
         </div>
@@ -98,6 +115,7 @@ const Forms = ({ onFormSuccess }) => {
             placeholder="Last Name"
             value={credentials.last_name}
             onChange={handleChange}
+            maxLength={100} // Limiting input length
             required // Required attribute added
           />
         </div>
@@ -113,12 +131,12 @@ const Forms = ({ onFormSuccess }) => {
           />
         </div>
         <div className="input-box">
-          <label htmlFor="sex">Sex</label>
+          <label htmlFor="sex">Gender</label>
           <select
-            id="sex"
-            name="sex"
+            id="gender"
+            name="gender"
             placeholder="Select Gender"
-            value={credentials.sex}
+            value={credentials.gender}
             onChange={handleChange}
             required // Required attribute added
           >
@@ -137,6 +155,7 @@ const Forms = ({ onFormSuccess }) => {
               placeholder="example@hotmail.com"
               value={credentials.email}
               onChange={handleChange}
+              maxLength={100} // Limiting input length
               required // Required attribute added
             />
           </div>
@@ -149,11 +168,11 @@ const Forms = ({ onFormSuccess }) => {
               placeholder="7871234567"
               value={credentials.phone_number}
               onChange={handleChange}
+              maxLength={15} // Limiting input length
               required // Required attribute added
             />
           </div>
         </div>
-
         <div className="input-box address">
           <label>Job Offers</label>
           <div className="column">
@@ -173,69 +192,59 @@ const Forms = ({ onFormSuccess }) => {
             </div>
           </div>
         </div>
-
+        
         <div className="input-box">
-          <label htmlFor="description">Description</label>
+          <label htmlFor="description">Education</label>
           <textarea
-            id="description"
-            name="description"
-            value={credentials.description}
+            id="education"
+            name="education"
+            value={credentials.education}
             onChange={handleChange}
-            placeholder="Tell us about yourself."
-            required // Required attribute added
-          ></textarea>
-        </div>
-
-        <div className="input-box">
-          <label htmlFor="major_skills">Major Skills</label>
-          <input
-            type="text"
-            id="major_skills"
-            name="major_skills"
-            placeholder="What are your major skills?"
-            value={credentials.major_skills}
-            onChange={handleChange}
+            placeholder="Your Education"
+            maxLength={500} // Limiting input length
             required // Required attribute added
           />
         </div>
 
         <div className="input-box">
-          <label htmlFor="education_qualification">Education </label>
+          <label htmlFor="skills">Skills</label>
           <input
             type="text"
-            id="education_qualification"
-            name="education_qualification"
-            placeholder="Previous Education"
-            value={credentials.education_qualification}
+            id="skills"
+            name="skills"
+            placeholder="Your skills"
+            value={credentials.skills}
             onChange={handleChange}
+            maxLength={200} // Limiting input length
             required // Required attribute added
           />
         </div>
-
         <div className="input-box">
-          <label htmlFor="vision">Vision</label>
+          <label htmlFor="experience">Experience</label>
           <textarea
-            id="vision"
-            name="vision"
-            value={credentials.vision}
+            id="experience"
+            name="experience"
+            value={credentials.experience}
             onChange={handleChange}
-            placeholder="How do you see yourself after a few years with us?"
+            placeholder="Your experience"
+            maxLength={500} // Limiting input length
             required // Required attribute added
-          ></textarea>
+            ></textarea>
         </div>
-
         <div className="input-box">
-          <label htmlFor="why_join">Why Join?</label>
-          <textarea
-            id="why_join"
-            name="why_join"
-            value={credentials.why_join}
+          <label htmlFor="achivements">Achievements </label>
+          <input
+            type="text"
+            id="achievements"
+            name="achievements"
+            placeholder="Your achievements"
+            value={credentials.achivements}
             onChange={handleChange}
-            placeholder="Why are you applying for this position?"
+            maxLength={200} // Limiting input length
             required // Required attribute added
-          ></textarea>
+          />
         </div>
-
+        
         <br />
         <br />
         {loading && <p>Loading...</p>}
