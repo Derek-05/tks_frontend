@@ -7,15 +7,19 @@ const Forms = ({ onFormSuccess }) => {
   const [credentials, setCredentials] = useState({
     first_name: "",
     last_name: "",
+    dof: "",
+    gender: "",
     email: "",
     phone_number: "",
     job_offering_id: "",
-    cv_file: "",
-  });
+    education: "",
+    skills: "",
+    experience: "",
+    achievements: "",
+   });
 
   const [loading, setLoading] = useState(false);
   const [jobOfferings, setJobOfferings] = useState([]);
-  const [fileName, setFileName] = useState("");
 
   useEffect(() => {
     fetchJobs();
@@ -44,13 +48,8 @@ const Forms = ({ onFormSuccess }) => {
     setLoading(true);
 
     try {
-      const formData = new FormData();
-      Object.entries(credentials).forEach(([key, value]) => {
-        formData.append(key, value);
-      });
-
       // Call the onFormSuccess callback with user data
-      const response = await newApplicant(formData);
+      const response = await newApplicant(credentials);
       console.log("Applicant created successfully:", response);
       onFormSuccess(response.user);
     } catch (error) {
@@ -61,13 +60,28 @@ const Forms = ({ onFormSuccess }) => {
   };
 
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
+    const { name, value } = e.target;
+
+    // Limit input length for certain fields
+    const maxLength = {
+      first_name: 100,
+      last_name: 100,
+      email: 100,
+      phone_number: 15,
+      education: 500,
+      skills: 200,
+      achievements: 200,
+      experience: 500,
+    };
+
+    if (value.length > maxLength[name]) {
+      return; // Don't update state if character limit exceeded
+    }
+
     setCredentials((prev) => ({
       ...prev,
-      [name]: name === "cv_file" ? (files && files[0]) : value,
+      [name]: name === "sex" ? e.target.value : value,
     }));
-
-    setFileName(files && files[0] ? files[0].name : "");
   };
 
   const handleJobChange = (e) => {
@@ -75,17 +89,11 @@ const Forms = ({ onFormSuccess }) => {
     setCredentials((prev) => ({ ...prev, job_offering_id: value }));
   };
 
-  const handleUndo = () => {
-    setCredentials((prev) => ({ ...prev, cv_file: null }));
-    setFileName("");
-  };
-
   return (
-    <section className="container"> 
-     
-      <form onSubmit={handleFormSubmit} className="Newform" >
+    <section className="container">
+      <form onSubmit={handleFormSubmit} className="Newform">
         <h1>Apply Now</h1>
-        <div className="input-box" >
+        <div className="input-box">
           <label htmlFor="first_name">First Name</label>
           <input
             type="text"
@@ -94,7 +102,8 @@ const Forms = ({ onFormSuccess }) => {
             placeholder="First Name"
             value={credentials.first_name}
             onChange={handleChange}
-            required
+            maxLength={100} // Limiting input length
+            required // Required attribute added
           />
         </div>
         <div className="input-box">
@@ -106,8 +115,35 @@ const Forms = ({ onFormSuccess }) => {
             placeholder="Last Name"
             value={credentials.last_name}
             onChange={handleChange}
-            required
+            maxLength={100} // Limiting input length
+            required // Required attribute added
           />
+        </div>
+        <div className="input-box">
+          <label htmlFor="dof">Date of Birth</label>
+          <input
+            type="date"
+            id="dof"
+            name="dof"
+            value={credentials.dof}
+            onChange={handleChange}
+            required // Required attribute added
+          />
+        </div>
+        <div className="input-box">
+          <label htmlFor="sex">Gender</label>
+          <select
+            id="gender"
+            name="gender"
+            placeholder="Select Gender"
+            value={credentials.gender}
+            onChange={handleChange}
+            required // Required attribute added
+          >
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
         </div>
         <div className="column">
           <div className="input-box">
@@ -119,7 +155,8 @@ const Forms = ({ onFormSuccess }) => {
               placeholder="example@hotmail.com"
               value={credentials.email}
               onChange={handleChange}
-              required
+              maxLength={100} // Limiting input length
+              required // Required attribute added
             />
           </div>
           <div className="input-box">
@@ -131,11 +168,11 @@ const Forms = ({ onFormSuccess }) => {
               placeholder="7871234567"
               value={credentials.phone_number}
               onChange={handleChange}
-              required
+              maxLength={15} // Limiting input length
+              required // Required attribute added
             />
           </div>
         </div>
-
         <div className="input-box address">
           <label>Job Offers</label>
           <div className="column">
@@ -143,6 +180,7 @@ const Forms = ({ onFormSuccess }) => {
               <select
                 onChange={handleJobChange}
                 value={credentials.job_offering_id}
+                required // Required attribute added
               >
                 <option value="">Select Job</option>
                 {jobOfferings.map((job) => (
@@ -152,42 +190,67 @@ const Forms = ({ onFormSuccess }) => {
                 ))}
               </select>
             </div>
-            {credentials.job_offering_id && (
-              <div className="input-box address">
-                <label htmlFor="resume">Resume</label>
-                {fileName && (
-                  <div className="filename">
-                    <p>Selected file: {fileName}</p>
-                    <button type="button" onClick={handleUndo}>
-                      Undo
-                    </button>
-                  </div>
-                )}
-                <div className="column">
-                  <div className="CVbtn">
-                    <input
-                      type="file"
-                      name="cv_file"
-                      placeholder="Upload CV"
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
-              </div>
-            )}
-            <br />
-            <br />
-            {loading && <p>Loading...</p>}
-            <button
-              type="submit"
-              className="containerbtn"
-              disabled={loading}
-            >
-              {loading ? "Submitting..." : "Submit"}
-            </button>
           </div>
         </div>
+        
+        <div className="input-box">
+          <label htmlFor="description">Education</label>
+          <textarea
+            id="education"
+            name="education"
+            value={credentials.education}
+            onChange={handleChange}
+            placeholder="Your Education"
+            maxLength={500} // Limiting input length
+            required // Required attribute added
+          />
+        </div>
+
+        <div className="input-box">
+          <label htmlFor="skills">Skills</label>
+          <input
+            type="text"
+            id="skills"
+            name="skills"
+            placeholder="Your skills"
+            value={credentials.skills}
+            onChange={handleChange}
+            maxLength={200} // Limiting input length
+            required // Required attribute added
+          />
+        </div>
+        <div className="input-box">
+          <label htmlFor="experience">Experience</label>
+          <textarea
+            id="experience"
+            name="experience"
+            value={credentials.experience}
+            onChange={handleChange}
+            placeholder="Your experience"
+            maxLength={500} // Limiting input length
+            required // Required attribute added
+            ></textarea>
+        </div>
+        <div className="input-box">
+          <label htmlFor="achievements">Achievements </label>
+          <input
+            type="text"
+            id="achievements"
+            name="achievements"
+            placeholder="Your achievements"
+            value={credentials.achievements}
+            onChange={handleChange}
+            maxLength={200} // Limiting input length
+            required // Required attribute added
+          />
+        </div>
+        
+        <br />
+        <br />
+        {loading && <p>Loading...</p>}
+        <button type="submit" className="containerbtn" disabled={loading}>
+          {loading ? "Submitting..." : "Submit"}
+        </button>
       </form>
     </section>
   );
