@@ -56,15 +56,15 @@ body .logout {
 
 /* Table styles */
 .list {
-  margin-bottom: 250px;
+  margin-top: 200px;
   width: 30%; /* Reduciendo el ancho de la tabla */
   margin-left: 470px; /* Quitando el margen izquierdo */
   margin-right: 20px; /* Agregando un margen derecho para mover la tabla hacia la derecha */
 }
 .list-2 {
-  margin-bottom: 250px;
+  margin-top: 250px;
   width: 30%; /* Reduciendo el ancho de la tabla */
-  margin-left: 350px; /* Quitando el margen izquierdo */
+  margin-left: 450px; /* Quitando el margen izquierdo */
   margin-right: 20px; /* Agregando un margen derecho para mover la tabla hacia la derecha */
 }
 .list-2 td p {
@@ -133,13 +133,15 @@ body .logout {
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 20px;
+  margin-top: 150px;
  
   
 }
 
 .job-form h2 {
-margin-top: 50px;
+   margin-top: 50px;
   color: darkblue;
+  
 
 
 }

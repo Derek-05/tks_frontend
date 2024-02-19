@@ -293,6 +293,7 @@ const Table = () => {
   // Render job form
   const renderJobForm = () => (
     <div className="job-form">
+      
       <h2>Create Job</h2>
       <form onSubmit={handleSubmit}>
         <br />

@@ -9,6 +9,9 @@ const Report = () => {
           <div className="contactTitle">
             <br />
             <br/>
+            <br />
+             <br/>
+             <br/>
             <h2>Get In touch</h2>
             <br/>
             <p>
@@ -63,7 +66,12 @@ const Report = () => {
             method="POST"
           >
             <div className="inputGroup halfWidth">
+            <br/>
+              <br/>
+              <br/>
+            
               <input type="text" name="text" required="required" />
+             
               <label>Your Name</label>
             </div>
 

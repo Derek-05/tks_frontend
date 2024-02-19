@@ -22,7 +22,7 @@ Complete medical assessments for children, such as congenital malformations, tra
           <div className="icon">
           <i class='bx bxl-mongodb' ></i>
           </div>
-          <h2 className='title-2'>Therapy and rehabilitation</h2>
+          <h2 className='title-2'>Therapy and <br/>rehabilitation</h2>
           <p> Provide physical and occupational therapy to help children adapt and learn how to use 
             their prostheses effectively.</p>
         </div>
@@ -30,7 +30,7 @@ Complete medical assessments for children, such as congenital malformations, tra
           <div className="icon">
           <i class='bx bx-heart'></i>
           </div>
-          <h2 className='title-2'>Long-term monitoring and care</h2>
+          <h2 className='title-2'>Long-term monitoring<br/> and care</h2>
           <p> Provide continuous follow-up and regular prosthetic settings as the child grows and 
             changes, ensuring they remain adequate.</p>
         </div>
