@@ -1,6 +1,6 @@
 import React from "react";
 import sunset from "../../assets/sunset.jpeg";
-import OurStory2 from "../../assets/OurStory2.jpg";
+import OurStory2 from "../../assets/OurStory2.jpeg";
 import "./about_us.css";
 
 const AboutUs = () => {
