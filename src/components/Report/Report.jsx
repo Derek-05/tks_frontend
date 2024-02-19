@@ -32,17 +32,6 @@ const Report = () => {
 
             <div className="iconGroup">
               <div className="icon">
-                <i class="bx bx-envelope"></i>
-              </div>
-              <div class="details">
-                <span>Email</span>
-                <br/>
-                <span>techkidssolutions@gmail.com</span>
-              </div>
-            </div>
-
-            <div className="iconGroup">
-              <div className="icon">
                 <i class="bx bx-location-plus"></i>
               </div>
               <div class="details">
@@ -51,13 +40,26 @@ const Report = () => {
                 <span>Aguada, PR</span>
               </div>
             </div>
+
+            <div className="iconGroup">
+              <div className="icon">
+                <i class="bx bx-envelope"></i>
+              </div>
+              <div class="details">
+                <span>Email</span>
+                <br/>
+                <span>orthokidssolutions@gmail.com</span>
+              </div>
+            </div>
+
+           
           </div>
         </section>
 
         <section className="col right">
           <form
             className="messageform"
-            action="https://formsubmit.co/gc102406@gmail.com"
+            action="https://formsubmit.co/orthokidssolutions@gmail.com"
             method="POST"
           >
             <div className="inputGroup halfWidth">
@@ -77,7 +79,9 @@ const Report = () => {
 
             <div className="inputGroup fullWidth">
               <textarea required="required" name="reqired"></textarea>
-             
+              <div className="message-label">
+             <label >Message</label>
+             </div>
             </div>
 
             <div className="inputGroup fullWidth">

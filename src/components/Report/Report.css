@@ -76,10 +76,10 @@ body {
     text-align: justify;
     text-justify: distribute-all-lines;
     font-size: 15px;
-    color: rgba(0, 0, 0, 0.7);
+    color: #666;
     line-height: 1.6;
     margin-bottom: 20px;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .container .row .left .contactInfo {
@@ -137,6 +137,17 @@ body {
     left: 0;
     color: darkblue;
     bottom: 20px; 
+    font-size: 15px;
+    transition: transform 0.4s, font-size 0.4s; 
+    pointer-events: none;
+    transform-origin: left bottom; 
+}
+
+.message-label{
+    position: absolute;
+    left: 3px;
+    color: darkblue;
+    bottom: 85px; 
     font-size: 15px;
     transition: transform 0.4s, font-size 0.4s; 
     pointer-events: none;
