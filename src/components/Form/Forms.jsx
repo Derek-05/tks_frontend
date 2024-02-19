@@ -4,26 +4,25 @@ import { newApplicant } from "../../api/applicantApi";
 import { getAllJobOfferings } from "../../api/jobOfferingsAPI";
 
 const Forms = ({ onFormSuccess }) => {
+  // State variables
   const [credentials, setCredentials] = useState({
     first_name: "",
     last_name: "",
     email: "",
     phone_number: "",
     job_offering_id: "",
-    file_name: "",
-    file_type: "",
-    file_size: "",
-    data: "",
+    file: null, // Store file object here
   });
-
   const [loading, setLoading] = useState(false);
   const [jobOfferings, setJobOfferings] = useState([]);
-  const [fileName, setFileName] = useState("")
+  const [selectedFileName, setSelectedFileName] = useState(""); // To display selected file name
 
+  // Fetch job offerings when component mounts
   useEffect(() => {
     fetchJobs();
   }, []);
 
+  // Function to fetch job offerings
   const fetchJobs = async () => {
     try {
       const response = await getAllJobOfferings();
@@ -42,19 +41,23 @@ const Forms = ({ onFormSuccess }) => {
     }
   };
 
+  // Handle form submission
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
+  
     try {
       const formData = new FormData();
       Object.entries(credentials).forEach(([key, value]) => {
-        formData.append(key, value);
+        if (key === "file" && value !== null) {
+          formData.append("file", value);
+        } else {
+          formData.append(key, value);
+        }
       });
-
-      // Call the onFormSuccess callback with user data
+      // Call the newApplicant API function with form data
       const response = await newApplicant(formData);
-      console.log("Applicant created successfully:", response);
+      // Call the onFormSuccess callback with user data
       onFormSuccess(response.user);
     } catch (error) {
       console.error("Error creating applicant:", error);
@@ -63,68 +66,34 @@ const Forms = ({ onFormSuccess }) => {
     }
   };
 
+  // Handle form input change
   const handleChange = (e) => {
     const { name, value, files } = e.target;
-  
-    // If the input is a file input
-    if (name === "cv_file") {
-      // Set file name, type, size, and data in credentials
-      const file = files && files[0];
-      if (file) {
-        const fileSize = file.size; // Get the file size in bytes
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          // After reading the file, set the data in credentials
-          setCredentials((prev) => ({
-            ...prev,
-            file_name: file.name,
-            file_type: file.type,
-            file_size: fileSize,
-          }));
-        };
-        reader.readAsDataURL(file); // Read the file as a data URL
-      } else {
-        // If no file is selected, reset the file-related fields
-        setCredentials((prev) => ({
-          ...prev,
-          file_name: "",
-          file_type: "",
-          file_size: "",
-          data: "",
-        }));
-      }
-      // Set file name for display
-      setFileName(file ? file.name : "");
+    if (name === "file") {
+      setCredentials((prev) => ({
+        ...prev,
+        file: files[0], // Store only the first file
+      }));
+      setSelectedFileName(files[0].name); // Update selected file name
     } else {
-      // For other input fields, update credentials as usual
       setCredentials((prev) => ({
         ...prev,
         [name]: value,
       }));
     }
   };
-  
-  
-  
+
+  // Handle job selection change
   const handleJobChange = (e) => {
     const { value } = e.target;
     setCredentials((prev) => ({ ...prev, job_offering_id: value }));
   };
 
-  const handleUndo = () => {
-    setCredentials((prev) => ({ ...prev, cv_file: null }));
-    setFileName("");
-    // Reset file input value
-    document.getElementById("cv_file").value = "";
-  };
-  
-
   return (
-    <section className="container"> 
-     
-      <form onSubmit={handleFormSubmit} className="Newform" >
+    <section className="container">
+      <form onSubmit={handleFormSubmit} className="Newform">
         <h1>Apply Now</h1>
-        <div className="input-box" >
+        <div className="input-box">
           <label htmlFor="first_name">First Name</label>
           <input
             type="text"
@@ -148,85 +117,61 @@ const Forms = ({ onFormSuccess }) => {
             required
           />
         </div>
-        <div className="column">
-          <div className="input-box">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="example@hotmail.com"
-              value={credentials.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="input-box">
-            <label htmlFor="phone_number">Phone Number</label>
-            <input
-              type="tel"
-              id="phone_number"
-              name="phone_number"
-              placeholder="7871234567"
-              value={credentials.phone_number}
-              onChange={handleChange}
-              required
-            />
-          </div>
+        <div className="input-box">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@hotmail.com"
+            value={credentials.email}
+            onChange={handleChange}
+            required
+          />
         </div>
-
-        <div className="input-box address">
+        <div className="input-box">
+          <label htmlFor="phone_number">Phone Number</label>
+          <input
+            type="tel"
+            id="phone_number"
+            name="phone_number"
+            placeholder="7871234567"
+            value={credentials.phone_number}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="input-box">
           <label>Job Offers</label>
-          <div className="column">
-            <div className="select-box">
-              <select
-                onChange={handleJobChange}
-                value={credentials.job_offering_id}
-              >
-                <option value="">Select Job</option>
-                {jobOfferings.map((job) => (
-                  <option key={job.id} value={job.id}>
-                    {job.title}
-                  </option>
-                ))}
-              </select>
-            </div>
-            {credentials.job_offering_id && (
-              <div className="input-box address">
-                <label htmlFor="resume">Resume</label>
-                {fileName && (
-                  <div className="filename">
-                    <p>Selected file: {fileName}</p>
-                    <button type="button" onClick={handleUndo}>
-                      Undo
-                    </button>
-                  </div>
-                )}
-                <div className="column">
-                  <div className="CVbtn">
-                    <input
-                      type="file"
-                      name="cv_file"
-                      placeholder="Upload CV"
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
-              </div>
-            )}
-            <br />
-            <br />
-            {loading && <p>Loading...</p>}
-            <button
-              type="submit"
-              className="containerbtn"
-              disabled={loading}
-            >
-              {loading ? "Submitting..." : "Submit"}
-            </button>
-          </div>
+          <select
+            onChange={handleJobChange}
+            value={credentials.job_offering_id}
+          >
+            <option value="">Select Job</option>
+            {jobOfferings.map((job) => (
+              <option key={job.id} value={job.id}>
+                {job.title}
+              </option>
+            ))}
+          </select>
         </div>
+        <div className="input-box">
+          <label htmlFor="resume">Resume</label>
+          <input
+            type="file"
+            name="file"
+            accept="application/pdf"
+            onChange={handleChange}
+            required
+          />
+          {selectedFileName && ( // Display selected file name if available
+            <p>Selected file: {selectedFileName}</p>
+          )}
+        </div>
+        {loading && <p>Loading...</p>}
+        <button type="submit" disabled={loading}>
+          {loading ? "Submitting..." : "Submit"}
+        </button>
       </form>
     </section>
   );

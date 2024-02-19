@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Table.css";
 import { logoutUser } from "../../api/authApi";
-import { getAllApplicants, deleteApplicant } from "../../api/applicantApi";
+import { getAllApplicants, deleteApplicant, getApplicantPdfUploads } from "../../api/applicantApi";
 import { getAllUsers } from "../../api/userApi";
 import { getAllJobOfferings, deleteJobOffering, addJobOffering } from "../../api/jobOfferingsAPI";
 
@@ -18,6 +18,7 @@ const Table = () => {
     qualifications: "",
     available: true,
   });
+  const [pdfFiles, setPdfFiles] = useState([]);
 
   // Fetch data on component mount
   useEffect(() => {
@@ -35,7 +36,9 @@ const Table = () => {
         const jobOffersResponse = await getAllJobOfferings();
         setJobOfferList(jobOffersResponse.jobOfferings);
 
-        // Fetch user profile and update form data with user ID
+        // Fetch PDF files data
+        const files = await getApplicantPdfUploads();
+        setPdfFiles(files);
       } catch (error) {
         console.error("Error fetching data:", error);
         // Handle errors here
@@ -52,22 +55,11 @@ const Table = () => {
   const handleJobsClick = () => setContent("jobOffers");
   const handleJobFormClick = () => setContent("jobForm");
 
-  const handleEdit = (index) => {
-    // Implement edit functionality
-  };
-
-  const handleApplicantEdit = async () => {
-    // Implement applicant edit functionality
-  };
-
   const handleApplicantDelete = async (id) => {
     try {
       // Call the deleteApplicant function to delete the applicant with the provided ID
-      const deletedApplicant = await deleteApplicant(id);
+      await deleteApplicant(id);
       setEmployeeList(prevApplicants => prevApplicants.filter(applicant => applicant.applicant_id !== id));
-      // Handle the result if needed
-      console.log("Deleted Applicant:", deletedApplicant);
-      // Optionally update your UI or data after successful deletion
     } catch (error) {
       console.error("Error deleting applicant:", error);
       // Handle errors gracefully
@@ -76,6 +68,7 @@ const Table = () => {
 
   const handleJobDelete = async (id) => {
     try {
+      // Call the deleteJobOffering function to delete the job offering with the provided ID
       await deleteJobOffering(id);
       // If the deletion is successful, update the job offer list by refetching
       const jobOffersResponse = await getAllJobOfferings();
@@ -97,7 +90,6 @@ const Table = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log("Form data before submitting:", formData);
       // Add job offering
       await addJobOffering(formData);
       // If the creation is successful, update the job offer list
@@ -121,14 +113,17 @@ const Table = () => {
       // Call the logout function to clear token and logout from the server
       await logoutUser();
       // Redirect the user to the login page or any other appropriate page
-      // Example: Redirecting using window.location
       window.location.href = '/login'; 
     } catch (error) {
       // Handle any errors that might occur during the logout process
       console.error('Logout failed:', error);
-      // Optionally, you might want to display an error message to the user
-      // alert('Logout failed');
     }
+  };
+
+  const openPdfWindow = (file_name) => {
+    const baseURL = 'http://localhost:8080/api/uploads'; // Replace with your actual base URL
+    const pdfUrl = `${baseURL}/${file_name}`;
+    window.open(pdfUrl, '_blank', 'noreferrer');
   };
 
   // Render sidebar
@@ -192,8 +187,8 @@ const Table = () => {
       <div className="table-container">
         {content === "applicants" && renderApplicantsTable()}
         {content === "jobOffers" && renderJobOffersTable()}
-        {content === "jobForm" && renderJobForm()} {/* Updated condition */}
-        {content !== "applicants" && content !== "jobOffers" && content !== "jobForm" && <p>Welcome to Dashboard</p>} {/* Additional condition */}
+        {content === "jobForm" && renderJobForm()}
+        {content !== "applicants" && content !== "jobOffers" && content !== "jobForm" && <p>Welcome to Dashboard</p>}
       </div>
     </div>
   );
@@ -215,6 +210,7 @@ const Table = () => {
           <th>Job Id</th>
           <th>File Name</th>
           <th>File Type</th>
+          <th>Show PDF</th>
           <th>Created At</th>
           <th>Updated At</th>
           <th>Edit</th>
@@ -234,18 +230,14 @@ const Table = () => {
               <td>{user ? user.email : ""}</td>
               <td>{user ? user.phone_number : ""}</td>
               <td>{applicant.job_offering_id}</td>
-              <td>
-                {/* Include a download link for the file name */}
-                <a href={`download/${applicant.file_name}`} target="_blank" download>
-                  {applicant.file_name}
-                </a>
-              </td>
+              <td>{applicant.file_name}</td>
               <td>{applicant.file_type}</td>
+              <td>
+                {/* Render button to open PDF in a new window */}
+                <button onClick={() => openPdfWindow(applicant.file_name)}>Show PDF</button>
+              </td>
               <td>{applicant.created_At}</td>
               <td>{applicant.updated_At}</td>
-              <td>
-                <button onClick={() => handleApplicantEdit(index)}>Edit</button>
-              </td>
               <td>
                 <button onClick={() => handleApplicantDelete(applicant.applicant_id)}>Delete</button>
               </td>
@@ -270,7 +262,6 @@ const Table = () => {
           <th>Salary</th>
           <th>Qualifications</th>
           <th>Available</th>
-          <th>Edit</th>
           <th>Delete</th>
         </tr>
       </thead>
@@ -285,9 +276,6 @@ const Table = () => {
             <td>{jobOffer.qualifications}</td>
             <td>{jobOffer.available}</td>
             <td>
-              <button onClick={() => handleEdit(index)}>Edit</button>
-            </td>
-            <td>
               <button onClick={() => handleJobDelete(jobOffer.id)}>Delete</button>
             </td>
           </tr>
@@ -296,6 +284,7 @@ const Table = () => {
     </table>
   );
 
+  // Render job form
   const renderJobForm = () => (
     <div className="job-form">
       <h2>Create Job</h2>
