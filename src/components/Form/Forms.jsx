@@ -4,6 +4,7 @@ import { newApplicant } from "../../api/applicantApi";
 import { getAllJobOfferings } from "../../api/jobOfferingsAPI";
 
 const Forms = ({ onFormSuccess }) => {
+  // State variables
   const [credentials, setCredentials] = useState({
     first_name: "",
     last_name: "",
@@ -12,19 +13,20 @@ const Forms = ({ onFormSuccess }) => {
     email: "",
     phone_number: "",
     job_offering_id: "",
-    education: "",
-    skills: "",
-    experience: "",
-    achievements: "",
-   });
-
+    file: null, // Store file object here
+  });
+  
   const [loading, setLoading] = useState(false);
   const [jobOfferings, setJobOfferings] = useState([]);
+  const [selectedFileName, setSelectedFileName] = useState(""); // To display selected file name
 
+    
+  // Fetch job offerings when component mounts
   useEffect(() => {
     fetchJobs();
   }, []);
 
+  // Function to fetch job offerings
   const fetchJobs = async () => {
     try {
       const response = await getAllJobOfferings();
@@ -43,14 +45,25 @@ const Forms = ({ onFormSuccess }) => {
     }
   };
 
+  // Handle form submission
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
+  
     try {
+      const formData = new FormData();
+      Object.entries(credentials).forEach(([key, value]) => {
+        if (key === "file" && value !== null) {
+          formData.append("file", value);
+        } else {
+          formData.append(key, value);
+        }
+      });
+     
+      // Call the newApplicant API function with form data
+      const response = await newApplicant(formData);
+     
       // Call the onFormSuccess callback with user data
-      const response = await newApplicant(credentials);
-      console.log("Applicant created successfully:", response);
       onFormSuccess(response.user);
     } catch (error) {
       console.error("Error creating applicant:", error);
@@ -59,20 +72,30 @@ const Forms = ({ onFormSuccess }) => {
     }
   };
 
+  // Handle form input change
   const handleChange = (e) => {
-    const { name, value } = e.target;
 
-    // Limit input length for certain fields
+    const { name, value, files } = e.target;
+    if (name === "file") {
+      setCredentials((prev) => ({
+        ...prev,
+        file: files[0], // Store only the first file
+      }));
+      setSelectedFileName(files[0].name); // Update selected file name
+    } else {
+      setCredentials((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
+
+   // Limit input length for certain fields
     const maxLength = {
       first_name: 100,
       last_name: 100,
       email: 100,
       phone_number: 15,
-      education: 500,
-      skills: 200,
-      achievements: 200,
-      experience: 500,
-    };
+     };
 
     if (value.length > maxLength[name]) {
       return; // Don't update state if character limit exceeded
@@ -80,20 +103,22 @@ const Forms = ({ onFormSuccess }) => {
 
     setCredentials((prev) => ({
       ...prev,
-      [name]: name === "sex" ? e.target.value : value,
+      [name]: name === "gender" ? e.target.value : value,
     }));
-  };
+};
 
+  // Handle job selection change
   const handleJobChange = (e) => {
     const { value } = e.target;
     setCredentials((prev) => ({ ...prev, job_offering_id: value }));
   };
 
   return (
+
+    <section className="container">
     <body className="Apply-Form-body">
     <section className="container">
-  
-      <form onSubmit={handleFormSubmit} className="Newform">
+     <form onSubmit={handleFormSubmit} className="Newform">
         <h1>Apply Now</h1>
         <div className="input-box">
           <label htmlFor="first_name">First Name</label>
@@ -121,7 +146,8 @@ const Forms = ({ onFormSuccess }) => {
             required // Required attribute added
           />
         </div>
-        <div className="input-box">
+       
+
           <label htmlFor="dof">Date of Birth</label>
           <input
             type="date"
@@ -133,7 +159,7 @@ const Forms = ({ onFormSuccess }) => {
           />
         </div>
         <div className="input-box">
-          <label htmlFor="sex">Gender</label>
+          <label htmlFor="gender">Gender</label>
           <select
             id="gender"
             name="gender"
@@ -147,110 +173,66 @@ const Forms = ({ onFormSuccess }) => {
             <option value="female">Female</option>
           </select>
         </div>
-        <div className="column">
+          
           <div className="input-box">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="example@hotmail.com"
-              value={credentials.email}
-              onChange={handleChange}
-              maxLength={100} // Limiting input length
-              required // Required attribute added
-            />
-          </div>
-          <div className="input-box">
-            <label htmlFor="phone_number">Phone Number</label>
-            <input
-              type="tel"
-              id="phone_number"
-              name="phone_number"
-              placeholder="7871234567"
-              value={credentials.phone_number}
-              onChange={handleChange}
-              maxLength={15} // Limiting input length
-              required // Required attribute added
-            />
-          </div>
-        </div>
-        <div className="input-box address">
-          <label>Job Offers</label>
-          <div className="column">
-            <div className="select-box">
-              <select
-                onChange={handleJobChange}
-                value={credentials.job_offering_id}
-                required // Required attribute added
-              >
-                <option value="">Select Job</option>
-                {jobOfferings.map((job) => (
-                  <option key={job.id} value={job.id}>
-                    {job.title}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-        </div>
-        
-        <div className="input-box">
-          <label htmlFor="description">Education</label>
-          <textarea
-            id="education"
-            name="education"
-            value={credentials.education}
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@hotmail.com"
+            value={credentials.email}
             onChange={handleChange}
-            placeholder="Your Education"
-            maxLength={500} // Limiting input length
-            required // Required attribute added
+            maxLength={100}
+            required
           />
         </div>
+        
 
-        <div className="input-box">
-          <label htmlFor="skills">Skills</label>
+          <div className="input-box">
+          <label htmlFor="phone_number">Phone Number</label>
           <input
-            type="text"
-            id="skills"
-            name="skills"
-            placeholder="Your skills"
-            value={credentials.skills}
+            type="tel"
+            id="phone_number"
+            name="phone_number"
+            placeholder="7871234567"
+            value={credentials.phone_number}
             onChange={handleChange}
-            maxLength={200} // Limiting input length
-            required // Required attribute added
-          />
-        </div>
-        <div className="input-box">
-          <label htmlFor="experience">Experience</label>
-          <textarea
-            id="experience"
-            name="experience"
-            value={credentials.experience}
-            onChange={handleChange}
-            placeholder="Your experience"
-            maxLength={500} // Limiting input length
-            required // Required attribute added
-            ></textarea>
-        </div>
-        <div className="input-box">
-          <label htmlFor="achievements">Achievements </label>
-          <input
-            type="text"
-            id="achievements"
-            name="achievements"
-            placeholder="Your achievements"
-            value={credentials.achievements}
-            onChange={handleChange}
-            maxLength={200} // Limiting input length
-            required // Required attribute added
+            maxLength={15} 
+            required
           />
         </div>
         
-        <br />
-        <br />
+          <div className="input-box">
+          <label>Job Offers</label>
+          <select
+            onChange={handleJobChange}
+            value={credentials.job_offering_id}
+          >
+            <option value="">Select Job</option>
+            {jobOfferings.map((job) => (
+              <option key={job.id} value={job.id}>
+                {job.title}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="input-box">
+          <label htmlFor="resume">Resume</label>
+          <input
+            type="file"
+            name="file"
+            accept="application/pdf"
+            onChange={handleChange}
+            required
+          />
+          {selectedFileName && ( // Display selected file name if available
+            <p>Selected file: {selectedFileName}</p>
+          )}
+        </div>
         {loading && <p>Loading...</p>}
-        <button type="submit" className="containerbtn" disabled={loading}>
+        <button type="submit" disabled={loading}>
+
           {loading ? "Submitting..." : "Submit"}
         </button>
       </form>

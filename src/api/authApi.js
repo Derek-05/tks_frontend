@@ -1,56 +1,45 @@
 import axios from 'axios';
 
-const authBaseURL = 'http://localhost:8080/api'; 
+const authBaseURL = 'http://localhost:8080/api';
 
 // Function to register a new user
 export const registerUser = async (userData) => {
   try {
     const response = await axios.post(`${authBaseURL}/signup`, userData);
-    return response.data; 
+    return response.data; // Return response data upon successful registration
   } catch (error) {
     console.error("Error registering user", error.response ? error.response.data : error.message);
-    throw error;
+    throw error; // Throw error for handling in calling code
   }
 };
 
-
-
-
-// loginUser function
+// Function to log in a user
 export const loginUser = async (credentials) => {
   try {
     const response = await axios.post(`${authBaseURL}/signin`, credentials);
     const { token } = response.data;
 
-    console.log("Response data:", response.data); // Log the response data
+    // Log the response data
+    console.log("Response data:", response.data);
 
     // Set the token in local storage
     setTokenInLocalStorage(token);
-    return response.data; // Return the response data as before
+    return response.data; // Return the response data
   } catch (error) {
     console.error("Error logging in", error.response ? error.response.data : error.message);
-    throw error;
+    throw error; // Throw error for handling in calling code
   }
 };
 
-
-
-
- export const setTokenInLocalStorage = (token) => {
+// Function to set token in local storage
+export const setTokenInLocalStorage = (token) => {
   localStorage.setItem('token', token);
 };
-
-
-
-
-
-
 
 // Function to get the token from local storage
 export const getTokenFromLocalStorage = () => {
   return localStorage.getItem('token');
 };
-
 
 // Function to log out a user
 export const logoutUser = async () => {
@@ -58,26 +47,10 @@ export const logoutUser = async () => {
     // Clear token from local storage
     localStorage.removeItem('token');
     const response = await axios.get(`${authBaseURL}/logout`);
-    return response.data; 
+    return response.data; // Return response data upon successful logout
   } catch (error) {
     console.error("Error logging out", error.response ? error.response.data : error.message);
-    throw error;
-  }
-};
-
-// Function to get the user's profile using the authentication token
-export const getUserProfile = async (token) => {
-  try {
-    const response = await axios.get(`${authBaseURL}/me`, {
-      headers: {
-        Authorization: `token= ${token}`,
-        
-      }
-    });
-    return response.data; // This should include the user's profile
-  } catch (error) {
-    console.error("Error fetching user profile", error.response ? error.response.data : error.message);
-    throw error;
+    throw error; // Throw error for handling in calling code
   }
 };
 
@@ -86,7 +59,6 @@ export default {
   registerUser,
   loginUser,
   logoutUser,
-  getUserProfile,
   setTokenInLocalStorage,
   getTokenFromLocalStorage
 };

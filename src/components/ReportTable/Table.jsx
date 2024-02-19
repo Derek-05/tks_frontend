@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Table.css";
-
-import { getAllApplicants} from "../../api/applicantApi"
-import { getAllUsers} from "../../api/userApi"
-import { getAllJobOfferings, deleteJobOffering, addJobOffering  } from "../../api/jobOfferingsAPI";
-import { getTokenFromLocalStorage, getUserProfile } from "../../api/authApi";
+import { logoutUser } from "../../api/authApi";
+import { getAllApplicants, deleteApplicant, getApplicantPdfUploads } from "../../api/applicantApi";
+import { getAllUsers } from "../../api/userApi";
+import { getAllJobOfferings, deleteJobOffering, addJobOffering } from "../../api/jobOfferingsAPI";
 
 const Table = () => {
   // State variables
@@ -19,7 +18,7 @@ const Table = () => {
     qualifications: "",
     available: true,
   });
-  
+  const [pdfFiles, setPdfFiles] = useState([]);
 
   // Fetch data on component mount
   useEffect(() => {
@@ -37,8 +36,9 @@ const Table = () => {
         const jobOffersResponse = await getAllJobOfferings();
         setJobOfferList(jobOffersResponse.jobOfferings);
 
-        // Fetch user profile and update form data with user ID
-        
+        // Fetch PDF files data
+        const files = await getApplicantPdfUploads();
+        setPdfFiles(files);
       } catch (error) {
         console.error("Error fetching data:", error);
         // Handle errors here
@@ -50,22 +50,25 @@ const Table = () => {
     return () => {}; // Cleanup function
   }, []);
 
-
   // Event handlers
   const handleApplicantsClick = () => setContent("applicants");
   const handleJobsClick = () => setContent("jobOffers");
   const handleJobFormClick = () => setContent("jobForm");
 
-  const handleEdit = (index) => {
-    // Implement edit functionality
-  };
-
-  const handleDelete = (index) => {
-    // Implement delete functionality
+  const handleApplicantDelete = async (id) => {
+    try {
+      // Call the deleteApplicant function to delete the applicant with the provided ID
+      await deleteApplicant(id);
+      setEmployeeList(prevApplicants => prevApplicants.filter(applicant => applicant.applicant_id !== id));
+    } catch (error) {
+      console.error("Error deleting applicant:", error);
+      // Handle errors gracefully
+    }
   };
 
   const handleJobDelete = async (id) => {
     try {
+      // Call the deleteJobOffering function to delete the job offering with the provided ID
       await deleteJobOffering(id);
       // If the deletion is successful, update the job offer list by refetching
       const jobOffersResponse = await getAllJobOfferings();
@@ -87,17 +90,12 @@ const Table = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-  
-      console.log("Form data before submitting:", formData);
-  
-      // Añadir la oferta de trabajo
+      // Add job offering
       await addJobOffering(formData);
-  
-      // Si la creación es exitosa, actualiza la lista de ofertas de trabajo
+      // If the creation is successful, update the job offer list
       const jobOffersResponse = await getAllJobOfferings();
       setJobOfferList(jobOffersResponse.jobOfferings);
-  
-      // Restablece los datos del formulario
+      // Reset form data
       setFormData({
         title: "",
         description: "",
@@ -110,7 +108,23 @@ const Table = () => {
     }
   };
 
+  const handleLogoutClick = async () => {
+    try {
+      // Call the logout function to clear token and logout from the server
+      await logoutUser();
+      // Redirect the user to the login page or any other appropriate page
+      window.location.href = '/login'; 
+    } catch (error) {
+      // Handle any errors that might occur during the logout process
+      console.error('Logout failed:', error);
+    }
+  };
 
+  const openPdfWindow = (file_name) => {
+    const baseURL = 'http://localhost:8080/api/uploads'; // Replace with your actual base URL
+    const pdfUrl = `${baseURL}/${file_name}`;
+    window.open(pdfUrl, '_blank', 'noreferrer');
+  };
 
   // Render sidebar
   const renderSidebar = () => (
@@ -149,7 +163,7 @@ const Table = () => {
                 </a>
               </li>
               <li>
-                <a href="home" className="logout">
+                <a href="home" className="logout" onClick={handleLogoutClick}>
                   <i className="bx bx-log-out"></i>
                   <span className="logo_name">Logout</span>
                 </a>
@@ -173,81 +187,80 @@ const Table = () => {
       <div className="table-container">
         {content === "applicants" && renderApplicantsTable()}
         {content === "jobOffers" && renderJobOffersTable()}
-        {content === "jobForm" && renderJobForm()} {/* Updated condition */}
-        {content !== "applicants" && content !== "jobOffers" && content !== "jobForm" && <p>Welcome to Dashboard</p>} {/* Additional condition */}
+        {content === "jobForm" && renderJobForm()}
+        {content !== "applicants" && content !== "jobOffers" && content !== "jobForm" && <p>Welcome to Dashboard</p>}
       </div>
     </div>
   );
-  
 
   // Render applicants table
   const renderApplicantsTable = () => (
-  <table className="list" id="EmployeeList">
-    {/* Table header */}
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>User Id</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Phone Number</th>
-        <th>Email</th>
-        <th>Date of Birth</th>
-        <th>Gender</th>
-        <th>Job Id</th>
-        <th>Education</th>
-        <th>Skills</th>
-        <th>Experience</th>
-        <th>Achivements</th>
-        <th>Created At</th>
-        <th>Updated At</th>
-        <th>Edit</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    {/* Table body */}
-    <tbody>
-      {employeeList.map((applicant, index) => {
-        const user = userList.find((user) => user.user_id === applicant.user_id);
-        return (
-          <tr key={index}>
-            <td>{applicant.applicant_id}</td>
-            <td>{applicant.user_id}</td>
-            <td>{user ? user.first_name : ""}</td>
-            <td>{user ? user.last_name : ""}</td>
-            <td>{user ? user.phone_number : ""}</td>
-            <td>{user ? user.email : ""}</td>
-            <td>{user ? user.dof : ""}</td>
-            <td>{user ? user.gender : ""}</td>
-            <td>{applicant.job_offering_id}</td>
-            <td>{user ? user.education : ""}</td>
-            <td>{user ? user.skills : ""}</td>
-            <td>{user ? user.experience : ""}</td>
-            <td>{user ? user.achievements : ""}</td>
-            <td>{applicant.created_At}</td>
-            <td>{applicant.updated_At}</td>
-            <td>
-              <button onClick={() => handleEdit(index)}>Edit</button>
-            </td>
-            <td>
-              <button onClick={() => handleDelete(index)}>Delete</button>
-            </td>
-          </tr>
-        );
-      })}
-    </tbody>
-  </table>
-);
+
+    <table className="list" id="EmployeeList">
+      {/* Table header */}
+      <thead>
+        <br />
+        <br />
+        <tr>
+          <th>Id</th>
+          <th>User Id</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Date of Birth</th>
+          <th>Gender</th>
+          <th>Phone Number</th>
+          <th>Job Id</th>
+          <th>File Name</th>
+          <th>File Type</th>
+          <th>Show PDF</th>
+          <th>Created At</th>
+          <th>Updated At</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      {/* Table body */}
+      <tbody>
+        {employeeList.map((applicant, index) => {
+          const user = userList.find((user) => user.user_id === applicant.user_id);
+          return (
+            <tr key={index}>
+              <td>{applicant.applicant_id}</td>
+              <td>{applicant.user_id}</td>
+              <td>{user ? user.first_name : ""}</td>
+              <td>{user ? user.last_name : ""}</td>
+              <td>{user ? user.email : ""}</td>
+              <td>{user ? user.dof : ""}</td>
+              <td>{user ? user.gender : ""}</td>
+              <td>{user ? user.phone_number : ""}</td>
+              <td>{applicant.job_offering_id}</td>
+              <td>{applicant.file_name}</td>
+              <td>{applicant.file_type}</td>
+              <td>
+                {/* Render button to open PDF in a new window */}
+                <button onClick={() => openPdfWindow(applicant.file_name)}>Show PDF</button>
+              </td>
+              <td>{applicant.created_At}</td>
+              <td>{applicant.updated_At}</td>
+              <td>
+                <button onClick={() => handleApplicantDelete(applicant.applicant_id)}>Delete</button>
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  );
 
 
   // Render job offers table
   const renderJobOffersTable = () => (
     <table className="list-2" id="JobOfferList">
       {/* Table header */}
-    
       <thead>
-      <br/>
-      <br/>
+        <br />
+        <br />
         <tr>
           <th>ID</th>
           <th>Title</th>
@@ -255,7 +268,6 @@ const Table = () => {
           <th>Salary</th>
           <th>Qualifications</th>
           <th>Available</th>
-          <th>Edit</th>
           <th>Delete</th>
         </tr>
       </thead>
@@ -270,27 +282,20 @@ const Table = () => {
             <td>{jobOffer.qualifications}</td>
             <td>{jobOffer.available}</td>
             <td>
-              <button onClick={() => handleEdit(index)}>Edit</button>
-            </td>
-            <td>
               <button onClick={() => handleJobDelete(jobOffer.id)}>Delete</button>
             </td>
           </tr>
         ))}
       </tbody>
     </table>
+  );
 
-    
-
-    );
-
+  // Render job form
   const renderJobForm = () => (
     <div className="job-form">
       <h2>Create Job</h2>
-      
       <form onSubmit={handleSubmit}>
-        <br/>
-       
+        <br />
         <label htmlFor="title">Title:</label>
         <input type="text" id="title" name="title" value={formData.title} onChange={handleInputChange} required />
 
@@ -302,13 +307,6 @@ const Table = () => {
 
         <label htmlFor="qualifications">Qualifications:</label>
         <textarea id="qualifications" name="qualifications" value={formData.qualifications} onChange={handleInputChange} required />
-
-        <input
-            type="hidden"
-            id="userId"
-            name="userId"
-            value={formData.userId}
-          />
 
         <button type="submit">Create Job</button>
       </form>
