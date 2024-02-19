@@ -1,6 +1,6 @@
-.thank-you-card{
+.thank-you-card {
   width: 210vh;
- 
+  margin-top: 300px;
 }
 
 .card-2 {
@@ -18,13 +18,13 @@
   font-size: 30px;
   margin-bottom: 10px;
   text-align: center;
-  color:darkblue;
+  color: darkblue;
 }
 
 .card-text-2 {
   font-size: 18px;
   margin-bottom: 20px;
-  color: #666; /* Color de texto gris */
+  color: #666;
   line-height: 1.5;
   text-align: center;
 }
@@ -36,13 +36,20 @@
   color: white;
   border-radius: 5px;
   text-decoration: none;
-  text-align: center;
   cursor: pointer;
-  text-align: center;
 }
 
 .btn-primary:hover {
   background-color: white;
-  color:#0056b3;
-  border:2px solid dodgerblue;
+  color: #0056b3;
+  border: 2px solid dodgerblue;
+}
+
+/* Media Query para pantallas con un ancho máximo de 600px */
+@media screen and (max-width: 600px) {
+  .card-2 {
+    width: 60vh;
+  margin-top: 300px;
+  margin-right: 950px;
+  }
 }

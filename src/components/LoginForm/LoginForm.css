@@ -1,9 +1,20 @@
+
+.Login-form-body{
+ 
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding:20px;
+  background-color:rgb(237, 235, 235);
+}
 .modal-container {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   text-align: center;
+ 
+  
   
   
 }
@@ -64,4 +75,25 @@ color:yellow;
   border: 2px solid #ffed2a;
   background: white;
   color: #00489d;
+}
+
+
+@media screen and (max-width: 768px) {
+  .login-modal {
+    padding: 40px;
+  }
+  
+  .form-group input {
+    width: 60%;
+  }
+  
+  .login-button {
+    width: 60%;
+  }
+  .form-group label {
+    margin-left: 30px;
+  }
+  .login-modal h2{
+    margin-left: 30px;
+  }
 }
