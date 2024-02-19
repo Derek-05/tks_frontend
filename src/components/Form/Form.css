@@ -5,12 +5,15 @@
   font-family: sans-serif;
 }
 
-body{
+.Apply-Form-body{
   min-height: 100vh;
   display:flex;
   align-items: center;
   justify-content: center;
   padding:20px;
+  background:rgb(237, 235, 235) ;
+ 
+ 
   
 
 }
@@ -23,6 +26,7 @@ body{
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
+ top: 30px;
   
   
   
@@ -116,6 +120,8 @@ body{
   text-align: center;
 }
 .Newform button{
+ 
+  margin:10px 145px;
   height:45px;
   width: 50%;
   font-size: 20;
@@ -168,6 +174,7 @@ form {
     background-color: #007bff;
     color: #fff;
     cursor: pointer;
+  
   }
   
   button:hover {

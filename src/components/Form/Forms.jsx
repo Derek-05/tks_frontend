@@ -90,7 +90,9 @@ const Forms = ({ onFormSuccess }) => {
   };
 
   return (
+    <body className="Apply-Form-body">
     <section className="container">
+  
       <form onSubmit={handleFormSubmit} className="Newform">
         <h1>Apply Now</h1>
         <div className="input-box">
@@ -253,6 +255,7 @@ const Forms = ({ onFormSuccess }) => {
         </button>
       </form>
     </section>
+    </body>
   );
 };
 

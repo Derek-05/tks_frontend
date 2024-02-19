@@ -4,6 +4,7 @@ import "./ThankYou.css";
 const ThankYouPage = () => {
   return (
    <body className='thank-you-card'>
+   
     <div className="card-2">
     <div className="card-bod2">
       <h1 className="card-title-2">Thank You!</h1>
