@@ -32,8 +32,7 @@ const Prosthetics = () => {
             components that enable active movement. Instead, its primary purpose lies in enhancing the functionality 
             of the affected or pointed side of the body. Non-active prostheses are designed to provide essential support 
             and facilitate the execution of specific activities that may require stability, balance, or additional assistance. 
-            In addition, they are often customized to match the individual's anatomy and lifestyle, promoting a comfortable 
-            and seamlessly integrated experience for the wearer.
+            In addition, they are often customized to match the individual's anatomy and lifestyle.
             </p>
           </div>
         </div>
@@ -95,7 +94,7 @@ const Prosthetics = () => {
           <br />
           <br />
           <br />
-          <h2>Children's prosthesis designs</h2>
+          <h2>CHILDREN'S PROSTHESIS DESIGNS</h2>
         </div>
 
         <div className="variants-content">

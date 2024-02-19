@@ -22,7 +22,7 @@ const Advantage = () => {
   const images2 = [
     Finanza1,
     Finance2,
-    Employee2,
+    Benefit1,
     
   ]; 
   const images1 = [
@@ -36,7 +36,7 @@ const Advantage = () => {
   const images3 = [
    Familia1,
    Familia2,
-   Tree,
+   Benefit2,
    
     
   ];
@@ -142,7 +142,7 @@ const Advantage = () => {
             >
               {images2.map((image, index) => (
                 <div className="slider-item" key={index}>
-                  <img src={image} alt={`Slider ${index + 1}`} />
+                  <img src={image} alt={`Finance-images ${index + 1}`}  /> 
                 </div>
               ))}
             </div>
@@ -172,7 +172,7 @@ const Advantage = () => {
             >
               {images1.map((image2, index) => (
                 <div className="slider-item" key={index}>
-                  <img src={image2} alt={`Slider ${index + 1}`} />
+                  <img src={image2} alt={`Well-being-images ${index + 1}`} />
                 </div>
               ))}
             </div>
@@ -212,7 +212,7 @@ const Advantage = () => {
             >
               {images3.map((image2, index) => (
                 <div className="slider-item" key={index}>
-                  <img src={image2} alt={`Slider ${index + 1}`} />
+                  <img src={image2} alt={`Family-images ${index + 1}`} />
                 </div>
               ))}
             </div>
@@ -245,7 +245,7 @@ const Advantage = () => {
             >
               {images4.map((image2, index) => (
                 <div className="slider-item" key={index}>
-                  <img src={image2} alt={`Slider ${index + 1}`} />
+                  <img src={image2} alt={`Career Development ${index + 1}`} />
                 </div>
               ))}
             </div>
