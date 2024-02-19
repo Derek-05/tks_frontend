@@ -1,4 +1,4 @@
-import ortopeda from '../../assets/ortopeda.jpg';
+import ortopeda from "../../assets/ortopeda.jpeg";
 import secretaria from '../../assets/Secretaria.jpeg'
 import fisioterapeuta from '../../assets/fisioterapeuta.jpeg';
 import Nurse from '../../assets/Nurse.jpeg';
