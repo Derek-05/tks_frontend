@@ -293,9 +293,10 @@ const Table = () => {
   // Render job form
   const renderJobForm = () => (
     <div className="job-form">
+     
       
-      <h2>Create Job</h2>
       <form onSubmit={handleSubmit}>
+      <h2 className="heading-job-form-2">Create Job</h2>
         <br />
         <label htmlFor="title">Title:</label>
         <input type="text" id="title" name="title" value={formData.title} onChange={handleInputChange} required />
