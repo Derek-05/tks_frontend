@@ -58,13 +58,13 @@ body .logout {
 .list {
   margin-top: 200px;
   width: 30%; /* Reduciendo el ancho de la tabla */
-  margin-left: 470px; /* Quitando el margen izquierdo */
+  margin-left: 550px; /* Quitando el margen izquierdo */
   margin-right: 20px; /* Agregando un margen derecho para mover la tabla hacia la derecha */
 }
 .list-2 {
   margin-top: 250px;
   width: 30%; /* Reduciendo el ancho de la tabla */
-  margin-left: 450px; /* Quitando el margen izquierdo */
+  margin-left: 500px; /* Quitando el margen izquierdo */
   margin-right: 20px; /* Agregando un margen derecho para mover la tabla hacia la derecha */
 }
 .list-2 td p {
