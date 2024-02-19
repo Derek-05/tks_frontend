@@ -43,18 +43,51 @@ body .logout {
   left: 0;
 }
 
+
+
+
+
 /* Content area styles */
 .content {
-  width: calc(100% - 300px); /* Cambiado a 300px para corresponder con el ancho del sidebar */
-  margin-left: 300px; /* Cambiado a 300px para corresponder con el ancho del sidebar */
+  width: calc(100% - 400px); /* Cambiado a 300px para corresponder con el ancho del sidebar */
+  margin-left: 400px; /* Cambiado a 300px para corresponder con el ancho del sidebar */
   padding: 20px;
 }
 
 /* Table styles */
 .list {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 350px;
+  margin-bottom: 250px;
+  width: 30%; /* Reduciendo el ancho de la tabla */
+  margin-left: 470px; /* Quitando el margen izquierdo */
+  margin-right: 20px; /* Agregando un margen derecho para mover la tabla hacia la derecha */
+}
+.list-2 {
+  margin-bottom: 250px;
+  width: 30%; /* Reduciendo el ancho de la tabla */
+  margin-left: 350px; /* Quitando el margen izquierdo */
+  margin-right: 20px; /* Agregando un margen derecho para mover la tabla hacia la derecha */
+}
+.list-2 td p {
+  word-wrap: break-word; /* Permite que las palabras largas se rompan y se muevan a la siguiente línea */
+  max-width: 150px; /* Ancho máximo para la celda de la tabla */
+}
+.list td p {
+  word-wrap: break-word; /* Permite que las palabras largas se rompan y se muevan a la siguiente línea */
+  max-width: 150px; /* Ancho máximo para la celda de la tabla */
+}
+
+.list-2 th p{
+  color:black;
+}
+.list th p{
+  color:black;
+}
+
+.list-2 th,
+.list-2 td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
 }
 
 .list th,
@@ -63,10 +96,20 @@ body .logout {
   border: 1px solid #ccc;
   text-align: left;
 }
-
+.list-2 th {
+  background-color: #f2f2f2;
+  color: black;
+  text-align: justify;
+  text-justify: distribute-all-lines;
+}
 .list th {
   background-color: #f2f2f2;
   color: black;
+  text-align: justify;
+  text-justify: distribute-all-lines;
+}
+.list-2 td {
+  color: white;
 }
 
 .list td {
@@ -78,6 +121,11 @@ body .logout {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.list td-2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 /* Job Form styles */
 .job-form {
@@ -85,12 +133,13 @@ body .logout {
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 20px;
+ 
   
 }
 
 .job-form h2 {
 margin-top: 50px;
-  color: yellow;
+  color: darkblue;
 
 
 }
@@ -99,7 +148,7 @@ margin-top: 50px;
   width: 100%;
   display: block;
   margin-bottom: 10px;
-  color: yellow;
+  color: dodgerblue;
 }
 
 .job-form input[type="text"],
@@ -128,4 +177,33 @@ margin-top: 50px;
   border-color: dodgerblue;
 }
 
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Haz que el sidebar ocupe todo el ancho de la pantalla */
+    height: auto; /* Permitir que el alto se ajuste automáticamente */
+    padding-top: 20px; /* Reducir el espacio superior */
+    overflow-y: hidden; /* Ocultar la barra de desplazamiento vertical en dispositivos móviles */
+    position: static; /* Cambiar la posición a estática para que no esté fijo */
+  }
 
+  .logout {
+    position: static; /* Cambiar la posición a estática para que no esté absoluta */
+    margin-top: 20px; /* Añadir un espacio entre el sidebar y el botón de logout */
+  }
+
+  .content {
+    width: 100%; /* Haz que el contenido ocupe todo el ancho de la pantalla */
+    margin-left: 0; /* Eliminar el margen izquierdo */
+  }
+
+  .list,
+  .list-2 {
+    width: 100%; /* Haz que las tablas ocupen todo el ancho de la pantalla */
+    margin-left: 0; /* Eliminar el margen izquierdo */
+    margin-right: 0; /* Eliminar el margen derecho */
+  }
+
+  .job-form h2 {
+    margin-top: 20px; /* Reducir el espacio superior para el título del formulario */
+  }
+}

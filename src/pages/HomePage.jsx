@@ -9,10 +9,12 @@ const HomePage = () => {
             
             <Header />
             <About_Us />
-            <Team />
             <Ourservices/>
+            
+           
             <Jobs />
             <Prosthetics />
+            <Team />
             <Footer />
         </div>
     </div>

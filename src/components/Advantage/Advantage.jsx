@@ -5,34 +5,67 @@ import Benefit1 from "../../assets/Benefit1.jpeg";
 import Benefit2 from "../../assets/Benefit2.jpeg";
 import Benefit3 from "../../assets/Benefit3.jpeg";
 import Benefit4 from "../../assets/Benefit4.jpeg";
-import Wellbeing from "../../assets/Wellbeing.jpeg";
 import Tree from "../../assets/Tree.jpeg";
-import girl2 from "../../assets/girl2.jpeg";
 import Employee1 from "../../assets/Employee1.jpeg";
 import Employee2 from "../../assets/Employee2.jpeg";
-import Positivesign from "../../assets/Positivesign.jpeg";
-import Development from "../../assets/Devolopment.jpeg";
 import Finance2 from "../../assets/Finance2.jpg";
-
+import Finanza1 from "../../assets/Finanza1.jpeg";
+import Familia1 from "../../assets/Familia1.jpeg";
+import Familia2 from "../../assets/Familia2.jpeg";
+import Desarrollopersonal1 from "../../assets/Desarrollopersonal1.jpeg";
+import Desarrollopersonal2 from "../../assets/Desarrollopersonal2.jpeg";
+import Desarrollopersonal3 from "../../assets/Desarrollopersonal3.jpeg";
+import Bienestar1 from "../../assets/Bienestar1.jpeg";
+import Bienestar2 from "../../assets/Bienestar2.jpeg";
+import Bienestar3 from "../../assets/Bienestar3.jpeg";
 const Advantage = () => {
-  const images = [
-    Tree,
-    Positivesign,
-    Development,
+  const images2 = [
+    Finanza1,
     Finance2,
-    Employee2,
-    Wellbeing,
-  ]; // Agrega más imágenes según sea necesario
+    Benefit1,
+    
+  ]; 
+  const images1 = [
+    Bienestar1,
+    Bienestar2,
+    Bienestar3,
+    
+    
+  ];
+
+  const images3 = [
+   Familia1,
+   Familia2,
+   Benefit2,
+   
+    
+  ];
+
+  const images4 = [
+    Desarrollopersonal1,
+    Desarrollopersonal2,
+    Desarrollopersonal3,
+    
+  ];
   const [currentSlide, setCurrentSlide] = useState(0);
   const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % images2.length);
   };
 
   const prevSlide = () => {
     setCurrentSlide(
-      (prevSlide) => (prevSlide - 1 + images.length) % images.length
+      (prevSlide) => (prevSlide - 1 + images2.length) % images2.length
     );
+    
+    
   };
+  
+  
+   
+   
+  
+
+  
   return (
     <section className="Benefits-heading" id="Benefits">
       <br />
@@ -40,7 +73,7 @@ const Advantage = () => {
       <br />
       <br />
       <br />
-      <h2> Our Benefits</h2>
+      <h2> OUR BENEFITS</h2>
       <div className="card-container">
         <div className="card">
           <img src={Benefit4} alt="Health and Well-being" />
@@ -107,9 +140,9 @@ const Advantage = () => {
               className="slider-inner"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
-              {images.map((image, index) => (
+              {images2.map((image, index) => (
                 <div className="slider-item" key={index}>
-                  <img src={image} alt={`Slider ${index + 1}`} />
+                  <img src={image} alt={`Finance-images ${index + 1}`}  /> 
                 </div>
               ))}
             </div>
@@ -137,9 +170,9 @@ const Advantage = () => {
               className="slider-inner"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
-              {images.map((image, index) => (
+              {images1.map((image2, index) => (
                 <div className="slider-item" key={index}>
-                  <img src={image} alt={`Slider ${index + 1}`} />
+                  <img src={image2} alt={`Well-being-images ${index + 1}`} />
                 </div>
               ))}
             </div>
@@ -177,9 +210,9 @@ const Advantage = () => {
               className="slider-inner"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
-              {images.map((image, index) => (
+              {images3.map((image2, index) => (
                 <div className="slider-item" key={index}>
-                  <img src={image} alt={`Slider ${index + 1}`} />
+                  <img src={image2} alt={`Family-images ${index + 1}`} />
                 </div>
               ))}
             </div>
@@ -210,9 +243,9 @@ const Advantage = () => {
               className="slider-inner"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
-              {images.map((image, index) => (
+              {images4.map((image2, index) => (
                 <div className="slider-item" key={index}>
-                  <img src={image} alt={`Slider ${index + 1}`} />
+                  <img src={image2} alt={`Career Development ${index + 1}`} />
                 </div>
               ))}
             </div>
@@ -226,7 +259,7 @@ const Advantage = () => {
             </button>
           </div>
           <div className="card-content1">
-            <h3>Carrer Development</h3>
+            <h3>Career Development</h3>
             <p>
               At our clinic empowers employees with continuous learning
               initiatives. This includes ongoing training programs, financial

@@ -46,9 +46,9 @@ body {
 .container .row .left h2 {
     position: relative;
     font-size: 28px;
-    color: yellow;
+    color: darkblue;
     margin-bottom: 25px;
-  
+
 }
 
 .container .row .left h2::before {
@@ -73,11 +73,13 @@ body {
 
 
 .container .row .left p {
+    text-align: justify;
+    text-justify: distribute-all-lines;
     font-size: 15px;
-    color: white;
-    line-height: 1.5;
+    color: #666;
+    line-height: 1.6;
     margin-bottom: 20px;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .container .row .left .contactInfo {
@@ -103,18 +105,18 @@ body {
 
 .iconGroup .icon i {
     font-size: 18px;
-    color: white;
+    color: darkblue;
 }
 
 .iconGroup .details span {
     font-size: 15px;
-    color: white;
+    color: dodgerblue;
     font-weight: 700;
 }
 
 .iconGroup .details span:first-child {
     text-transform: uppercase;
-    color: yellow;
+    color: Darkblue;
     font-weight: 700;
 }
 
@@ -133,8 +135,19 @@ body {
 .inputGroup label {
     position: absolute;
     left: 0;
-    color: yellow;
+    color: darkblue;
     bottom: 20px; 
+    font-size: 15px;
+    transition: transform 0.4s, font-size 0.4s; 
+    pointer-events: none;
+    transform-origin: left bottom; 
+}
+
+.message-label{
+    position: absolute;
+    left: 3px;
+    color: darkblue;
+    bottom: 85px; 
     font-size: 15px;
     transition: transform 0.4s, font-size 0.4s; 
     pointer-events: none;
@@ -146,8 +159,8 @@ body {
     width: 100%;
     font-size: 16px;
     padding: 10px;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)) #00489d;
-    color: white;
+    background: white;
+    color: black;
     border: none;
     border-bottom: 2px solid dodgerblue;
     outline: none;
@@ -177,7 +190,7 @@ body {
     padding: 10px 20px;
     font-size: 15px;
     background: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)) #00489d;
-    color: yellow;
+    color: white;
     border: 1px solid transparent;
     border-radius: 25px;
     outline: none;

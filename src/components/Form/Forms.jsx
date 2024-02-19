@@ -8,15 +8,19 @@ const Forms = ({ onFormSuccess }) => {
   const [credentials, setCredentials] = useState({
     first_name: "",
     last_name: "",
+    dof: "",
+    gender: "",
     email: "",
     phone_number: "",
     job_offering_id: "",
     file: null, // Store file object here
   });
+  
   const [loading, setLoading] = useState(false);
   const [jobOfferings, setJobOfferings] = useState([]);
   const [selectedFileName, setSelectedFileName] = useState(""); // To display selected file name
 
+    
   // Fetch job offerings when component mounts
   useEffect(() => {
     fetchJobs();
@@ -55,8 +59,10 @@ const Forms = ({ onFormSuccess }) => {
           formData.append(key, value);
         }
       });
+     
       // Call the newApplicant API function with form data
       const response = await newApplicant(formData);
+     
       // Call the onFormSuccess callback with user data
       onFormSuccess(response.user);
     } catch (error) {
@@ -68,6 +74,7 @@ const Forms = ({ onFormSuccess }) => {
 
   // Handle form input change
   const handleChange = (e) => {
+
     const { name, value, files } = e.target;
     if (name === "file") {
       setCredentials((prev) => ({
@@ -81,7 +88,24 @@ const Forms = ({ onFormSuccess }) => {
         [name]: value,
       }));
     }
-  };
+
+   // Limit input length for certain fields
+    const maxLength = {
+      first_name: 100,
+      last_name: 100,
+      email: 100,
+      phone_number: 15,
+     };
+
+    if (value.length > maxLength[name]) {
+      return; // Don't update state if character limit exceeded
+    }
+
+    setCredentials((prev) => ({
+      ...prev,
+      [name]: name === "gender" ? e.target.value : value,
+    }));
+};
 
   // Handle job selection change
   const handleJobChange = (e) => {
@@ -90,8 +114,11 @@ const Forms = ({ onFormSuccess }) => {
   };
 
   return (
+
     <section className="container">
-      <form onSubmit={handleFormSubmit} className="Newform">
+    <body className="Apply-Form-body">
+    <section className="container">
+     <form onSubmit={handleFormSubmit} className="Newform">
         <h1>Apply Now</h1>
         <div className="input-box">
           <label htmlFor="first_name">First Name</label>
@@ -102,7 +129,8 @@ const Forms = ({ onFormSuccess }) => {
             placeholder="First Name"
             value={credentials.first_name}
             onChange={handleChange}
-            required
+            maxLength={100} // Limiting input length
+            required // Required attribute added
           />
         </div>
         <div className="input-box">
@@ -114,10 +142,39 @@ const Forms = ({ onFormSuccess }) => {
             placeholder="Last Name"
             value={credentials.last_name}
             onChange={handleChange}
-            required
+            maxLength={100} // Limiting input length
+            required // Required attribute added
+          />
+        </div>
+       
+
+          <label htmlFor="dof">Date of Birth</label>
+          <input
+            type="date"
+            id="dof"
+            name="dof"
+            value={credentials.dof}
+            onChange={handleChange}
+            required // Required attribute added
           />
         </div>
         <div className="input-box">
+          <label htmlFor="gender">Gender</label>
+          <select
+            id="gender"
+            name="gender"
+            placeholder="Select Gender"
+            value={credentials.gender}
+            onChange={handleChange}
+            required // Required attribute added
+          >
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+          
+          <div className="input-box">
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -126,10 +183,13 @@ const Forms = ({ onFormSuccess }) => {
             placeholder="example@hotmail.com"
             value={credentials.email}
             onChange={handleChange}
+            maxLength={100}
             required
           />
         </div>
-        <div className="input-box">
+        
+
+          <div className="input-box">
           <label htmlFor="phone_number">Phone Number</label>
           <input
             type="tel"
@@ -138,10 +198,12 @@ const Forms = ({ onFormSuccess }) => {
             placeholder="7871234567"
             value={credentials.phone_number}
             onChange={handleChange}
+            maxLength={15} 
             required
           />
         </div>
-        <div className="input-box">
+        
+          <div className="input-box">
           <label>Job Offers</label>
           <select
             onChange={handleJobChange}
@@ -170,10 +232,12 @@ const Forms = ({ onFormSuccess }) => {
         </div>
         {loading && <p>Loading...</p>}
         <button type="submit" disabled={loading}>
+
           {loading ? "Submitting..." : "Submit"}
         </button>
       </form>
     </section>
+    </body>
   );
 };
 

@@ -6,13 +6,19 @@
 
 body {
     width: 100%;
+   
+}
+
+.section{
+    background: rgb(237, 235, 235);
+    margin-bottom:100px;
 }
 
 .title h1 {
     text-align: center;
-    font-size: 30px;
-    font-weight: 800;
-    color: yellow;
+    font-size: 40px;
+    font-weight: 700;
+    color:darkblue;
     padding-top: 50px;
 }
 
@@ -20,7 +26,7 @@ body {
     content: "";
     height: 4px;
     width: 230px;
-    background-color: white;
+    background-color: yellow;
     display: block;
     margin: auto;
 }
@@ -42,16 +48,14 @@ body {
     flex-direction: column;
     margin: 0 20px;
     padding: 50px 20px;
-    background-color: antiquewhite;
+    background-color:#00489d ;
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 0 10px white;
-    transition: background-color 0.4s ease; /* Transición en el cambio de color de fondo */
+    transition: background-color 0.4s ease; 
 }
 
-.New-card:hover {
-    background-color: white;
-}
+
 
 .New-card .icon {
     font-size: 35px;
@@ -61,13 +65,13 @@ body {
 
 .New-card h2 {
     font-size: 28px;
-    color: dodgerblue;
+    color: yellow;
     margin-bottom: 20px;
 }
 
 .New-card p {
     font-size: 16px;
-    color: #666; /* Color de texto gris */
+    color: white; 
     line-height: 1.5;
 }
 
@@ -84,3 +88,10 @@ body {
         margin: 20px 0px;
     }
 }
+
+@media screen and (max-width: 768px) {
+   
+    .services {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }

@@ -3,17 +3,19 @@ import "./prosthetics.css";
 import pasiva from "../../assets/protesispasiva.jpg";
 import myoelectric from "../../assets/arm.jpeg";
 import basketball from "../../assets/basketball.jpeg";
-import patio from "../../assets/patio.jpeg";
 import clinic from "../../assets/clinic.jpeg";
 import soccer from "../../assets/soccer.jpeg";
 import street from "../../assets/street.jpeg";
+import { homepage } from "./imports";
 
 const Prosthetics = () => {
   return (
+    <body className="prosthetics-main">
+      
     <section>
       <div className="Types-of-prostheses" id="Prosthetic">
         <div class="center-text">
-          <h2>Types of prostheses</h2>
+          <h2>TYPES OF PROSTHESES</h2>
         </div>
         <br />
         <br />
@@ -23,15 +25,14 @@ const Prosthetics = () => {
             <img src={pasiva} alt="pasiva" />
           </div>
           <div class="prosthetics-text">
-            <h5>Passive prosthetics</h5>
+            <h5>Passive Prosthetics</h5>
             <h2>They are designed as a cosmetic Prothesis</h2>
             <p>
             This type of prosthesis, known as a non-active or static prosthesis, does not incorporate mechanisms or 
             components that enable active movement. Instead, its primary purpose lies in enhancing the functionality 
             of the affected or pointed side of the body. Non-active prostheses are designed to provide essential support 
             and facilitate the execution of specific activities that may require stability, balance, or additional assistance. 
-            In addition, they are often customized to match the individual's anatomy and lifestyle, promoting a comfortable 
-            and seamlessly integrated experience for the wearer.
+            In addition, they are often customized to match the individual's anatomy and lifestyle.
             </p>
           </div>
         </div>
@@ -41,7 +42,9 @@ const Prosthetics = () => {
 
         <div class="prosthetics">
           <div class="prosthetics-img">
-            <img src={myoelectric} alt="basketball" />
+            <br/>
+            <br/>
+            <img src={myoelectric} alt="Myoelectric Prosthetics" />
           </div>
           <div class="prosthetics-text">
             <h5> Myoelectric Prosthetics</h5>
@@ -65,7 +68,7 @@ const Prosthetics = () => {
             <img src={basketball} alt="basketball" />
           </div>
           <div class="prosthetics-text">
-            <h5> Specific Prostheses for an activity</h5>
+            <h5> Specific Prostheses </h5>
             <h2> They ara designed for recrational activities</h2>
             <p>
               {" "}
@@ -77,60 +80,67 @@ const Prosthetics = () => {
                tailored support, ensuring optimal performance and safety for the wearer.are engineered
                 with precision to address the unique challenges presented by specific activities, ensuring 
                 optimal functionality and durability. They offer tailored solutions for individuals engaged 
-                in sports or hobbies that demand intricate levels of support, safeguarding against 
-                potential damage or discomfort caused by conventional prosthetic options.
+                in sports or hobbies.
             </p>
           </div>
         </div>
       </div>
-
-      <section class="prostheticsvariants">
-        <div class="center-text" id="Design">
+      <div className="Prosthetics-body">
+      <section className="prostheticsvariants">
+        <div className="center-text" id="Design">
           <br />
           <br />
           <br />
           <br />
           <br />
           <br />
-          <h2>Children's prosthesis designs</h2>
+          <h2>CHILDREN'S PROSTHESIS DESIGNS</h2>
         </div>
 
-        <div class="variants-content">
-          <div class="box">
-            <img src={patio} alt="patio" />
+        <div className="variants-content">
+          <div className="box">
+            <img src={homepage} alt=" kid running" />
           </div>
 
-          <div class="box">
-            <img src={soccer} alt="soccer" />
+          <div className="box">
+            <img src={soccer} alt="kid playing soccer" />
           </div>
 
-          <div class="box">
-            <img src={street} alt="street" />
+          <div className="box">
+            <img src={street} alt="kid in a street" />
           </div>
 
-          <div class="box">
-            <img src={clinic} alt="clinic" />
+          <div className="box">
+            <img src={clinic} alt="kid in a clinic" />
           </div>
         </div>
       </section>
       <br />
       <br />
+      <br/>
+      <br/>
+      <br/>
+     
 
-      <div class="newsletter">
-        <div class="newsletter-content">
-          <div class="newsletter-text">
-            <br />
-            <br />
-            <br />
-            <br />
-            <h2>Ready to be part of our team</h2>
-            <p> Join us and help us make a better world</p>
-            <br/>
-            <br/>
-          </div>
-        </div>
-      </div>
+      <div className="container3">
+    <div className="column-left3">
+       <h3>Ready to be part of our team</h3>
+       <p>"Join us and help us  make a better world"</p>
+       <br/>
+       <br/>
+       <br/>
+    </div>
+    <div className="column-right3">
+    <button className="btn3">Job Offer</button>
+    </div>
+
+    
+</div>
+</div>
+
     </section>
+    </body>
+   
   );
 };
 

@@ -1,21 +1,21 @@
 import React from "react";
 import {
   ortopeda,
-  evaluadora,
-  fisioterapeuta,
-  fabricador,
-  biomedico,
+  secretaria,
+  Personal,
+  Nurse,
+  Nurse2,
   psicologa,
-  Insurance,
-  customer,
-  InvestigadorClinico,
+  fisioterapeuta,
+  
   Cirujano2,
 } from "./imports";
 import "./team.css";
 
 const Team = () => {
   return (
-    <section>
+   
+    <section className="Team-body-prosthetics">
       <div className="Team" id="Team">
         <div className="Teamheading" id="Team1">
           <br />
@@ -24,9 +24,9 @@ const Team = () => {
           <br />
           <br />
           
-          <h1>
-            <strong>Team</strong>
-          </h1>
+          <h2>
+           TEAM
+          </h2>
         </div>
       </div>
       <br />
@@ -36,22 +36,22 @@ const Team = () => {
         <div className="feature-content">
           <div className="row">
             <div className="row-img">
-              <img src={fisioterapeuta} alt="Physiotherapist" />
+            <img src={ortopeda} alt="Orthopedics" />
             </div>
-            <h3> Physiotherapist</h3>
+            <h3>Orthopedics</h3>
           </div>
           <div className="row">
             <div className="row-img">
-              <img src={ortopeda} alt="Orthopedics" />
+              <img src={Cirujano2} alt="Prosthetic surgeon" />
             </div>
-            <h3>Orthopedist</h3>
+            <h3>Prosthetic surgeon</h3>
           </div>
 
           <div className="row">
             <div className="row-img">
-              <img src={Insurance} alt="Insurance" />
+              <img src={fisioterapeuta} alt="Physical Therapist" />
             </div>
-            <h3>Insurance</h3>
+            <h3>Physical Therapist</h3>
           </div>
 
           <div className="row">
@@ -63,47 +63,41 @@ const Team = () => {
 
           <div className="row">
             <div className="row-img">
-              <img src={evaluadora} alt="Evaluator" />
+              <img src={Nurse} alt="Nurse" />
             </div>
-            <h3>Evaluator</h3>
+            <h3>Nurse</h3>
           </div>
 
           <div className="row">
             <div className="row-img">
-              <img src={customer} alt="Customer services" />
+            <img src={Nurse2} alt="Nurse" />
             </div>
-            <h3>Customer Services</h3>
+            <h3>Nurse</h3>
           </div>
           <div className="row">
             <div className="row-img">
-              <img src={fabricador} alt=" Prosthesis manufacturer" />
+              <img src={secretaria} alt="Secretary" />
             </div>
-            <h3> Prosthesis manufacturer</h3>
+            <h3> Secretary</h3>
           </div>
+
+         
 
           <div className="row">
             <div className="row-img">
-              <img src={biomedico} alt="Biomedical engineer" />
+              <img src={Personal} alt="Maintenance Staff" />
             </div>
-            <h3>Biomedical engineer</h3>
+            <h3>Maintenance Staff</h3>
           </div>
 
-          <div className="row">
-            <div className="row-img">
-              <img src={Cirujano2} alt="Prosthetic surgeon" />
-            </div>
-            <h3>Prosthetic surgeon</h3>
-          </div>
-
-          <div className="row">
-            <div className="row-img">
-              <img src={InvestigadorClinico} alt="Clinical researcher" />
-            </div>
-            <h3>Clinical researcher</h3>
-          </div>
+          
         </div>
       </div>
+      <br/>
+      <br/>
+      <br/>
     </section>
+   
   );
 };
 

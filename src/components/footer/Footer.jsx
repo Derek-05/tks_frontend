@@ -10,7 +10,7 @@ const Footer = () => {
 
         <h3>Services</h3>
         <a href="#Prosthetic">Custom Prosthetics</a>
-        <a href="#"> Our Services</a>
+        <a href="#services"> Our Services</a>
         <a href="#Design">Prosthesis designs</a>
       </div>
 
@@ -32,6 +32,7 @@ const Footer = () => {
       
         <a href="#">Job Offer</a>
         <a href="#Team1">Team</a>
+      
        
        
       </div>

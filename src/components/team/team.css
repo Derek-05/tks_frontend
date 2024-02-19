@@ -6,24 +6,28 @@
   align-items:center;
   text-align:center;
   gap:3rem;
-  color:#fff;
+  color:black;
 
   
 }
 
-.Teamheading h1{
+.Teamheading h2{
   font-size:40px;
-  font-weight:800;
-  color: #ffed2a;
+  font-weight:700;
+  color: darkblue;
   margin-bottom: 80px;
   text-align: center;
-  margin-top: 100px;
+  margin-top: -70px;
   
   
 }
 
+.Team-body-prosthetics{
+  background: rgb(237, 235, 235);
+  margin-top: -100px;
+}
 
-.row-img{
+.row-img {
   overflow: hidden;
   width: 140px;
   height: 140px;
@@ -34,22 +38,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
-.row-img img{
-  width:125%;
-  display:block;
-  
+.row-img img {
+  width: 100%; 
+  height: auto;
+  display: block;
   transition: transform 0.7s;
 }
 
-.row-img img:hover{
+.row-img img:hover {
   transform: scale(1.2);
 }
 
 .feature-content h4{
-
+  
   font-size:17px;
   font-weight:500;
   cursor:pointer;
@@ -68,3 +71,14 @@
   }
 }
 
+@media (max-width: 600px) {
+  .row-img {
+    width: 100px; /* Reducir el tamaño del círculo */
+    height: 100px;
+  }
+
+  .row-img img {
+    width: 100%; /* Ajustar el tamaño de la imagen para llenar completamente el círculo */
+    height: auto;
+  }
+}

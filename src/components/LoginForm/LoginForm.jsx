@@ -49,7 +49,10 @@ const LoginForm = () => {
     }
 
     return (
+        <body className="Login-form-body">
         <div className="modal-container">
+          
+            
             <div className="login-modal">
                 <h2>Login</h2>
                 <form className="login-form" onSubmit={handleSubmit}>
@@ -85,6 +88,7 @@ const LoginForm = () => {
                 </form>
             </div>
         </div>
+        </body>
     );
 }
 

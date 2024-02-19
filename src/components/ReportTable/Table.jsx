@@ -183,7 +183,7 @@ const Table = () => {
   // Render content based on selected tab
   const renderContent = () => (
     <div className="heading1">
-      <h1>Admin Dashboard</h1>
+      
       <div className="table-container">
         {content === "applicants" && renderApplicantsTable()}
         {content === "jobOffers" && renderJobOffersTable()}
@@ -195,6 +195,7 @@ const Table = () => {
 
   // Render applicants table
   const renderApplicantsTable = () => (
+
     <table className="list" id="EmployeeList">
       {/* Table header */}
       <thead>
@@ -206,6 +207,8 @@ const Table = () => {
           <th>First Name</th>
           <th>Last Name</th>
           <th>Email</th>
+          <th>Date of Birth</th>
+          <th>Gender</th>
           <th>Phone Number</th>
           <th>Job Id</th>
           <th>File Name</th>
@@ -228,6 +231,8 @@ const Table = () => {
               <td>{user ? user.first_name : ""}</td>
               <td>{user ? user.last_name : ""}</td>
               <td>{user ? user.email : ""}</td>
+              <td>{user ? user.dof : ""}</td>
+              <td>{user ? user.gender : ""}</td>
               <td>{user ? user.phone_number : ""}</td>
               <td>{applicant.job_offering_id}</td>
               <td>{applicant.file_name}</td>
@@ -248,9 +253,10 @@ const Table = () => {
     </table>
   );
 
+
   // Render job offers table
   const renderJobOffersTable = () => (
-    <table className="list" id="JobOfferList">
+    <table className="list-2" id="JobOfferList">
       {/* Table header */}
       <thead>
         <br />
