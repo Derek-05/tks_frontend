@@ -1,12 +1,16 @@
 /* JobListing.css */
 
 .job-listing {
-  padding: 20px;
+  padding: 20px ;
   margin: 80px 0;
   border: 1px solid #00489d; /* Border color matches background gradient */
   border-radius: 10px;
   background: linear-gradient(to left, rgba(0, 72, 157, 0.8), rgba(0, 72, 157, 0.5)); /* Background gradient with adjusted colors */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-top: 200px;
+  width:30%;
+  text-align: center;
+  margin-left: 500px;
 }
 
 .job-listing:hover {

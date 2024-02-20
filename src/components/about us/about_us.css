@@ -29,7 +29,7 @@
   height:auto;
   border-radius:10px;
   margin-left: 25px;
-  margin-top: 40px;
+  margin-top: 125px;
  }
 
  .About-us-text h2{
@@ -45,12 +45,13 @@
 
  .About-us-text h5{
   text-align: center;
-  font-size:30px;
+  font-size:35px;
   font-weight:700;
   color:darkblue;
   text-transform:uppercase;
   letter-spacing:6px;
   margin-bottom:20px;
+  margin-top: 60px;
   
 
 }
@@ -59,10 +60,10 @@
  .About-us-text p{
   text-align: justify;
     text-justify: distribute-all-lines;
-    font-size: 17px;
+    font-size: 18px;
     font-weight:700;
     line-height: 50px;
-    color:#666;
+    color:#313131;
     margin-bottom: 60px;
     margin-right: 25px;
  }
@@ -96,7 +97,7 @@
  
  .Our-story-text h5{
    text-align: center;
-   font-size: 30px;
+   font-size: 35px;
    font-weight:700;
    color:darkblue;
  
@@ -110,10 +111,10 @@
     
   text-align: justify;
     text-justify: distribute-all-lines;
-    font-size: 17px;
+    font-size: 18px;
     font-weight:700;
     line-height: 50px;
-    color: #666;
+    color:#313131;
     margin-bottom: 35px;
     margin-right: 25px;
     

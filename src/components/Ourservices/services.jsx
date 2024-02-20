@@ -5,7 +5,7 @@ function services() {
     <body >
     <div className="section">
       <div className="title" id="services">
-        <h1>Our Services</h1>
+        <h1>OUR SERVICES</h1>
         <br/>
         <br/>
       </div>
@@ -36,6 +36,8 @@ Complete medical assessments for children, such as congenital malformations, tra
         </div>
         
       </div>
+      <br/>
+      <br/>
     </div>
     
     </body>
