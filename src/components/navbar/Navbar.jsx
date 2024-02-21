@@ -43,13 +43,12 @@ const Navbar = () => {
   // Menu items
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "Job Offer", path: "/job" },
     { name: "Benefits", path: "/benefits" },
+    { name: "Job Offer", path: "/job" },
     { name: "Apply Now", path: "/apply_now" },
-    { name: "Contact", path: "/contact" },
-    { name: "Dashboard", path: "/Dashboard" },
+    { name: "Contact Us", path: "/contact" },
     { name: "Login", path: "/Login" },
-    { name: "ThankYou", path: "/thankyou" },
+   
 
   ];
 
