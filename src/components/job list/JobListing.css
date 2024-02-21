@@ -1,26 +1,28 @@
-/* JobListing.css */
 
-.job-listing {
-  padding: 20px;
-  margin: 80px 0;
-  border: 1px solid #00489d; /* Border color matches background gradient */
-  border-radius: 10px;
-  background: linear-gradient(to left, rgba(0, 72, 157, 0.8), rgba(0, 72, 157, 0.5)); /* Background gradient with adjusted colors */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+h2{
+  color:black;
 }
+.job-listing {
+  padding: 25px;
+  margin: 10px 0;
+  border: 1px solid linear-gradient(to left, rgba(0,0,0,0.6), rgba(0,0,0,0.3))#00489d;;
+  border-radius: 4px;
+  background:dodgerblue;
+  margin-top: 200px;
+  width:20%;
+  border-radius: 10px;
+  margin-left: 20px;
 
-.job-listing:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .job-listing h3 {
-  color: #fff;
+  color: white;
   margin-bottom: 8px;
+  text-align: center;
 }
 
-/* Optional: Customize link styles */
-.job-listing a {
-  text-decoration: none;
-  color: inherit;
+.job-listing p {
+  color: #666;
+  margin-bottom: 5px;
 }
+

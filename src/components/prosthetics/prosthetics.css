@@ -21,13 +21,14 @@
     height:auto;
     border-radius:10px;
     margin-left: 20px;
-    margin-top: 45px;
+    margin-top: 70px;
     margin-left: 20px;
 }
 
 
 
 .prosthetics-text h5{
+    text-align: center;
     font-size:28px;
     font-weight:800;
     color:darkblue;
@@ -39,6 +40,7 @@
 }
 
 .prosthetics-text h2{
+    text-align: center;
     color:#176fc2;
     font-size:25px;
     font-weight:800;
@@ -49,10 +51,10 @@
 .prosthetics-text p{
     text-align: justify;
     text-justify: distribute-all-lines;
-    font-size: 17px;
+    font-size: 18px;
     font-weight:700;
     line-height: 45px;
-    color:#666;
+    color:#313131;
     margin-bottom: 35px;
     margin-right: 35px;
 }

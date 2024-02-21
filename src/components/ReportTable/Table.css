@@ -56,22 +56,24 @@ body .logout {
 
 /* Table styles */
 .list {
-  margin-top: 200px;
+  margin-top: 140px;
   width: 30%; /* Reduciendo el ancho de la tabla */
-  margin-left: 550px; /* Quitando el margen izquierdo */
+  margin-left: 350px; /* Quitando el margen izquierdo */
   margin-right: 20px; /* Agregando un margen derecho para mover la tabla hacia la derecha */
 }
 .list-2 {
-  margin-top: 250px;
+  margin-top: 150px;
   width: 30%; /* Reduciendo el ancho de la tabla */
-  margin-left: 500px; /* Quitando el margen izquierdo */
+  margin-left: 350px; /* Quitando el margen izquierdo */
   margin-right: 20px; /* Agregando un margen derecho para mover la tabla hacia la derecha */
 }
 .list-2 td p {
+  color:black;
   word-wrap: break-word; /* Permite que las palabras largas se rompan y se muevan a la siguiente línea */
   max-width: 150px; /* Ancho máximo para la celda de la tabla */
 }
 .list td p {
+  color:black;
   word-wrap: break-word; /* Permite que las palabras largas se rompan y se muevan a la siguiente línea */
   max-width: 150px; /* Ancho máximo para la celda de la tabla */
 }
@@ -85,9 +87,10 @@ body .logout {
 
 .list-2 th,
 .list-2 td {
-  padding: 12px;
+  padding: 25px;
   border: 1px solid #ccc;
   text-align: left;
+ 
 }
 
 .list th,
@@ -109,11 +112,11 @@ body .logout {
   text-justify: distribute-all-lines;
 }
 .list-2 td {
-  color: white;
+  color: black;
 }
 
 .list td {
-  color: white;
+  color: black;
 }
 
 .list td {
