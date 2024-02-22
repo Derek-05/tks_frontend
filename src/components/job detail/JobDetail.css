@@ -14,9 +14,9 @@
   padding: 15px;
   margin: 80px;
   border-radius: 8px;
-  background: linear-gradient(to left, rgba(0, 72, 157, 0.8), rgba(0, 72, 157, 0.5)); /* Adjusted background gradient */
-  color: #fff; /* Set text color to white for better contrast */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle box shadow for depth */
+  background: linear-gradient(to left, rgba(0, 72, 157, 0.8), rgba(0, 72, 157, 0.5)); 
+  color: #fff; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 .job-detail p {
@@ -34,5 +34,5 @@
 
 /* Optional: Add hover effect */
 .job-detail:hover {
-  transform: scale(1.02); /* Optional: Add a slight scale effect on hover */
+  transform: scale(1.02); 
 }

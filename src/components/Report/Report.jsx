@@ -3,6 +3,7 @@ import "./Report.css";
 
 const Report = () => {
   return (
+    /*Contact us page body */
     <div className="container" id="Contact">
       <main className="row">
         <section className="col left">

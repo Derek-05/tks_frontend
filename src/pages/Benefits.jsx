@@ -4,6 +4,7 @@ import Advantage from'../components/Advantage/Advantage';
 
 const Benefits = () => {
   return (
+      /* Benefits Page */
     <div className="Benefits">
       
         <Advantage />

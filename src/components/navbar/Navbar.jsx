@@ -58,6 +58,7 @@ const Navbar = () => {
   };
 
   return (
+     /*Navbar body */
     <header ref={navbarRef} className={window.pageYOffset > 100 ? "sticky" : ""}>
       <a href="#">
         <img src={logo} width="90vh" alt="logo" />

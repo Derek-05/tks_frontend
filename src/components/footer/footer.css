@@ -1,7 +1,5 @@
-
-
-
-
+  /*Footer page  style */ 
+  
 .footer{
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,auto));

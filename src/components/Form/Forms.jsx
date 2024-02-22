@@ -92,6 +92,7 @@ const Forms = ({ onFormSuccess }) => {
   };
 
   return (
+      /*Form page body  */
     <section className="container">
       <form onSubmit={handleFormSubmit} className="Newform">
         <h1>Apply Now</h1>

@@ -5,6 +5,7 @@ import './jobs.css';
 
 const Jobs = ({imgUrl, title}) => {
   return (
+     /* Job container body */
     <div className='tks__team-container_job'>
         <div className='tks__team-container_job_img'>
           

@@ -4,6 +4,7 @@ import OurStory2 from "../../assets/OurStory2.jpeg";
 import "./about_us.css";
 
 const AboutUs = () => {
+    /*About us page  body  */
   return (
     <body className="body-about-us">
      
@@ -35,7 +36,7 @@ const AboutUs = () => {
           prosthesis.
         </p>
       </div>
-
+     
       <div className="Our-story-img">
         <br />
         <br />

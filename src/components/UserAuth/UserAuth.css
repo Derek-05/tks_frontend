@@ -2,26 +2,26 @@
 .user-auth {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Align to the right side */
-  color: #ffed2a; /* Matching the navbar link color */
-  font-size: 15px; /* Matching the navbar font size */
-  margin-right: 20px; /* Consistent spacing from the right */
+  justify-content: flex-end; 
+  color: #ffed2a; 
+  font-size: 15px; 
+  margin-right: 20px; 
 }
 
 .user-auth span {
-  margin-right: 10px; /* Space between the greeting and the button */
+  margin-right: 10px; 
 }
 
 .user-auth button {
   background: none;
   border: none;
-  color: #ffed2a; /* Matching the navbar link color */
+  color: #ffed2a; 
   padding: 5px 10px;
   cursor: pointer;
   transition: all .50s ease;
 }
 
 .user-auth button:hover {
-  color: #fff; /* Hover effect to match navbar links */
+  color: #fff; 
   transform: translateY(-3px);
 }

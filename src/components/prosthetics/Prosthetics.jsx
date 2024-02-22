@@ -10,6 +10,7 @@ import { homepage } from "./imports";
 
 const Prosthetics = () => {
   return (
+    /*Prosthetics page body */
     <body className="prosthetics-main">
       
     <section>
@@ -121,21 +122,6 @@ const Prosthetics = () => {
       <br/>
       <br/>
      
-
-      <div className="container3">
-    <div className="column-left3">
-       <h3>Ready to be part of our team</h3>
-       <p>"Join us and help us  make a better world"</p>
-       <br/>
-       <br/>
-       <br/>
-    </div>
-    <div className="column-right3">
-    <button className="btn3">Job Offer</button>
-    </div>
-
-    
-</div>
 </div>
 
     </section>

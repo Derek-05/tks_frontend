@@ -49,33 +49,33 @@ body .logout {
 
 /* Content area styles */
 .content {
-  width: calc(100% - 400px); /* Cambiado a 300px para corresponder con el ancho del sidebar */
-  margin-left: 400px; /* Cambiado a 300px para corresponder con el ancho del sidebar */
+  width: calc(100% - 400px); 
+  margin-left: 400px; 
   padding: 20px;
 }
 
 /* Table styles */
 .list {
   margin-top: 140px;
-  width: 30%; /* Reduciendo el ancho de la tabla */
-  margin-left: 350px; /* Quitando el margen izquierdo */
-  margin-right: 20px; /* Agregando un margen derecho para mover la tabla hacia la derecha */
+  width: 30%; 
+  margin-left: 350px;
+  margin-right: 20px; 
 }
 .list-2 {
   margin-top: 150px;
-  width: 30%; /* Reduciendo el ancho de la tabla */
-  margin-left: 350px; /* Quitando el margen izquierdo */
-  margin-right: 20px; /* Agregando un margen derecho para mover la tabla hacia la derecha */
+  width: 30%; 
+  margin-left: 350px;
+  margin-right: 20px; 
 }
 .list-2 td p {
   color:black;
-  word-wrap: break-word; /* Permite que las palabras largas se rompan y se muevan a la siguiente línea */
-  max-width: 150px; /* Ancho máximo para la celda de la tabla */
+  word-wrap: break-word; 
+  max-width: 150px; 
 }
 .list td p {
   color:black;
-  word-wrap: break-word; /* Permite que las palabras largas se rompan y se muevan a la siguiente línea */
-  max-width: 150px; /* Ancho máximo para la celda de la tabla */
+  word-wrap: break-word; 
+  max-width: 150px; 
 }
 
 .list-2 th p{
@@ -181,34 +181,34 @@ body .logout {
   color: dodgerblue;
   border-color: dodgerblue;
 }
-
+/*styles of other devices */
 @media screen and (max-width: 768px) {
   .sidebar {
-    width: 100%; /* Haz que el sidebar ocupe todo el ancho de la pantalla */
-    height: auto; /* Permitir que el alto se ajuste automáticamente */
-    padding-top: 20px; /* Reducir el espacio superior */
-    overflow-y: hidden; /* Ocultar la barra de desplazamiento vertical en dispositivos móviles */
-    position: static; /* Cambiar la posición a estática para que no esté fijo */
+    width: 100%; 
+    height: auto; 
+    padding-top: 20px; 
+    overflow-y: hidden; 
+    position: static; 
   }
 
   .logout {
-    position: static; /* Cambiar la posición a estática para que no esté absoluta */
-    margin-top: 20px; /* Añadir un espacio entre el sidebar y el botón de logout */
+    position: static; 
+    margin-top: 20px; 
   }
 
   .content {
-    width: 100%; /* Haz que el contenido ocupe todo el ancho de la pantalla */
-    margin-left: 0; /* Eliminar el margen izquierdo */
+    width: 100%; 
+    margin-left: 0; 
   }
 
   .list,
   .list-2 {
-    width: 100%; /* Haz que las tablas ocupen todo el ancho de la pantalla */
-    margin-left: 0; /* Eliminar el margen izquierdo */
-    margin-right: 0; /* Eliminar el margen derecho */
+    width: 100%; 
+    margin-left: 0; 
+    margin-right: 0; 
   }
 
   .job-form h2 {
-    margin-top: 20px; /* Reducir el espacio superior para el título del formulario */
+    margin-top: 20px;
   }
 }

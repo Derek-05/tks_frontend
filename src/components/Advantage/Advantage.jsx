@@ -79,7 +79,7 @@ const Advantage = () => {
           <img src={Benefit4} alt="Health and Well-being" />
           <div className="card-content">
             <h1>Health and Well-being</h1>
-            <a href="#Benefits-Info" class="card-button">
+            <a href="#cardsinfo2" class="card-button">
               Read more
             </a>
           </div>
@@ -88,7 +88,7 @@ const Advantage = () => {
           <img src={Benefit3} alt="Professional Development" />
           <div className="card-content">
             <h1>Professional Development</h1>
-            <a href="#Benefits-Info" class="card-button">
+            <a href="#cardsinfo2" class="card-button">
               Read more
             </a>
           </div>
@@ -97,7 +97,7 @@ const Advantage = () => {
           <img src={Benefit2} alt="Work-Family Balance" />
           <div className="card-content">
             <h1> Work-Family Balance</h1>
-            <a href="#Benefits-Info" class="card-button">
+            <a href="#cardsinfo2" class="card-button">
               Read more
             </a>
           </div>
@@ -106,7 +106,7 @@ const Advantage = () => {
           <img src={Benefit1} alt="Financial-Incentives" />
           <div className="card-content">
             <h1>Financial Incentives</h1>
-            <a href="#Benefits-Info" class="card-button">
+            <a href="#cardsinfo2" class="card-button">
               Read more
             </a>
           </div>
@@ -131,70 +131,54 @@ const Advantage = () => {
         </div>
       </div>
       <div className="Information-text" id="Benefits-Info">
-        <h5> Benefits Information</h5>
+        <h5>Benefits Information</h5>
       </div>
-      <div className="advantage-container">
-        <div className="card1">
-          <div className="slider">
-            <div
-              className="slider-inner"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {images2.map((image, index) => (
-                <div className="slider-item" key={index}>
-                  <img src={image} alt={`Finance-images ${index + 1}`}  /> 
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="slider-controls">
-            <button className="slider-button" onClick={prevSlide}>
-              <i class="bx bx-left-arrow-alt"></i>
-            </button>
-            <button className="slider-button" onClick={nextSlide}>
-              <i class="bx bx-right-arrow-alt"></i>
-            </button>
-          </div>
-          <div className="card-content1">
-            <h3>Financial </h3>
-            <p>
-             At our clinic, we offer different benefits to make sure our employees are happy. We give bonuses 
-             based on performance, share profits, help with retirement savings, and offer discounts on services.
-              These things help keep our staff motivated, financially secure, and connected to our clinic's goals.
-            </p>
+      <br/>
+      <br/>
+
+      <div className="container3" id="cardsinfo2">
+        <div className="card4">
+          <img src={Bienestar1} alt="pasiva" />
+          <div className="card-info">
+            <h3>Health and Well being</h3>
+            <p>At our clinic, we prioritize the health and well-being of our team members. 
+              We offer comprehensive benefits that encompass dental coverage, yoga and fitness 
+              programs, check-up assurance, and paid health leaves. We understand the importance 
+              of fostering a work environment that supports both physical and mental wellness lifestyle.</p>
           </div>
         </div>
-        <div className="card1">
-          <div className="slider">
-            <div
-              className="slider-inner"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {images1.map((image2, index) => (
-                <div className="slider-item" key={index}>
-                  <img src={image2} alt={`Well-being-images ${index + 1}`} />
-                </div>
-              ))}
-            </div>
+
+        <div className="card4">
+          <img src={Desarrollopersonal2} alt="pasiva" />
+          <div className="card-info">
+            <h3>Professional Development</h3>
+            <p>At our clinic empowers employees with continuous learning initiatives. This includes ongoing training programs.
+               financial support for related education through tuition reimbursement, and mentorship opportunities. our workforce
+                to progress in their careers within the clinic, emphasizing our commitment to their success </p>
           </div>
-          <div className="slider-controls">
-            <button className="slider-button" onClick={prevSlide}>
-              <i class="bx bx-left-arrow-alt"></i>
-            </button>
-            <button className="slider-button" onClick={nextSlide}>
-              <i class="bx bx-right-arrow-alt"></i>
-            </button>
-          </div>
-          <div className="card-content1">
-            <h3> Well being</h3>
+        </div>
+
+        <div className="card4">
+          <img src={Familia2} alt="pasiva" />
+          <div className="card-info">
+            <h3> Work-Family Balance</h3>
             <p>
-              At our clinic, we prioritize the health and well-being of our team
-              members. We offer comprehensive benefits that encompass dental
-              coverage, yoga and fitness programs, check-up assurance, and paid
-              health leaves. We understand the importance of fostering a work
-              environment that supports both physical and mental wellness
-              lifestyle.
-            </p>
+             At our clinic, fostering a supportive environment for our employees. 
+             With flexible work schedules, on-site childcare services, paid parental leave, 
+             and additional days off for family-related situations, we aim to create a workplace
+              that recognizes and accommodates the diverse needs of our staff, ensuring a harmonious 
+              balance between work and family life</p>
+          </div>
+        </div>
+
+        <div className="card4">
+          <img src={Finance2} alt="pasiva" />
+          <div className="card-info">
+            <h3>Financial Incentives</h3>
+            <p>At our clinic, we offer different benefits to make sure our employees are happy.
+               We give bonuses based on performance, share profits, help with retirement savings, 
+               and offer discounts on services. These things help keep our staff motivated, financially 
+               secure, and connected to our clinic's goals.</p>
           </div>
         </div>
       </div>
@@ -203,73 +187,7 @@ const Advantage = () => {
       <br />
       <br />
 
-      <div className="advantage-container">
-        <div className="card1">
-          <div className="slider">
-            <div
-              className="slider-inner"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {images3.map((image2, index) => (
-                <div className="slider-item" key={index}>
-                  <img src={image2} alt={`Family-images ${index + 1}`} />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="slider-controls">
-            <button className="slider-button" onClick={prevSlide}>
-              <i class="bx bx-left-arrow-alt"></i>
-            </button>
-            <button className="slider-button" onClick={nextSlide}>
-              <i class="bx bx-right-arrow-alt"></i>
-            </button>
-          </div>
-          <div className="card-content1">
-            <h3>Work-Family</h3>
-            <p>
-              At our clinic, fostering a supportive environment for our
-              employees. With flexible work schedules, on-site childcare
-              services, paid parental leave, and additional days off for
-              family-related situations, we aim to create a workplace that
-              recognizes and accommodates the diverse needs of our staff,
-              ensuring a harmonious balance between work and family life.
-            </p>
-          </div>
-        </div>
-        <div className="card1">
-          <div className="slider">
-            <div
-              className="slider-inner"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {images4.map((image2, index) => (
-                <div className="slider-item" key={index}>
-                  <img src={image2} alt={`Career Development ${index + 1}`} />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="slider-controls">
-            <button className="slider-button" onClick={prevSlide}>
-              <i class="bx bx-left-arrow-alt"></i>
-            </button>
-            <button className="slider-button" onClick={nextSlide}>
-              <i class="bx bx-right-arrow-alt"></i>
-            </button>
-          </div>
-          <div className="card-content1">
-            <h3>Career Development</h3>
-            <p>
-              At our clinic empowers employees with continuous learning
-              initiatives. This includes ongoing training programs, financial
-              support for related education through tuition reimbursement, and
-              mentorship opportunities.  our workforce to progress in their careers
-              within the clinic, emphasizing our commitment to their success.
-            </p>
-          </div>
-        </div>
-      </div>
+   
     </section>
   );
 };
