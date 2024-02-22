@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import "./JobLink.css";
 function JobLink() {
   return (
@@ -12,7 +13,9 @@ function JobLink() {
        <br/>
     </div>
     <div className="column-right3">
+    <Link to="/job">
     <button className="btn3">Job Offer</button>
+    </Link>
     </div>
 
     
