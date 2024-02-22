@@ -7,6 +7,7 @@ import clinic from "../../assets/clinic.jpeg";
 import soccer from "../../assets/soccer.jpeg";
 import street from "../../assets/street.jpeg";
 import { homepage } from "./imports";
+import { Link } from 'react-router-dom';
 
 const Prosthetics = () => {
   return (
@@ -131,7 +132,9 @@ const Prosthetics = () => {
        <br/>
     </div>
     <div className="column-right3">
-    <button className="btn3">Job Offer</button>
+    <Link to="/job">
+  <button className="btn3">Job Offer</button>
+  </Link>
     </div>
 
     

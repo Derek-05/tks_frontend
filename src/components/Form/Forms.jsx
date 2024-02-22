@@ -122,8 +122,8 @@ const Forms = ({ onFormSuccess }) => {
           />
         </div>
 
-        <div>
-          <label htmlFor="dof">Date of Birth</label>
+        <div className="input-box">
+          <label htmlFor="dof">Date of Birth
           <input
             type="date"
             id="dof"
@@ -132,6 +132,7 @@ const Forms = ({ onFormSuccess }) => {
             onChange={handleChange}
             required // Required attribute added
           />
+          </label>
         </div>
         <div className="input-box">
           <label htmlFor="gender">Gender</label>
