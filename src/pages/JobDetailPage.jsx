@@ -23,10 +23,11 @@ const JobDetailPage = () => {
   }, [id, setJob]);
 
   const goBack = () => {
-    navigate(-1); // Reemplaza useHistory().goBack() con useNavigate() para retroceder
+    navigate(-1); 
   };
 
   return (
+      /* Job Details Page */
     <div>
       <button onClick={goBack}>Volver</button>
       {job ? <JobDetail job={job} /> : <p>Cargando...</p>}

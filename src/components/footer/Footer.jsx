@@ -3,6 +3,7 @@ import "./footer.css";
 
 const Footer = () => {
   return (
+      /*Footer page  body  */
     <section class="footer">
       <div class="footer-box">
         <br />

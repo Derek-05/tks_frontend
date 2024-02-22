@@ -1,3 +1,4 @@
+  /*Form page style  */
 *{
   margin:0;
   padding:0;
@@ -17,7 +18,7 @@
   
 
 }
-
+  /*Form style  */
 .container .Newform{
   position: relative;
   max-width:700px ;

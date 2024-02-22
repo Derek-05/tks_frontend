@@ -1,3 +1,4 @@
+  /* ThankYouPage style */
 .thank-you-card {
   width: 210vh;
   margin-top: 300px;
@@ -28,7 +29,7 @@
   line-height: 1.5;
   text-align: center;
 }
-
+  /* ThankYouPage button style */
 .btn-2 {
   display: inline-block;
   padding: 10px 20px;
@@ -45,7 +46,7 @@
   border: 2px solid dodgerblue;
 }
 
-/* Media Query para pantallas con un ancho máximo de 600px */
+/* /*styles of other devices */
 @media screen and (max-width: 600px) {
   .card-2 {
     width: 60vh;

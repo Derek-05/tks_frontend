@@ -1,4 +1,4 @@
-
+/*Contact us page style*/
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ body {
     
 }
 
-
+/*Contact us page  content style*/
 .container {
     width: 100%;
     min-height: 100vh;
@@ -31,7 +31,7 @@ body {
     width: 100%;
     max-width: 1100px;
 }
-
+/*Contact us page left row style*/
 .container .row .left {
     flex-basis: 35%;
     min-width: 320px;
@@ -85,7 +85,7 @@ body {
 .container .row .left .contactInfo {
     margin-bottom: 20px;
 }
-
+/*Contact us page icons style*/
 .iconGroup {
     display: flex;
     align-items: center;
@@ -119,13 +119,13 @@ body {
     color: Darkblue;
     font-weight: 700;
 }
-
+/*Contact us page Message form style*/
 .messageform {
     display: flex;
     flex-wrap: wrap;
     padding-top: 30px;
 }
-
+/*Contact us page Input style*/
 .inputGroup {
     margin-bottom: 20px;
     position: relative;
@@ -205,7 +205,7 @@ body {
 }
 
 
-
+/*styles of other devices */
 @media(max-width: 1100px){
     .messageform .halfWidth{
         flex-basis: 100%;

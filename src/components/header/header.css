@@ -1,3 +1,5 @@
+  /*Home page  header style  */
+
 .tks__header{
     display:flex;
 
@@ -39,7 +41,7 @@
 
 
 
-
+/*styles of other devices */
 @media screen and (max-width: 1050px){
     .tks__header{
         flex-direction: column;

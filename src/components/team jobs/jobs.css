@@ -1,4 +1,4 @@
-
+ /* Job container style */
 .tks__team-container_job_img{
     overflow: hidden;
      width:140px;
@@ -8,7 +8,7 @@
      border-radius: 50%;
      cursor: pointer;
 }
-
+ /* Team page img style */
 .tks__team-container_job_img img{
     width:150%;
     display:block;
@@ -23,7 +23,7 @@
     padding: 1rem 1.5rem;
     height:100%;
 }
-
+ 
 .tks__team-container_job-content h3{
     font-size:30px;
      font-weight:500;

@@ -3,6 +3,7 @@ import './JobDetail.css';
 
 const JobDetail = ({ job ={} }) => {
   return (
+     /*Job Detail page body  */
     <div className="job-detail">
       <p><strong>Description:</strong> {job.jobOffering.description ?? 'Not provided'}</p>
       <p><strong>Salary:</strong> {job.jobOffering.salary ??  'Not provided'}</p>

@@ -15,6 +15,7 @@ const ApplyNow = () => {
   }
 
   return (
+      /* Apply Now Page */
     <div className='FormInfo'>
       <Forms onFormSuccess={handleFormSuccess} />
     </div>

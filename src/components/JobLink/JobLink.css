@@ -1,0 +1,70 @@
+/* Job Link section style */
+.container3 {
+    bottom: 20px;
+    display: flex; 
+    flex-direction: column; 
+    
+    margin-left: 20px;
+    width: 100%;
+}
+
+.column-left3, .column-right3 {
+    padding: 10px; 
+}
+.column-left3 {
+    order: 2; 
+}
+
+.column-right3 {
+    order: 2;
+}
+.column-left3 h3{
+    margin-top: 50px;
+font-size: 22px;
+color:darkblue;
+font-weight: 800;
+margin-left: 20px;
+}
+.column-left3 p {
+     font-size: 15px;
+     color:#176fc2;
+     font-weight: 800;
+     margin-left: 20px;
+}
+
+/* Job list button style */
+.btn3 {
+    width: 25%;
+    padding: 10px 20px;
+    background-color: #00489d;
+    color:#ffed2a;
+    border: none;
+    border-radius: 5px;
+    margin-left: 150px;
+    margin-top: 70px;
+}
+
+.btn3:hover {
+   
+    border: 2px solid #ffed2a;
+    background: white;
+    color: #00489d;
+  }
+/*styles of other devices */
+@media screen and (min-width: 768px) {
+    .container3 {
+        flex-direction: row; /* Cambia la disposición a filas en pantallas más grandes */
+    }
+
+    .column-left3, .column-right3 {
+        flex: 1; /* Ambas columnas tomarán el mismo espacio */
+    }
+
+    .column-left3 {
+        order: 1; /* Cambia el orden a izquierda */
+    }
+
+    .column-right3 {
+        order: 2; /* Cambia el orden a derecha */
+    }
+}

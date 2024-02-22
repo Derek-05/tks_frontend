@@ -7,6 +7,7 @@ const Dashboard = () => {
   const token = getTokenFromLocalStorage();
 
   return (
+      /* Dashboard Page */
     <div className="Info">
       <Table token={token} /> {/* Pass the token to child components if needed */}
     </div>

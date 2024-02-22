@@ -2,6 +2,7 @@ import React from 'react'
 import "./services.css";
 function services() {
   return (
+     /*Ourservices page body */
     <body >
     <div className="section">
       <div className="title" id="services">
