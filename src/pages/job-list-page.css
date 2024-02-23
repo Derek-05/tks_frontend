@@ -1,0 +1,50 @@
+  /* Job page style*/
+.job-page-edit{
+    background: white;
+}
+
+.Job-details-heading {
+    text-align: center; /* Para centralizar el contenido */
+    margin-top: 150px; /* Ajusta el margen superior según sea necesario */
+  }
+  
+  .Job-details-heading h2 {
+    color: darkblue;
+    font-size:35px;
+    font-weight:700;
+    letter-spacing: 4px;
+    
+  }
+
+  .job-title-content{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start ;
+    flex-direction: column;
+    margin-top: 20px;
+    
+
+    margin-left: 27rem;
+  }
+
+  .job-title-content h5{
+   
+    font-size:27px;
+    font-weight: 600;
+    margin-top: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color:dodgerblue;
+  }
+
+  .job-title-content h3{
+    color:#424242e0;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 180px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-top: 15px;
+    
+  }

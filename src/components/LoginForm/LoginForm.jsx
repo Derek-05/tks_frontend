@@ -49,6 +49,7 @@ const LoginForm = () => {
     }
 
     return (
+          /*Login form body */
         <body className="Login-form-body">
         <div className="modal-container">
           

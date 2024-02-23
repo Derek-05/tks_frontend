@@ -1,3 +1,4 @@
+  /*Navbar style*/
 header {
     background: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)) #00489d;
     position: fixed;
@@ -71,7 +72,7 @@ header {
     font-size: 1.875rem;
     cursor: pointer;
   }
-  
+  /*styles of other devices */
   @media (max-width: 1200px) {
     header {
       padding: 0.875rem 5%;

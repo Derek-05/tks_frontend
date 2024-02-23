@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  ortopeda,
+  Ortopeda,
   secretaria,
   Personal,
   Nurse,
@@ -14,7 +14,7 @@ import "./team.css";
 
 const Team = () => {
   return (
-   
+    /* Team page body */
     <section className="Team-body-prosthetics">
       <div className="Team" id="Team">
         <div className="Teamheading" id="Team1">
@@ -31,14 +31,14 @@ const Team = () => {
       </div>
       <br />
       <br />
-
+      
       <div className="feature">
         <div className="feature-content">
           <div className="row">
             <div className="row-img">
-            <img src={ortopeda} alt="Orthopedics" />
+            <img src={Ortopeda} alt="Orthopedics" />
             </div>
-            <h3>Orthopedics</h3>
+            <h3>Orthopedic</h3>
           </div>
           <div className="row">
             <div className="row-img">

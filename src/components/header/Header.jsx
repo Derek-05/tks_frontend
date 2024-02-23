@@ -3,6 +3,7 @@ import "./header.css";
 
 const Header = () => {
   return (
+      /*Home page  header body  */
     <div className="tks__header section__padding" id="home">
       <div className="tks__header-content">
         <div id="google_translate_element">

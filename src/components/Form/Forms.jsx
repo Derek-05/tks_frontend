@@ -92,6 +92,8 @@ const Forms = ({ onFormSuccess }) => {
   };
 
   return (
+      /*Form page body  */
+      <body className="container-form">
     <section className="container">
       <form onSubmit={handleFormSubmit} className="Newform">
         <h1>Apply Now</h1>
@@ -203,7 +205,7 @@ const Forms = ({ onFormSuccess }) => {
           />
           {selectedFileName && (
             // Display selected file name if available
-            <p>Selected file: {selectedFileName}</p>
+            <p className="file-name">Selected file: {selectedFileName}</p>
           )}
         </div>
         {loading && <p>Loading...</p>}
@@ -212,6 +214,7 @@ const Forms = ({ onFormSuccess }) => {
         </button>
       </form>
     </section>
+    </body>
   );
 };
 

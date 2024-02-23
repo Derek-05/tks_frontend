@@ -2,6 +2,7 @@ import React from 'react'
 import "./services.css";
 function services() {
   return (
+     /*Ourservices page body */
     <body >
     <div className="section">
       <div className="title" id="services">
@@ -30,7 +31,7 @@ Complete medical assessments for children, such as congenital malformations, tra
           <div className="icon">
           <i class='bx bx-heart'></i>
           </div>
-          <h2 className='title-2'>Long-term monitoring<br/> and care</h2>
+          <h2 className='title-2'>Long-term and <br/> monitoring </h2>
           <p> Provide continuous follow-up and regular prosthetic settings as the child grows and 
             changes, ensuring they remain adequate.</p>
         </div>

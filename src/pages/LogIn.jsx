@@ -10,6 +10,7 @@ const LoginPage = () => {
     };
 
     return (
+       /*Login page */
         <div>
             <h1>Login Page</h1>
             <LoginForm onLoginSuccess={handleLoginSuccess} />

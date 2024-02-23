@@ -6,7 +6,7 @@ import JobDetail from '../components/job detail/JobDetail';
 const JobDetailPage = () => {
   const [job, setJob] = useState();
   const { id } = useParams();
-  const navigate = useNavigate();
+  
 
   useEffect(() => {
     const fetchJobData = async () => {
@@ -22,13 +22,11 @@ const JobDetailPage = () => {
     fetchJobData();
   }, [id, setJob]);
 
-  const goBack = () => {
-    navigate(-1); // Reemplaza useHistory().goBack() con useNavigate() para retroceder
-  };
-
+  
   return (
+      /* Job Details Page */
     <div>
-      <button onClick={goBack}>Volver</button>
+      
       {job ? <JobDetail job={job} /> : <p>Cargando...</p>}
     </div>
   );

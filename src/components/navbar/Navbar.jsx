@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import logo from "../../assets/Techkidslogo2.jpg.png";
+import logo from "../../assets/LOGO ORTHO(1).png";
 import UserAuth from "../UserAuth/UserAuth";
 import "./navbar.css";
 
@@ -58,9 +58,10 @@ const Navbar = () => {
   };
 
   return (
+     /*Navbar body */
     <header ref={navbarRef} className={window.pageYOffset > 100 ? "sticky" : ""}>
       <a href="#">
-        <img src={logo} width="90vh" alt="logo" />
+        <img src={logo} width="60vh" alt="logo" />
       </a>
       {isMobileView && (
         <FontAwesomeIcon

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import "./ThankYou.css";
 const ThankYouPage = () => {
   return (
+      /* ThankYouPage body */
    <body className='thank-you-card'>
    
     <div className="card-2">
