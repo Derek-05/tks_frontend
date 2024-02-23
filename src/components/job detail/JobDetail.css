@@ -1,10 +1,23 @@
 /* JobDetail.css */
+.job-offer-heading {
+  text-align: center; /* Para centralizar el contenido */
+  margin-top: 110px; /* Ajusta el margen superior según sea necesario */
+}
 
+.job-offer-heading h2 {
+  color: darkblue;
+  font-size:35px;
+  font-weight:700;
+  letter-spacing: 4px;
+  
+}
 .job-detail-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
+  
+  
    /* Adjust as needed based on your layout */
 }
 
@@ -17,10 +30,17 @@
   background: linear-gradient(to left, rgba(0, 72, 157, 0.8), rgba(0, 72, 157, 0.5)); 
   color: #fff; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  height: 45vh;
+  width: 50%;
+  margin-left: 45vh;
+ 
 }
 
 .job-detail p {
+  margin-bottom: 100px;
+  font-size: 20px;
   margin: 8px 0;
+
 }
 
 .job-detail strong {
@@ -35,4 +55,19 @@
 /* Optional: Add hover effect */
 .job-detail:hover {
   transform: scale(1.02); 
+}
+
+
+ .detail-btn{
+  width:20%;;
+   padding: 10px 20px; /* Agrega relleno al botón para que tenga un aspecto más espaciado */
+   text-align:center;
+  color: white; /* Establece el color del texto */
+  font-size: 16px; /* Establece el tamaño del texto */
+  margin-left: 35vh;
+ 
+}
+
+.BTN-2{
+  margin-right: 20vh;
 }

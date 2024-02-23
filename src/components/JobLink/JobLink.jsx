@@ -4,6 +4,7 @@ import "./JobLink.css";
 function JobLink() {
   return (
     /*JobLink body */
+    <section className='Job-link-body'>
     <div className="container3">
     <div className="column-left3">
        <h3>Ready to be part of our team</h3>
@@ -20,6 +21,7 @@ function JobLink() {
 
     
 </div>
+</section>
    
   )
 }

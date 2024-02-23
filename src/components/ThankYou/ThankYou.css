@@ -13,6 +13,7 @@
   padding: 20px;
   text-align: center;
   border: 2px solid dodgerblue;
+  margin-left:65vh;
 }
 
 .card-title-2 {
@@ -49,8 +50,8 @@
 /* /*styles of other devices */
 @media screen and (max-width: 600px) {
   .card-2 {
-    width: 60vh;
+    width: 50vh;
   margin-top: 300px;
-  margin-right: 950px;
+  margin-left: 3vh;
   }
 }

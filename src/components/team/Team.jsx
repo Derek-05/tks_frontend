@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  ortopeda,
+  Ortopeda,
   secretaria,
   Personal,
   Nurse,
@@ -36,9 +36,9 @@ const Team = () => {
         <div className="feature-content">
           <div className="row">
             <div className="row-img">
-            <img src={ortopeda} alt="Orthopedics" />
+            <img src={Ortopeda} alt="Orthopedics" />
             </div>
-            <h3>Orthopedics</h3>
+            <h3>Orthopedic</h3>
           </div>
           <div className="row">
             <div className="row-img">

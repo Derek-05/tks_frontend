@@ -114,7 +114,7 @@ const Advantage = () => {
         <div className="container">
           <div className="Information">
             <div class="Information-img">
-              <img src={Employee1} alt="Employee" />
+              <img src={Desarrollopersonal1} alt="Family" />
             </div>
             <div className="Information-text">
               <h5> Inspire Smiles</h5>
@@ -157,7 +157,7 @@ const Advantage = () => {
                 to progress in their careers within the clinic, emphasizing our commitment to their success </p>
           </div>
         </div>
-
+        
         <div className="card4">
           <img src={Familia2} alt="pasiva" />
           <div className="card-info">
@@ -170,6 +170,8 @@ const Advantage = () => {
               balance between work and family life</p>
           </div>
         </div>
+
+        
 
         <div className="card4">
           <img src={Finance2} alt="pasiva" />

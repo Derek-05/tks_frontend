@@ -19,8 +19,7 @@ const Prosthetics = () => {
           <h2>TYPES OF PROSTHESES</h2>
         </div>
         <br />
-        <br />
-        <br />
+        
         <div class="prosthetics">
           <div class="prosthetics-img">
             <img src={pasiva} alt="pasiva" />
@@ -29,7 +28,7 @@ const Prosthetics = () => {
             <h5>Passive Prosthetics</h5>
             <h2>They are designed as a cosmetic Prothesis</h2>
             <p>
-            This type of prosthesis, known as a non-active or static prosthesis, does not incorporate mechanisms or 
+            This type of Prosthesis, known as a non-active or static Prosthesis, does not incorporate mechanisms or 
             components that enable active movement. Instead, its primary purpose lies in enhancing the functionality 
             of the affected or pointed side of the body. Non-active prostheses are designed to provide essential support 
             and facilitate the execution of specific activities that may require stability, balance, or additional assistance. 
@@ -54,8 +53,8 @@ const Prosthetics = () => {
               {" "}
               Activity-specific prostheses are designed for an activity in which the residual limb without a prosthesis, 
               or passive, mechanical, or myoelectric prosthesis, could damage the prosthesis or simply cannot or is not 
-              suitable for the specific activity. For example, in the execution of sports or other hobbies that require a 
-              very specific subjection. These specialized prostheses are meticulously crafted to withstand the unique demands
+              suitable for the specific activity.  For example, in the execution of sports or other hobbies that require a 
+              very specific subjection.  These specialized prostheses are meticulously crafted to withstand the unique demands
               and stresses associated with particular activities, ensuring durability and optimal performance during pursuits 
               such as running, swimming, or engaging in challenging physical endeavors.
             </p>
@@ -70,17 +69,17 @@ const Prosthetics = () => {
           </div>
           <div class="prosthetics-text">
             <h5> Specific Prostheses </h5>
-            <h2> They ara designed for recrational activities</h2>
+            <h2> They are designed for recrational activities</h2>
             <p>
               {" "}
               Activity-specific prostheses are meticulously crafted to accommodate scenarios 
               where the natural residual limb, or conventional passive, mechanical, or myoelectric 
               prostheses, may pose a risk of damaging the prosthesis, or where they prove inadequate 
-              for the demands of the particular activity. These specialized prosthetic devices find
+              for the demands of the particular activity.  These specialized prosthetic devices find
                application in various pursuits such as sports or hobbies that necessitate precise and 
-               tailored support, ensuring optimal performance and safety for the wearer.are engineered
+               tailored support, ensuring optimal performance and safety for the wearer.  Are engineered
                 with precision to address the unique challenges presented by specific activities, ensuring 
-                optimal functionality and durability. They offer tailored solutions for individuals engaged 
+                optimal functionality and durability.  They offer tailored solutions for individuals engaged 
                 in sports or hobbies.
             </p>
           </div>

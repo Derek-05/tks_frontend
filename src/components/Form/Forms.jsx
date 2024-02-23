@@ -93,6 +93,7 @@ const Forms = ({ onFormSuccess }) => {
 
   return (
       /*Form page body  */
+      <body className="container-form">
     <section className="container">
       <form onSubmit={handleFormSubmit} className="Newform">
         <h1>Apply Now</h1>
@@ -123,8 +124,8 @@ const Forms = ({ onFormSuccess }) => {
           />
         </div>
 
-        <div>
-          <label htmlFor="dof">Date of Birth</label>
+        <div className="input-box">
+          <label htmlFor="dof">Date of Birth
           <input
             type="date"
             id="dof"
@@ -133,6 +134,7 @@ const Forms = ({ onFormSuccess }) => {
             onChange={handleChange}
             required // Required attribute added
           />
+          </label>
         </div>
         <div className="input-box">
           <label htmlFor="gender">Gender</label>
@@ -203,7 +205,7 @@ const Forms = ({ onFormSuccess }) => {
           />
           {selectedFileName && (
             // Display selected file name if available
-            <p>Selected file: {selectedFileName}</p>
+            <p className="file-name">Selected file: {selectedFileName}</p>
           )}
         </div>
         {loading && <p>Loading...</p>}
@@ -212,6 +214,7 @@ const Forms = ({ onFormSuccess }) => {
         </button>
       </form>
     </section>
+    </body>
   );
 };
 
