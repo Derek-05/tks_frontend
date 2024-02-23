@@ -121,18 +121,11 @@ const Prosthetics = () => {
       <br/>
       <br/>
       <br/>
-     
-
-
-    
-</div>
-
-</div>
-
+     </div>
     </section>
-    </body>
-   
-  );
+  </body>
+
+);
 };
 
 export default Prosthetics;
