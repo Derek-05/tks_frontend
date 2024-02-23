@@ -5,7 +5,11 @@ import './JobListing.css';
 const JobListing = ({ job = {} }) => {
   return (
  
+
+    
+
  /*Job Listing page body */
+
     <Link to={`/job/${job.id || ''}`} style={{ textDecoration: 'none', color: 'inherit' }}>
       
       <div className="job-listing">
