@@ -98,7 +98,7 @@
 }
 
 .Information-img img{
- margin-top: 290px;
+ margin-top: 220px;
   width: 100%;
   height:auto;
   border-radius:10px;
@@ -146,8 +146,8 @@
 }
 
 .card4 {
-  width: 20%; /* Reducir el ancho de las tarjetas */
-  margin-bottom: 20px; /* Reducir el espacio entre las tarjetas */
+  width: 40%; /* Reducir el ancho de las tarjetas */
+  margin-bottom: 50px; /* Reducir el espacio entre las tarjetas */
   border: 1px solid #ccc;
   border-radius: 5px;
   overflow: hidden;

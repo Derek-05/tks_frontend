@@ -49,20 +49,7 @@ return (
           <h3>
             {" "}
             Let's embark on this journey together
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+           
            
           </h3>
       </div>

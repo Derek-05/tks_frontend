@@ -1,9 +1,14 @@
 /* Job Link section style */
+.Job-link-body{
+    background: #fff36e;
+    
+   
+}
 .container3 {
     bottom: 20px;
     display: flex; 
     flex-direction: column; 
-    
+   
     margin-left: 20px;
     width: 100%;
 }
@@ -46,7 +51,7 @@ margin-left: 20px;
 
 .btn3:hover {
    
-    border: 2px solid #ffed2a;
+    border: 2px solid #00489d;
     background: white;
     color: #00489d;
   }

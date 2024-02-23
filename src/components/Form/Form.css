@@ -1,5 +1,9 @@
   /*Form page style  */
-*{
+.container-form{
+  background: url(../../assets/Mainbackground4.png);
+}
+
+  *{
   margin:0;
   padding:0;
   box-sizing: border-box;
@@ -12,7 +16,7 @@
   align-items: center;
   justify-content: center;
   padding:20px;
-  background:rgb(237, 235, 235) ;
+  
  
  
   
@@ -136,6 +140,9 @@
   cursor: pointer;
 }
 
+.file-name {
+  color:black;
+}
 .Newform button:hover{
   border: 2px solid #ffed2a;
   background: white;
