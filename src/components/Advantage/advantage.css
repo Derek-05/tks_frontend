@@ -24,7 +24,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap:25px;
-    margin-top: 100px;
+    margin-bottom: 350px;
     z-index: 1;
 }
 
@@ -64,7 +64,7 @@
     font-size: 40px;
     font-weight: 700;
     color:darkblue;
-    margin-top: 30px;
+    margin-top: 100px;
 }
 
 .card-content a{
@@ -98,7 +98,7 @@
 }
 
 .Information-img img{
- margin-top: 220px;
+ margin-bottom: 200px;
   width: 100%;
   height:auto;
   border-radius:10px;
@@ -106,16 +106,6 @@
 
 }
 
-.Information-text h2{
- text-align: center;
- color:dodgerblue;
- font-size: 23px;
- font-weight:800;
- line-height:1.2;
- margin-bottom:25px;
- 
-  
-}
 
 .Information-text h5{
  text-align: center;
@@ -124,7 +114,16 @@
  color:darkblue;
  letter-spacing:6px;
  margin-bottom:20px;
- margin-top: 140px;
+ margin-top: -240px;
+}
+.Information-text-1 h5{
+  text-align: center;
+  font-size:30px;
+  font-weight:700;
+  color:darkblue;
+  letter-spacing:6px;
+  margin-bottom:20px;
+  margin-top: -240px;
 }
 
 .Information-text p{
@@ -143,6 +142,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around; /* Alinea las cartas en el centro */
+
+ 
 }
 
 .card4 {
@@ -152,11 +153,14 @@
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 200px;
+ 
 }
 
 .card4 img {
   width: 100%;
   height: auto;
+  
 }
 
 .card-info {
@@ -174,6 +178,15 @@
   color:#313131;
   font-size: 20px;
   font-weight: 700;
+}
+
+.Equal-Employment p{
+  text-align: justify;
+  text-justify: distribute-all-lines;
+  color:black;
+  line-height: 2em;
+  margin-left: 100px;
+  font-size: 18px;
 }
 
 
