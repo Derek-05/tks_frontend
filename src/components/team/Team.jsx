@@ -1,14 +1,14 @@
 import React from "react";
 import {
-  Ortopeda,
-  secretaria,
+  ortopeda,
+  Secretaria,
   Personal,
   Nurse,
   Nurse2,
   psicologa,
   fisioterapeuta,
-  
-  Cirujano2,
+   Cirujano2,
+   
 } from "./imports";
 import "./team.css";
 
@@ -36,7 +36,7 @@ const Team = () => {
         <div className="feature-content">
           <div className="row">
             <div className="row-img">
-            <img src={Ortopeda} alt="Orthopedics" />
+            <img src={ortopeda} alt="Orthopedics" />
             </div>
             <h3>Orthopedic</h3>
           </div>
@@ -76,7 +76,7 @@ const Team = () => {
           </div>
           <div className="row">
             <div className="row-img">
-              <img src={secretaria} alt="Secretary" />
+              <img src={Secretaria} alt="Secretary" />
             </div>
             <h3> Secretary</h3>
           </div>
