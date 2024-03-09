@@ -7,7 +7,7 @@ import clinic from "../../assets/clinic.jpeg";
 import soccer from "../../assets/soccer.jpeg";
 import street from "../../assets/street.jpeg";
 import { homepage } from "./imports";
-import { Link } from 'react-router-dom';
+
 
 const Prosthetics = () => {
   return (
@@ -121,7 +121,18 @@ const Prosthetics = () => {
       <br/>
       <br/>
       <br/>
+
+     
+
+
+    
+</div>
+
+
+
+
      </div>
+
     </section>
   </body>
 
