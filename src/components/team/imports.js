@@ -1,5 +1,10 @@
+
 import ortopeda from '../../assets/ortopeda.jpeg';
 import Secretaria from '../../assets/Secretaria.jpeg';
+
+
+import secretaria from '../../assets/Secretaria.jpeg';
+
 import fisioterapeuta from '../../assets/fisioterapeuta.jpeg';
 import Nurse from '../../assets/Nurse.jpeg';
 import Nurse2 from '../../assets/Nurse2.jpeg';

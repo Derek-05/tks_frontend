@@ -73,9 +73,35 @@ const Advantage = () => {
       <br />
       <br />
       <br />
+      
       <h2> OUR BENEFITS</h2>
+      <div className="container">
+          <div className="Information">
+            <div class="Information-img">
+              <img src={Desarrollopersonal1} alt="Family" />
+            </div>
+            <div className="Information-text">
+              <h5> Inspire Smiles</h5>
+              
+              <p>
+              In our pediatric prosthetics clinic, we are dedicated to ensuring the well-being of our team. We provide dental coverage, 
+              professional development programs, flexible work arrangements, and financial incentives to create an environment that promotes
+              health, growth, and work-family balance. Additionally, we offer mental health resources and counseling services to support our
+              team members through any challenges they may face. In our clinic, we don't just create prosthetics for children; we also foster
+              a space where everyone thrives, recognizing the importance of holistic support for our staff's overall well-being.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="Information-text">
+        <h5>Benefits </h5>
+        <br/>
+        <br/>
+        </div>
       <div className="card-container">
+      
         <div className="card">
+        
           <img src={Benefit4} alt="Health and Well-being" />
           <div className="card-content">
             <h1>Health and Well-being</h1>
@@ -111,33 +137,17 @@ const Advantage = () => {
             </a>
           </div>
         </div>
-        <div className="container">
-          <div className="Information">
-            <div class="Information-img">
-              <img src={Desarrollopersonal1} alt="Family" />
-            </div>
-            <div className="Information-text">
-              <h5> Inspire Smiles</h5>
-              <h2>Join Our Team Today</h2>
-              <p>
-              In our pediatric prosthetics clinic, we are dedicated to ensuring the well-being of our team. We provide dental coverage, 
-              professional development programs, flexible work arrangements, and financial incentives to create an environment that promotes
-              health, growth, and work-family balance. Additionally, we offer mental health resources and counseling services to support our
-              team members through any challenges they may face. In our clinic, we don't just create prosthetics for children; we also foster
-              a space where everyone thrives, recognizing the importance of holistic support for our staff's overall well-being.
-              </p>
-            </div>
-          </div>
-        </div>
+       
       </div>
-      <div className="Information-text" id="Benefits-Info">
+      
+      <div className="Information-text-1">
         <h5>Benefits Information</h5>
-      </div>
-      <br/>
-      <br/>
-
+       
+        </div>
       <div className="container3" id="cardsinfo2">
+        
         <div className="card4">
+
           <img src={Bienestar1} alt="pasiva" />
           <div className="card-info">
             <h3>Health and Well being</h3>
@@ -184,10 +194,23 @@ const Advantage = () => {
           </div>
         </div>
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
+     <div className="Equal-Employment">
+     
+
+      <h2>Equal Employment Opportunity Policy</h2>
+      <br/>
+      <br/>
+      <p>Ortho Kids Solution is committed to providing equal employment opportunities. 
+        This means we must treat our Ortho Kids Solution colleagues and applicants fairly and never <br/>
+        behave in a discriminatory manner. We follow all related laws and in our employment decisions (such as recruiting,
+        hiring, training, salary and promotion) we do not discriminate <br/>against anyone based on race, color, gender, age, 
+        origin, religion, sexual orientation, gender identity or expression, marital status, citizenship, disability, 
+        veteran status, or any other <br/>fact protected by law.</p>
+     </div>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
 
    
     </section>

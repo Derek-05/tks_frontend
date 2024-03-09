@@ -121,6 +121,7 @@ const Prosthetics = () => {
       <br/>
       <br/>
       <br/>
+
      
 
 
@@ -129,10 +130,13 @@ const Prosthetics = () => {
 
 
 
+
+     </div>
+
     </section>
-    </body>
-   
-  );
+  </body>
+
+);
 };
 
 export default Prosthetics;
