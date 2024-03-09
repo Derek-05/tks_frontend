@@ -131,7 +131,7 @@ const Prosthetics = () => {
 
 
 
-     </div>
+    
 
     </section>
   </body>
