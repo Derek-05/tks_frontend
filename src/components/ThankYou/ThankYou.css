@@ -1,36 +1,42 @@
-  /* ThankYouPage style */
+/* ThankYouPage style */
 .thank-you-card {
-  width: 210vh;
-  margin-top: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  padding: 20px;
+  max-height: 90vh; 
+  overflow: auto; 
 }
 
 .card-2 {
-  width: 400px;
-  margin: 0 auto;
+  width: 80vw; 
+  max-width: 400px; 
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
   border: 2px solid dodgerblue;
-  margin-left:65vh;
+  margin: 0 auto;
 }
 
 .card-title-2 {
-  font-size: 30px;
+  font-size: 2rem; /* Responsive font size */
   margin-bottom: 10px;
   text-align: center;
   color: darkblue;
 }
 
 .card-text-2 {
-  font-size: 18px;
+  font-size: 1rem; /* Responsive font size */
   margin-bottom: 20px;
   color: #666;
   line-height: 1.5;
   text-align: center;
 }
-  /* ThankYouPage button style */
+
+/* ThankYouPage button style */
 .btn-2 {
   display: inline-block;
   padding: 10px 20px;
@@ -41,17 +47,24 @@
   cursor: pointer;
 }
 
-.btn-primary:hover {
+.btn-2:hover {
   background-color: white;
   color: #0056b3;
   border: 2px solid dodgerblue;
 }
 
-/* /*styles of other devices */
+/* Styles for smaller devices */
 @media screen and (max-width: 600px) {
   .card-2 {
-    width: 50vh;
-  margin-top: 300px;
-  margin-left: 3vh;
+    width: 90vw; /* Adjusted width for small screens */
+    margin-left: 0; /* Center align */
+  }
+
+  .card-title-2 {
+    font-size: 1.5rem; /* Smaller font size */
+  }
+
+  .card-text-2 {
+    font-size: 0.875rem; /* Smaller font size */
   }
 }

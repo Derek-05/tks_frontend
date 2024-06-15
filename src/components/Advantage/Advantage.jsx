@@ -93,7 +93,7 @@ const Advantage = () => {
             </div>
           </div>
         </div>
-        <div className="Information-text">
+        <div className="Information-text2">
         <h5>Benefits </h5>
         <br/>
         <br/>
@@ -123,7 +123,7 @@ const Advantage = () => {
           <img src={Benefit2} alt="Work-Family Balance" />
           <div className="card-content">
             <h1> Work-Family Balance</h1>
-            <a href="#cardsinfo2" class="card-button">
+            <a href="#cardsinfo3" class="card-button">
               Read more
             </a>
           </div>
@@ -132,7 +132,7 @@ const Advantage = () => {
           <img src={Benefit1} alt="Financial-Incentives" />
           <div className="card-content">
             <h1>Financial Incentives</h1>
-            <a href="#cardsinfo2" class="card-button">
+            <a href="#cardsinfo3" class="card-button">
               Read more
             </a>
           </div>
@@ -161,13 +161,15 @@ const Advantage = () => {
         <div className="card4">
           <img src={Desarrollopersonal2} alt="pasiva" />
           <div className="card-info">
-            <h3>Professional Development</h3>
+            <h3>Professional Development </h3>
             <p>At our clinic empowers employees with continuous learning initiatives. This includes ongoing training programs.
                financial support for related education through tuition reimbursement, and mentorship opportunities. our workforce
                 to progress in their careers within the clinic, emphasizing our commitment to their success </p>
           </div>
         </div>
+        </div>
         
+        <div className="container3" id="cardsinfo3">
         <div className="card4">
           <img src={Familia2} alt="pasiva" />
           <div className="card-info">
@@ -193,7 +195,8 @@ const Advantage = () => {
                secure, and connected to our clinic's goals.</p>
           </div>
         </div>
-      </div>
+        </div>
+      
      <div className="Equal-Employment">
      
 
@@ -201,11 +204,11 @@ const Advantage = () => {
       <br/>
       <br/>
       <p>Ortho Kids Solution is committed to providing equal employment opportunities. 
-        This means we must treat our Ortho Kids Solution colleagues and applicants fairly and never <br/>
+        This means we must treat our Ortho Kids Solution colleagues and applicants fairly and never 
         behave in a discriminatory manner. We follow all related laws and in our employment decisions (such as recruiting,
-        hiring, training, salary and promotion) we do not discriminate <br/>against anyone based on race, color, gender, age, 
+        hiring, training, salary and promotion) we do not discriminate against anyone based on race, color, gender, age, 
         origin, religion, sexual orientation, gender identity or expression, marital status, citizenship, disability, 
-        veteran status, or any other <br/>fact protected by law.</p>
+        veteran status, or any other fact protected by law.</p>
      </div>
      <br/>
      <br/>
