@@ -4,7 +4,6 @@ import { newApplicant } from "../../api/applicantApi";
 import { getAllJobOfferings } from "../../api/jobOfferingsAPI";
 
 const Forms = ({ onFormSuccess }) => {
-  // State variables
   const [credentials, setCredentials] = useState({
     first_name: "",
     last_name: "",
@@ -20,7 +19,6 @@ const Forms = ({ onFormSuccess }) => {
   const [selectedFileName, setSelectedFileName] = useState("");
   const [ageError, setAgeError] = useState("");
 
-  // Fetch job offerings when component mounts
   useEffect(() => {
     fetchJobs();
   }, []);
@@ -41,7 +39,12 @@ const Forms = ({ onFormSuccess }) => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    if (ageError) return; // Prevent form submission if there's an age error
+    const age = calculateAge(credentials.dof);
+    if (age < 18) {
+      setAgeError("You must be at least 18 years old.");
+      return;
+    }
+    if (ageError) return;
     setLoading(true);
 
     try {
@@ -98,6 +101,18 @@ const Forms = ({ onFormSuccess }) => {
     } else {
       setAgeError("");
     }
+  };
+
+  const calculateAge = (dob) => {
+    const birthDate = new Date(dob);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age;
   };
 
   const handleJobChange = (e) => {
@@ -163,7 +178,7 @@ const Forms = ({ onFormSuccess }) => {
               <option value="">Select Gender</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
-              <option value="Do not Specify">Do not Specify</option>
+              <option value="donotspecify">Do not Specify</option>
             </select>
           </div>
 
@@ -190,7 +205,7 @@ const Forms = ({ onFormSuccess }) => {
               placeholder="7871234567"
               value={credentials.phone_number}
               onChange={handleChange}
-              maxLength={15}
+              maxLength={10}
               required
             />
           </div>

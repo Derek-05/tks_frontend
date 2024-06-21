@@ -1,25 +1,62 @@
- /*Job Listing page style */
-
+/* Job Listing Page Style */
 .job-listing {
   padding: 25px;
-  margin: 10px 0;
-  border: 1px solid linear-gradient(to left, rgba(0,0,0,0.6), rgba(0,0,0,0.3))#00489d;
-  border-radius: 5px;
-  background:dodgerblue;
+  margin: 10px auto;
+  border: 1px solid #00489d;
+  border-radius: 10px;
+  background: dodgerblue;
   margin-top: 100px;
   margin-bottom: 50px;
-  width:20%;
-  border-radius: 10px;
-  margin-left: 37em;
+  width: 20%;
   text-align: center;
-
 }
 
 .job-listing h3 {
   color: white;
   margin-bottom: 8px;
   text-align: center;
- 
 }
 
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .job-listing {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
+@media screen and (max-width: 768px) {
+  .job-listing {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .job-listing {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+  }
+
+  .job-listing h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 375px) {
+  .job-listing {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+  }
+
+  .job-listing h3 {
+    font-size: 1rem;
+  }
+}
