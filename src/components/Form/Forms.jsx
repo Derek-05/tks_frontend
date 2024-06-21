@@ -18,6 +18,8 @@ const Forms = ({ onFormSuccess }) => {
   const [jobOfferings, setJobOfferings] = useState([]);
   const [selectedFileName, setSelectedFileName] = useState("");
   const [ageError, setAgeError] = useState("");
+  const [firstNameError, setFirstNameError] = useState("");
+  const [lastNameError, setLastNameError] = useState("");
 
   useEffect(() => {
     fetchJobs();
@@ -44,7 +46,7 @@ const Forms = ({ onFormSuccess }) => {
       setAgeError("You must be at least 18 years old.");
       return;
     }
-    if (ageError) return;
+    if (ageError || firstNameError || lastNameError) return;
     setLoading(true);
 
     try {
@@ -81,6 +83,8 @@ const Forms = ({ onFormSuccess }) => {
 
       if (name === "dof") {
         validateAge(value);
+      } else if (name === "first_name" || name === "last_name") {
+        validateName(value, name);
       }
     }
   };
@@ -100,6 +104,22 @@ const Forms = ({ onFormSuccess }) => {
       setAgeError("You must be at least 18 years old.");
     } else {
       setAgeError("");
+    }
+  };
+
+  const validateName = (value, name) => {
+    if (name === "first_name") {
+      if (value && value[0] !== value[0].toUpperCase()) {
+        setFirstNameError("First name must start with a capital letter.");
+      } else {
+        setFirstNameError("");
+      }
+    } else if (name === "last_name") {
+      if (value && value[0] !== value[0].toUpperCase()) {
+        setLastNameError("Last name must start with a capital letter.");
+      } else {
+        setLastNameError("");
+      }
     }
   };
 
@@ -137,6 +157,7 @@ const Forms = ({ onFormSuccess }) => {
               maxLength={100}
               required
             />
+            {firstNameError && <div className="error">{firstNameError}</div>}
           </div>
           <div className="input-box">
             <label htmlFor="last_name">Last Name</label>
@@ -150,6 +171,7 @@ const Forms = ({ onFormSuccess }) => {
               maxLength={100}
               required
             />
+            {lastNameError && <div className="error">{lastNameError}</div>}
           </div>
 
           <div className="input-box">
@@ -240,7 +262,7 @@ const Forms = ({ onFormSuccess }) => {
           </div>
 
           {loading && <p>Loading...</p>}
-          <button type="submit" disabled={loading || ageError}>
+          <button type="submit" disabled={loading || ageError || firstNameError || lastNameError}>
             {loading ? "Submitting..." : "Submit"}
           </button>
         </form>

@@ -1,16 +1,7 @@
 /* Global Styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   font-family: sans-serif;
 }
-
-html, body {
-  height: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
 .container-form {
   background: url(../../assets/Mainbackground4.png);
 }

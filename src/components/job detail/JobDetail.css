@@ -29,7 +29,7 @@
   background: linear-gradient(to left, rgba(0, 72, 157, 0.8), rgba(0, 72, 157, 0.5)); 
   color: #fff; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-  text-align: center; /* Center text */
+  text-align: left; /* Align text to the left */
   width: 80%; /* Adjust width as needed */
   max-width: 600px; /* Ensure it doesn't exceed a certain width */
   margin: 0 auto; /* Center horizontally */
@@ -50,12 +50,6 @@
 
 .job-detail:hover {
   transform: scale(1.02); /* Optional hover effect */
-}
-
-
-
-.detail-btn:hover {
-  background-color: #003d85; /* Darken button color on hover */
 }
 
 /* Responsive Styles */
