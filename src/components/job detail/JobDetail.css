@@ -1,73 +1,79 @@
 /* JobDetail.css */
+
+/* Job Offer Heading */
 .job-offer-heading {
-  text-align: center; /* Para centralizar el contenido */
-  margin-top: 110px; /* Ajusta el margen superior según sea necesario */
+  text-align: center;
+  margin-top: 110px; /* Adjust top margin as needed */
 }
 
 .job-offer-heading h2 {
   color: darkblue;
-  font-size:35px;
-  font-weight:700;
+  font-size: 35px;
+  font-weight: 700;
   letter-spacing: 4px;
-  
 }
+
+/* Job Detail Container */
 .job-detail-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
-  
-  
-   /* Adjust as needed based on your layout */
+  height: 80vh; /* Adjust height as needed */
 }
 
+/* Job Detail */
 .job-detail {
-  justify-content: center;
   border: none;
-  padding: 15px;
-  margin: 80px;
+  padding: 20px;
   border-radius: 8px;
   background: linear-gradient(to left, rgba(0, 72, 157, 0.8), rgba(0, 72, 157, 0.5)); 
   color: #fff; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-  height: 45vh;
-  width: 50%;
-  margin-left: 45vh;
- 
+  text-align: left; /* Align text to the left */
+  width: 80%; /* Adjust width as needed */
+  max-width: 600px; /* Ensure it doesn't exceed a certain width */
+  margin: 0 auto; /* Center horizontally */
 }
 
 .job-detail p {
-  margin-bottom: 100px;
-  font-size: 20px;
-  margin: 8px 0;
-
+  font-size: 18px; /* Adjust font size as needed */
+  line-height: 1.5; /* Adjust line height for readability */
 }
 
 .job-detail strong {
   font-weight: bold;
 }
 
-/* Optional: Add styling for 'Not provided' text */
 .job-detail .not-provided {
   color: #888;
 }
 
-/* Optional: Add hover effect */
 .job-detail:hover {
-  transform: scale(1.02); 
+  transform: scale(1.02); /* Optional hover effect */
 }
 
-
- .detail-btn{
-  width:20%;;
-   padding: 10px 20px; /* Agrega relleno al botón para que tenga un aspecto más espaciado */
-   text-align:center;
-  color: white; /* Establece el color del texto */
-  font-size: 16px; /* Establece el tamaño del texto */
-  margin-left: 35vh;
- 
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .job-detail {
+    width: 90%;
+    padding: 15px;
+  }
 }
 
-.BTN-2{
-  margin-right: 20vh;
+@media screen and (max-width: 768px) {
+  .job-detail {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .job-detail {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .job-detail {
+    font-size: 16px;
+  }
 }

@@ -71,6 +71,7 @@ header {
     color: #ffffff;
     font-size: 1.875rem;
     cursor: pointer;
+    margin-right: 20px;
   }
   /*styles of other devices */
   @media (max-width: 1200px) {

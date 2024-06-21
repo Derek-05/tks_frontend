@@ -158,8 +158,15 @@
 @media (max-width: 800px){
     .prosthetics{
         grid-template-columns: 1fr;
+    
         
     }
+    .prosthetics p{
+        font-size: 15px;
+        margin-left: 20px;
+    }
+
+   
     .newsletter-content{
         grid-template-columns: 1fr;
        

@@ -1,50 +1,82 @@
-  /* Job page style*/
-.job-page-edit{
-    background: white;
+/* Job-page.css */
+
+/* Job Page Edit */
+.job-page-edit {
+  background: white;
 }
 
+/* Job Details Heading */
 .Job-details-heading {
-    text-align: center; /* Para centralizar el contenido */
-    margin-top: 150px; /* Ajusta el margen superior según sea necesario */
+  text-align: center;
+  margin-top: 150px; /* Adjust top margin as needed */
+}
+
+.Job-details-heading h2 {
+  color: darkblue;
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+/* Job Title Content */
+.job-title-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  text-align: center; /* Center text content */
+}
+
+.job-title-content h5 {
+  font-size: 27px;
+  font-weight: 600;
+  margin-top: 40px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: dodgerblue;
+}
+
+.job-title-content h3 {
+  color: #424242;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 15px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .job-title-content {
+    margin-left: 10%;
+    margin-right: 10%;
   }
-  
-  .Job-details-heading h2 {
-    color: darkblue;
-    font-size:35px;
-    font-weight:700;
-    letter-spacing: 4px;
-    
+}
+
+@media screen and (max-width: 768px) {
+  .job-title-content {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .job-title-content h5 {
+    font-size: 22px;
   }
 
-  .job-title-content{
-    flex:1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start ;
-    flex-direction: column;
-    margin-top: 20px;
-    
+  .job-title-content h3 {
+    font-size: 18px;
+  }
+}
 
-    margin-left: 27rem;
+@media screen and (max-width: 375px) {
+  .job-title-content h5 {
+    font-size: 18px;
   }
 
-  .job-title-content h5{
-   
-    font-size:27px;
-    font-weight: 600;
-    margin-top: 40px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color:dodgerblue;
+  .job-title-content h3 {
+    font-size: 16px;
   }
-
-  .job-title-content h3{
-    color:#424242e0;
-    font-size: 20px;
-    font-weight: 600;
-    margin-top: 180px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    margin-top: 15px;
-    
-  }
+}

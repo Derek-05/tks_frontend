@@ -48,9 +48,7 @@ const Navbar = () => {
     { name: "Apply Now", path: "/apply_now" },
     { name: "Contact Us", path: "/contact" },
     { name: "Login", path: "/Login" },
-   
-
-  ];
+  ]
 
   // Function to toggle mobile menu
   const toggleMobileMenu = () => {

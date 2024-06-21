@@ -43,10 +43,6 @@ body .logout {
   left: 0;
 }
 
-
-
-
-
 /* Content area styles */
 .content {
   width: calc(100% - 400px); 
@@ -61,28 +57,32 @@ body .logout {
   margin-left: 350px;
   margin-right: 20px; 
 }
+
 .list-2 {
   margin-top: 150px;
   width: 30%; 
   margin-left: 350px;
   margin-right: 20px; 
 }
+
 .list-2 td p {
-  color:black;
-  word-wrap: break-word; 
-  max-width: 150px; 
-}
-.list td p {
-  color:black;
+  color: black;
   word-wrap: break-word; 
   max-width: 150px; 
 }
 
-.list-2 th p{
-  color:black;
+.list td p {
+  color: black;
+  word-wrap: break-word; 
+  max-width: 150px; 
 }
-.list th p{
-  color:black;
+
+.list-2 th p {
+  color: black;
+}
+
+.list th p {
+  color: black;
 }
 
 .list-2 th,
@@ -90,7 +90,6 @@ body .logout {
   padding: 25px;
   border: 1px solid #ccc;
   text-align: left;
- 
 }
 
 .list th,
@@ -99,18 +98,21 @@ body .logout {
   border: 1px solid #ccc;
   text-align: left;
 }
+
 .list-2 th {
   background-color: #f2f2f2;
   color: black;
   text-align: justify;
   text-justify: distribute-all-lines;
 }
+
 .list th {
   background-color: #f2f2f2;
   color: black;
   text-align: justify;
   text-justify: distribute-all-lines;
 }
+
 .list-2 td {
   color: black;
 }
@@ -124,6 +126,7 @@ body .logout {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .list td-2 {
   white-space: nowrap;
   overflow: hidden;
@@ -137,16 +140,11 @@ body .logout {
   align-items: flex-start;
   margin-bottom: 20px;
   margin-top: 150px;
- 
-  
 }
 
 .job-form h2 {
-   margin-top: 50px;
+  margin-top: 50px;
   color: darkblue;
-  
-
-
 }
 
 .job-form label {
@@ -181,8 +179,90 @@ body .logout {
   color: dodgerblue;
   border-color: dodgerblue;
 }
-/*styles of other devices */
+
+/* Responsive styles for different devices */
+@media screen and (max-width: 1200px) {
+  .content {
+    width: calc(100% - 350px); 
+    margin-left: 350px;
+  }
+
+  .list,
+  .list-2 {
+    margin-left: 320px;
+  }
+
+  .sidebar {
+    width: 280px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .content {
+    width: calc(100% - 300px); 
+    margin-left: 300px;
+  }
+
+  .list,
+  .list-2 {
+    width: 50%; 
+    margin-left: 270px;
+  }
+
+  .sidebar {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .content {
+    width: calc(100% - 250px); 
+    margin-left: 250px;
+  }
+
+  .list,
+  .list-2 {
+    width: 60%; 
+    margin-left: 220px;
+  }
+
+  .sidebar {
+    width: 220px;
+  }
+}
+
 @media screen and (max-width: 768px) {
+  .sidebar {
+    width: 100%; 
+    height: auto; 
+    padding-top: 20px; 
+    overflow-y: hidden; 
+    position: static; 
+  }
+
+  .logout {
+    position: static; 
+    margin-top: 20px; 
+  }
+
+  .content {
+    width: 100%; 
+    margin-left: 0; 
+  }
+
+  .list,
+  .list-2 {
+    width: 100%; 
+    margin-left: 0; 
+    margin-right: 0; 
+  }
+
+  .job-form h2 {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .sidebar {
     width: 100%; 
     height: auto; 

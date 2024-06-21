@@ -1,137 +1,127 @@
-  /*Form page style  */
-.container-form{
+/* Global Styles */
+* {
+  font-family: sans-serif;
+}
+.container-form {
   background: url(../../assets/Mainbackground4.png);
 }
 
-  *{
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-  font-family: sans-serif;
-}
-
-.Apply-Form-body{
+.Apply-Form-body {
   min-height: 100vh;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding:20px;
-  
- 
- 
-  
-
+  padding: 20px;
 }
-  /*Form style  */
-.container .Newform{
+
+/* Form Styles */
+.container .Newform {
   position: relative;
-  max-width:700px ;
-  width:100%;
-  padding:40px 80px;
+  max-width: 700px;
+  width: 100%;
+  padding: 40px 80px;
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   top: 50px;
-  
-  
-  
+  overflow: auto; /* Allow scrolling within the form */
 }
 
-.Newform h1{
+.Newform h1 {
   font-size: 25px;
-  color:darkblue;
+  color: darkblue;
   font-weight: 500;
   text-align: center;
- 
 }
 
-.container .Newform{
+.container .Newform {
   margin-top: 50px;
 }
 
-.Newform .input-box{
- width:100%;
- margin-top: 20px;
-}
-
-.input-box label{
-  color:darkblue;
-
-}
-
-
-.Newform :where( .input-box input, .select-box){
-  position: relative;
-  height:50px;
+.Newform .input-box {
   width: 100%;
-  outline:none;
+  margin-top: 20px;
+}
+
+.input-box label {
+  color: darkblue;
+}
+
+.Newform :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
   font-size: 1rem;
   margin-top: 8px;
-  border:1px solid #ddd;
+  border: 1px solid #ddd;
   padding: 0 25px;
 }
 
-.Newform .column{
+.Newform .column {
   display: flex;
   column-gap: 50px;
 }
 
-.Newform .gender-box{
+.Newform .gender-box {
   margin-top: 20px;
 }
 
-.gender-box h3{
+.gender-box h3 {
   color: darkblue;
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 8px;
 }
 
-.gender label{
-  color:black;
+.gender label {
+  color: black;
 }
-.Newform :where(.gender-option, .gender) {
 
+.Newform :where(.gender-option, .gender) {
   display: flex;
   align-items: center;
   column-gap: 50px;
   flex-wrap: wrap;
 }
-.Newform .gender{
+
+.Newform .gender {
   column-gap: 5px;
-  
 }
 
-.gender input{
-  accent-color:dodgerblue;
+.gender input {
+  accent-color: dodgerblue;
 }
 
-.Newform :where(.gender input, .gender label){
+.Newform :where(.gender input, .gender label) {
   cursor: pointer;
 }
-.addres :where(input, .select-box){
+
+.addres :where(input, .select-box) {
   margin-top: 15px;
 }
-.select-box select{
- height: 100%;
- width: 100%;
- outline:none;
- border: none;
- color: #707070;
- font-size: 1rem;
- background-color: white;
+
+.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1rem;
+  background-color: white;
 }
-.containerbtn{
+
+.containerbtn {
   text-align: center;
 }
-.Newform button{
- 
-  margin:10px 145px;
-  height:45px;
+
+.Newform button {
+  margin: 10px 145px;
+  height: 45px;
   width: 50%;
-  font-size: 20;
-  color:#ffed2a;
-  border:none;
+  font-size: 20px;
+  color: #ffed2a;
+  border: none;
   background-color: #00489d;
   text-decoration: none;
   border-radius: 6px;
@@ -141,58 +131,124 @@
 }
 
 .file-name {
-  color:black;
+  color: black;
 }
-.Newform button:hover{
+
+.Newform button:hover {
   border: 2px solid #ffed2a;
   background: white;
   color: #00489d;
 }
-/*Responsive */
-@media screen and (max-width: 500px){
-  .Newform .column{
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .Newform {
+    padding: 30px 60px;
+  }
+
+  .Newform .column {
+    column-gap: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Newform {
+    padding: 20px 40px;
+  }
+
+  .Newform .column {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  .Newform button {
+    margin: 10px 0;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .Newform {
+    padding: 20px;
+  }
+
+  .Newform .column {
     flex-wrap: wrap;
   }
-  .Newform :where(.gender-option, .gender){
+
+  .Newform :where(.gender-option, .gender) {
     row-gap: 15px;
   }
 }
 
+/* Mobile Styles */
+@media screen and (max-width: 375px) {
+  .Newform {
+    padding: 10px;
+  }
+
+  .Newform .input-box {
+    margin-top: 15px;
+  }
+
+  .input-box label {
+    font-size: 14px;
+  }
+
+  .Newform :where(.input-box input, .select-box) {
+    height: 40px;
+    font-size: 0.875rem;
+    padding: 0 15px;
+  }
+
+  .gender-box h3 {
+    font-size: 14px;
+  }
+
+  .gender label {
+    font-size: 14px;
+  }
+
+  .select-box select {
+    font-size: 0.875rem;
+  }
+}
 
 form {
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input,
-  select,
-  button {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-  
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-
-.filename p{
-  color: black;
-  
+  max-width: 400px;
+  margin: 0 auto;
 }
-  
-  
-  
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.filename p {
+  color: black;
+}
+
+.error {
+  color: black;
+  font-size: 14px;
+  margin-top: 5px;
+}
