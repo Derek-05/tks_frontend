@@ -30,7 +30,7 @@ const Report = () => {
               <div class="details">
                 <span>Phone</span>
                 <br/>
-                <span>1+787-444-545</span>
+                <span>787-484-5455</span>
               </div>
             </div>
 
