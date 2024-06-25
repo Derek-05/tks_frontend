@@ -164,7 +164,7 @@ const Advantage = () => {
             <h3>Professional Development </h3>
             <p>At our clinic empowers employees with continuous learning initiatives. This includes ongoing training programs.
                financial support for related education through tuition reimbursement, and mentorship opportunities. our workforce
-                to progress in their careers within the clinic, emphasizing our commitment to their success </p>
+                to progress in their careers within the clinic, emphasizing our commitment to their success. </p>
           </div>
         </div>
         </div>
@@ -179,7 +179,7 @@ const Advantage = () => {
              With flexible work schedules, on-site childcare services, paid parental leave, 
              and additional days off for family-related situations, we aim to create a workplace
               that recognizes and accommodates the diverse needs of our staff, ensuring a harmonious 
-              balance between work and family life</p>
+              balance between work and family life.</p>
           </div>
         </div>
 
