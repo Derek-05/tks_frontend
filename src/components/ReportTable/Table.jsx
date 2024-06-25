@@ -216,7 +216,6 @@ const Table = () => {
           <th>Show PDF</th>
           <th>Created At</th>
           <th>Updated At</th>
-          <th>Edit</th>
           <th>Delete</th>
         </tr>
       </thead>
@@ -239,7 +238,7 @@ const Table = () => {
               <td>{applicant.file_type}</td>
               <td>
                 {/* Render button to open PDF in a new window */}
-                <button onClick={() => openPdfWindow(applicant.file_name)}>Show PDF</button>
+                <button onClick={() => openPdfWindow(applicant.file_name)}>View Resume</button>
               </td>
               <td>{applicant.created_At}</td>
               <td>{applicant.updated_At}</td>

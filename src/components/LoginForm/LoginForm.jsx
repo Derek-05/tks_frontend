@@ -83,8 +83,8 @@ const LoginForm = () => {
                     </div>
                     {loading && <p>Loading...</p>}
                     {error && <p className="error-message">{error}</p>} {/* Apply CSS for error message */}
-                    <button type="submit" className="login-button" disabled={loading}>
-                        {loading ? 'Logging in...' : 'Submit'}
+                    <button type="signin" className="login-button" disabled={loading}>
+                        {loading ? 'Logging in...' : 'Sign in'}
                     </button>
                 </form>
             </div>
