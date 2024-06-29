@@ -23,7 +23,7 @@ const Header = () => {
 
           <h3>
             {" "}
-            Be Part of Something Extraordinary
+            Be Part of the Extraordinary
             <br />
             <br />
             <br />
